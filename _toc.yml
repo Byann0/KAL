@@ -5,5 +5,4 @@ format: jb-book
 root: intro
 chapters:
 - file: persamaanlinier
-  sections:
-  - file: eliminasigauss
+- file: eliminasigauss
