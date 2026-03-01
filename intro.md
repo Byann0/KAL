@@ -1,10 +1,12 @@
-# Komputasi Aljabar Linier
+# My Notebook
 
-Nama : Abyan Naufal Yunianto
+**Nama**          : Abyan Naufal Yunianto
 
-NIM : 240411100178
+**NIM**           : 240411100178
 
-Kelas : IF 2A
+**Mata Kuliah**   : Komputasi Aljabar Linier
+
+**Kelas**         : IF 2A
 
 ```{tableofcontents}
 ```
