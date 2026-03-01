@@ -14,27 +14,65 @@ kernelspec:
 
 # Eliminasi Gauss
 
-kita akan mengidentifikasi sistem L dengan matriks augmentasinya A\text{.}.
-Lebih lanjut, mereduksi sistem linear menggunakan operasi elementer pada persamaan sekarang diterjemahkan sebagai melakukan operasi baris elementer pada matriks. Dengan risiko redundansi, kita sekarang secara resmi menerjemahkan sejumlah konsep terdahulu kita mengenai reduksi sistem linear ke dalam konteks matriks.
+Kita akan mengidentifikasi sistem $L$ dengan matriks augmentasinya $A$.
 
-Perkalian skalar : Kalikan sebuah baris dengan bilangan tak-nol c\ne 0\text{:}: yaitu, ganti r_i dengan c\,r_i\text{,}, hasil perkalian semua entri baris dengan c\text{.}.
+Lebih lanjut, mereduksi sistem linear menggunakan operasi elementer pada persamaan diterjemahkan sebagai melakukan operasi baris elementer pada matriks.
 
-Pertukaran baris : Tukar dua baris dari A\text{.}.
+Tindakan mengubah matriks menggunakan operasi baris elementer disebut **reduksi baris**.
 
-Penjumlahan baris : Tambahkan kelipatan satu baris ke baris lain: yaitu, ganti r_i dengan r_i+cr_j untuk suatu c\text{,}, i\text{,}, dan j\text{.}.
+Dua matriks disebut **ekuivalen baris** jika yang satu dapat diperoleh dari yang lain melalui urutan hingga operasi baris elementer.
 
-Tindakan mengubah matriks menggunakan operasi baris elementer disebut reduksi baris
-Dua matriks ekuivalen baris jika yang satu dapat diperoleh dari yang lain dengan melakukan urutan hingga operasi baris elementer.
+---
+
+## Operasi Baris Elementer
+
+1. **Perkalian Skalar**
+
+   Kalikan sebuah baris dengan bilangan tak-nol $c \ne 0$.
+
+   $$
+   r_i \rightarrow c\, r_i
+   $$
+
+2. **Pertukaran Baris**
+
+   Tukar dua baris dari matriks:
+
+   $$
+   r_i \leftrightarrow r_j
+   $$
+
+3. **Penjumlahan Baris**
+
+   Tambahkan kelipatan suatu baris ke baris lain:
+
+   $$
+   r_i \rightarrow r_i + c\, r_j
+   $$
+
+---
 
 ## Definisi Eliminasi Gaussian
 
-Eliminasi Gaussian adalah algoritma yang dijelaskan di bawah. Algoritma ini menerima masukan matriks A dan mengembalikan matriks B yang ekuivalen baris dalam bentuk eselon baris.
+Eliminasi Gaussian adalah algoritma yang menerima masukan matriks $A$ dan menghasilkan matriks $B$ yang ekuivalen baris dalam **bentuk eselon baris**.
 
-- Langkah 1
-Temukan kolom tak-nol paling kiri dan lakukan pertukaran baris untuk memindahkan baris dengan entri tak-nol ini ke bagian atas matriks.🔗
-- Langkah 2
-Skala baris teratas yang baru untuk menghasilkan satu utama pada baris tersebut. Sebut baris baru ini r\text{.}.
-- Langkah 3
-Untuk setiap baris r_i di bawah r\text{,}, lakukan operasi baris berbentuk r_i+c\,r untuk mengganti semua entri di bawah satu utama dari r dengan nol.
-- Langkah 4
-Mulai lagi dengan Langkah 1 yang diterapkan pada matriks yang terdiri dari semua baris di bawah r\text{.}. Lanjutkan hingga matriks berada dalam bentuk eselon baris.
+### Langkah-langkah:
+
+**Langkah 1**  
+Temukan kolom tak-nol paling kiri.  
+Lakukan pertukaran baris jika perlu untuk memindahkan entri tak-nol ke posisi paling atas.
+
+**Langkah 2**  
+Skalakan baris teratas tersebut sehingga entri utamanya menjadi 1 (disebut *satu utama* atau pivot).
+
+**Langkah 3**  
+Untuk setiap baris $r_i$ di bawah baris pivot $r$, lakukan operasi:
+
+$$
+r_i \rightarrow r_i + c\, r
+$$
+
+untuk mengubah semua entri di bawah pivot menjadi nol.
+
+**Langkah 4**  
+Ulangi proses pada submatriks yang tersisa (baris-baris di bawah pivot sebelumnya) hingga seluruh matriks berada dalam bentuk eselon baris.
