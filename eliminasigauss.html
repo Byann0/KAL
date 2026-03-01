@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'eliminasigauss';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -376,7 +378,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-eliminasi-gaussian">Definisi Eliminasi Gaussian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-eliminasi-gaussian">Definisi Eliminasi Gaussian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-langkah:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -390,26 +396,58 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gauss">
 <h1>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h1>
-<p>kita akan mengidentifikasi sistem L dengan matriks augmentasinya A\text{.}.
-Lebih lanjut, mereduksi sistem linear menggunakan operasi elementer pada persamaan sekarang diterjemahkan sebagai melakukan operasi baris elementer pada matriks. Dengan risiko redundansi, kita sekarang secara resmi menerjemahkan sejumlah konsep terdahulu kita mengenai reduksi sistem linear ke dalam konteks matriks.</p>
-<p>Perkalian skalar : Kalikan sebuah baris dengan bilangan tak-nol c\ne 0\text{:}: yaitu, ganti r_i dengan c,r_i\text{,}, hasil perkalian semua entri baris dengan c\text{.}.</p>
-<p>Pertukaran baris : Tukar dua baris dari A\text{.}.</p>
-<p>Penjumlahan baris : Tambahkan kelipatan satu baris ke baris lain: yaitu, ganti r_i dengan r_i+cr_j untuk suatu c\text{,}, i\text{,}, dan j\text{.}.</p>
-<p>Tindakan mengubah matriks menggunakan operasi baris elementer disebut reduksi baris
-Dua matriks ekuivalen baris jika yang satu dapat diperoleh dari yang lain dengan melakukan urutan hingga operasi baris elementer.</p>
+<p>Kita akan mengidentifikasi sistem <span class="math notranslate nohighlight">\(L\)</span> dengan matriks augmentasinya <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>Lebih lanjut, mereduksi sistem linear menggunakan operasi elementer pada persamaan diterjemahkan sebagai melakukan operasi baris elementer pada matriks.</p>
+<p>Tindakan mengubah matriks menggunakan operasi baris elementer disebut <strong>reduksi baris</strong>.</p>
+<p>Dua matriks disebut <strong>ekuivalen baris</strong> jika yang satu dapat diperoleh dari yang lain melalui urutan hingga operasi baris elementer.</p>
+<hr class="docutils" />
+<section id="operasi-baris-elementer">
+<h2>Operasi Baris Elementer<a class="headerlink" href="#operasi-baris-elementer" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Perkalian Skalar</strong></p>
+<p>Kalikan sebuah baris dengan bilangan tak-nol <span class="math notranslate nohighlight">\(c \ne 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+   r_i \rightarrow c\, r_i
+   \]</div>
+</li>
+<li><p><strong>Pertukaran Baris</strong></p>
+<p>Tukar dua baris dari matriks:</p>
+<div class="math notranslate nohighlight">
+\[
+   r_i \leftrightarrow r_j
+   \]</div>
+</li>
+<li><p><strong>Penjumlahan Baris</strong></p>
+<p>Tambahkan kelipatan suatu baris ke baris lain:</p>
+<div class="math notranslate nohighlight">
+\[
+   r_i \rightarrow r_i + c\, r_j
+   \]</div>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
 <section id="definisi-eliminasi-gaussian">
 <h2>Definisi Eliminasi Gaussian<a class="headerlink" href="#definisi-eliminasi-gaussian" title="Link to this heading">#</a></h2>
-<p>Eliminasi Gaussian adalah algoritma yang dijelaskan di bawah. Algoritma ini menerima masukan matriks A dan mengembalikan matriks B yang ekuivalen baris dalam bentuk eselon baris.</p>
-<ul class="simple">
-<li><p>Langkah 1
-Temukan kolom tak-nol paling kiri dan lakukan pertukaran baris untuk memindahkan baris dengan entri tak-nol ini ke bagian atas matriks.🔗</p></li>
-<li><p>Langkah 2
-Skala baris teratas yang baru untuk menghasilkan satu utama pada baris tersebut. Sebut baris baru ini r\text{.}.</p></li>
-<li><p>Langkah 3
-Untuk setiap baris r_i di bawah r\text{,}, lakukan operasi baris berbentuk r_i+c,r untuk mengganti semua entri di bawah satu utama dari r dengan nol.</p></li>
-<li><p>Langkah 4
-Mulai lagi dengan Langkah 1 yang diterapkan pada matriks yang terdiri dari semua baris di bawah r\text{.}. Lanjutkan hingga matriks berada dalam bentuk eselon baris.</p></li>
-</ul>
+<p>Eliminasi Gaussian adalah algoritma yang menerima masukan matriks <span class="math notranslate nohighlight">\(A\)</span> dan menghasilkan matriks <span class="math notranslate nohighlight">\(B\)</span> yang ekuivalen baris dalam <strong>bentuk eselon baris</strong>.</p>
+<section id="langkah-langkah">
+<h3>Langkah-langkah:<a class="headerlink" href="#langkah-langkah" title="Link to this heading">#</a></h3>
+<p><strong>Langkah 1</strong><br />
+Temukan kolom tak-nol paling kiri.<br />
+Lakukan pertukaran baris jika perlu untuk memindahkan entri tak-nol ke posisi paling atas.</p>
+<p><strong>Langkah 2</strong><br />
+Skalakan baris teratas tersebut sehingga entri utamanya menjadi 1 (disebut <em>satu utama</em> atau pivot).</p>
+<p><strong>Langkah 3</strong><br />
+Untuk setiap baris <span class="math notranslate nohighlight">\(r_i\)</span> di bawah baris pivot <span class="math notranslate nohighlight">\(r\)</span>, lakukan operasi:</p>
+<div class="math notranslate nohighlight">
+\[
+r_i \rightarrow r_i + c\, r
+\]</div>
+<p>untuk mengubah semua entri di bawah pivot menjadi nol.</p>
+<p><strong>Langkah 4</strong><br />
+Ulangi proses pada submatriks yang tersisa (baris-baris di bawah pivot sebelumnya) hingga seluruh matriks berada dalam bentuk eselon baris.</p>
+</section>
 </section>
 </section>
 
@@ -468,7 +506,11 @@ Mulai lagi dengan Langkah 1 yang diterapkan pada matriks yang terdiri dari semua
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-eliminasi-gaussian">Definisi Eliminasi Gaussian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-eliminasi-gaussian">Definisi Eliminasi Gaussian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-langkah:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
