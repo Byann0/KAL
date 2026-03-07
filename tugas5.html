@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Eliminasi Gauss &#8212; My sample book</title>
+    <title>Tugas 5 &#8212; My sample book</title>
   
   
   
@@ -59,11 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'eliminasigauss';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas5';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tugas 4" href="tugas4.html" />
-    <link rel="prev" title="Sistem Persamaan Linear" href="persamaanlinier.html" />
+    <link rel="prev" title="Tugas 4" href="tugas4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,9 +183,9 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
 
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Eliminasi Gauss</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tugas4.html">Tugas 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tugas5.html">Tugas 5</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tugas 5</a></li>
 </ul>
 </details></li>
 </ul>
@@ -260,7 +259,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feliminasigauss.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftugas5.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +289,7 @@
       
       
       
-      <li><a href="_sources/eliminasigauss.md" target="_blank"
+      <li><a href="_sources/tugas5.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +299,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -374,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Eliminasi Gauss</h1>
+    <h1>Tugas 5</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,11 +383,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-eliminasi-gaussian">Definisi Eliminasi Gaussian</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-langkah:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan-linier">Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented">Matriks Augmented</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementar">Operasi Baris Elementar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substitusi-balik">Substitusi Balik</a></li>
 </ul>
             </nav>
         </div>
@@ -400,63 +398,184 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gauss">
-<h1>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h1>
-<p>Kita akan mengidentifikasi sistem <span class="math notranslate nohighlight">\(L\)</span> dengan matriks augmentasinya <span class="math notranslate nohighlight">\(A\)</span>.</p>
-<p>Lebih lanjut, mereduksi sistem linear menggunakan operasi elementer pada persamaan diterjemahkan sebagai melakukan operasi baris elementer pada matriks.</p>
-<p>Tindakan mengubah matriks menggunakan operasi baris elementer disebut <strong>reduksi baris</strong>.</p>
-<p>Dua matriks disebut <strong>ekuivalen baris</strong> jika yang satu dapat diperoleh dari yang lain melalui urutan hingga operasi baris elementer.</p>
-<hr class="docutils" />
-<section id="operasi-baris-elementer">
-<h2>Operasi Baris Elementer<a class="headerlink" href="#operasi-baris-elementer" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p><strong>Perkalian Skalar</strong></p>
-<p>Kalikan sebuah baris dengan bilangan tak-nol <span class="math notranslate nohighlight">\(c \ne 0\)</span>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-5">
+<h1>Tugas 5<a class="headerlink" href="#tugas-5" title="Link to this heading">#</a></h1>
+<p>Membuat operasi baris elementar 5 variabel dan 5 persamaan (eliminasi gauss)</p>
+<p>x1 = 1, x2 = 2, x3 = 3, x4 = 4, x5 = 5</p>
+<section id="sistem-persamaan-linier">
+<h2>Sistem Persamaan Linier<a class="headerlink" href="#sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(x_1 + x_2 + x_3 + x_4 + x_5 = 15\)</span></p>
+<p><span class="math notranslate nohighlight">\(2x_1 + 3x_2 + 2x_3 + 2x_4 + 2x_5 = 32\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_1 + 2x_2 + 3x_3 + 2x_4 + 2x_5 = 32\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_1 + x_2 + 2x_3 + 3x_4 + 2x_5 = 31\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_1 + x_2 + x_3 + 2x_4 + 3x_5 = 29\)</span></p>
+</section>
+<section id="matriks-augmented">
+<h2>Matriks Augmented<a class="headerlink" href="#matriks-augmented" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
-\[
-   r_i \rightarrow c\, r_i
-   \]</div>
-</li>
-<li><p><strong>Pertukaran Baris</strong></p>
-<p>Tukar dua baris dari matriks:</p>
-<div class="math notranslate nohighlight">
-\[
-   r_i \leftrightarrow r_j
-   \]</div>
-</li>
-<li><p><strong>Penjumlahan Baris</strong></p>
-<p>Tambahkan kelipatan suatu baris ke baris lain:</p>
-<div class="math notranslate nohighlight">
-\[
-   r_i \rightarrow r_i + c\, r_j
-   \]</div>
-</li>
+\[\begin{split}\left[ \begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+2 &amp; 3 &amp; 2 &amp; 2 &amp; 2 &amp; 32 \\
+1 &amp; 2 &amp; 3 &amp; 2 &amp; 2 &amp; 32 \\
+1 &amp; 1 &amp; 2 &amp; 3 &amp; 2 &amp; 31 \\
+1 &amp; 1 &amp; 1 &amp; 2 &amp; 3 &amp; 29
+\end{array} \right]\end{split}\]</div>
+</section>
+<section id="operasi-baris-elementar">
+<h2>Operasi Baris Elementar<a class="headerlink" href="#operasi-baris-elementar" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Kolom 1 (Baris 1(R1))</p></li>
 </ol>
-</section>
-<hr class="docutils" />
-<section id="definisi-eliminasi-gaussian">
-<h2>Definisi Eliminasi Gaussian<a class="headerlink" href="#definisi-eliminasi-gaussian" title="Link to this heading">#</a></h2>
-<p>Eliminasi Gaussian adalah algoritma yang menerima masukan matriks <span class="math notranslate nohighlight">\(A\)</span> dan menghasilkan matriks <span class="math notranslate nohighlight">\(B\)</span> yang ekuivalen baris dalam <strong>bentuk eselon baris</strong>.</p>
-<section id="langkah-langkah">
-<h3>Langkah-langkah:<a class="headerlink" href="#langkah-langkah" title="Link to this heading">#</a></h3>
-<p><strong>Langkah 1</strong><br />
-Temukan kolom tak-nol paling kiri.<br />
-Lakukan pertukaran baris jika perlu untuk memindahkan entri tak-nol ke posisi paling atas.</p>
-<p><strong>Langkah 2</strong><br />
-Skalakan baris teratas tersebut sehingga entri utamanya menjadi 1 (disebut <em>satu utama</em> atau pivot).</p>
-<p><strong>Langkah 3</strong><br />
-Untuk setiap baris <span class="math notranslate nohighlight">\(r_i\)</span> di bawah baris pivot <span class="math notranslate nohighlight">\(r\)</span>, lakukan operasi:</p>
+<p>Pakai baris 1 untuk menolkan elemen di bawah angka 1 pada kolom pertama.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_2 \gets R_2 - 2R_1\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(2 - 2(1) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3 - 2(1) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2 - 2(1) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2 - 2(1) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2 - 2(1) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(32 - 2(15) = 2\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(R_3 \gets R_3 - R_1\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(1-1=0, \ 2-1=1, \ 3-1=2, \ 2-1=1, \ 2-1=1 \ | \ 32-15=17\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(R_4 \gets R_4 - R_1\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(1-1=0, \ 1-1=0, \ 2-1=1, \ 3-1=2, \ 2-1=1 \ | \ 31-15=16\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(R_5 \gets R_5 - R_1\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(1-1=0, \ 1-1=0, \ 1-1=0, \ 2-1=1, \ 3-1=2 \ | \ 29-15=14\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Matriks :</p>
 <div class="math notranslate nohighlight">
-\[
-r_i \rightarrow r_i + c\, r
-\]</div>
-<p>untuk mengubah semua entri di bawah pivot menjadi nol.</p>
-<p><strong>Langkah 4</strong><br />
-Ulangi proses pada submatriks yang tersisa (baris-baris di bawah pivot sebelumnya) hingga seluruh matriks berada dalam bentuk eselon baris.</p>
+\[\begin{split}\left[ \begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 2 &amp; 1 &amp; 1 &amp; 17 \\
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 16 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 14
+\end{array} \right]\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Kolom 2 (Baris 2(R2))</p></li>
+</ol>
+<p>Pakai baris 2 untuk menolkan elemen di bawah angka 1 pada kolom kedua. Kebetulan hanya <span class="math notranslate nohighlight">\(R_3\)</span> yang perlu diproses.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_3 \gets R_3 - R_2\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(0 - 0 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1 - 1 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2 - 0 = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1 - 0 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1 - 0 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(17 - 2 = 15\)</span></p></li>
+</ul>
+</li>
+<li><p>(Baris 4 dan 5 sudah bernilai 0 di kolom kedua, jadi lewati saja).</p></li>
+</ul>
+<p>Matriks :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; 0 &amp; 2 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 16 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 14
+\end{array} \right]\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Kolom 3 (Tukar(R3&lt;-&gt;R4) &amp; Pivot)</p></li>
+</ol>
+<p>Supaya tidak bertemu pecahan (<span class="math notranslate nohighlight">\(15 \div 16\)</span>), kita tukar <span class="math notranslate nohighlight">\(R_3\)</span> dengan <span class="math notranslate nohighlight">\(R_4\)</span> karena <span class="math notranslate nohighlight">\(R_4\)</span> memiliki angka 1 di kolom ketiga.</p>
+<ul class="simple">
+<li><p>Tukar <span class="math notranslate nohighlight">\(R_3 \leftrightarrow R_4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_4 \gets R_4 - 2R_3\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(0 - 2(0) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 - 2(0) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2 - 2(1) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1 - 2(2) = -3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1 - 2(1) = -1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(15 - 2(16) = -17\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Matriks :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 16 \\
+0 &amp; 0 &amp; 0 &amp; -3 &amp; -1 &amp; -17 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 14
+\end{array} \right]\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Kolom 4(Tukar(R4&lt;-&gt;R5) &amp; Pivot)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Tukar <span class="math notranslate nohighlight">\(R_4 \leftrightarrow R_5\)</span>s</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_5 \gets R_5 + 3R_4\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(0 + 3(0) = 0, \ 0 + 3(0) = 0, \ 0 + 3(0) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-3 + 3(1) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-1 + 3(2) = 5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-17 + 3(14) = -17 + 42 = 25\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Matriks :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \begin{array}{ccccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 15 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 16 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 14 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 5 &amp; 25
+\end{array} \right]\end{split}\]</div>
 </section>
+<section id="substitusi-balik">
+<h2>Substitusi Balik<a class="headerlink" href="#substitusi-balik" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Mencari <span class="math notranslate nohighlight">\(x_5\)</span>:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(5x_5 = 25 \implies \mathbf{x_5 = 5}\)</span></p></li>
+</ul>
+</li>
+<li><p>Mencari <span class="math notranslate nohighlight">\(x_4\)</span>:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x_4 + 2x_5 = 14\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_4 + 2(5) = 14 \implies x_4 + 10 = 14 \implies \mathbf{x_4 = 4}\)</span></p></li>
+</ul>
+</li>
+<li><p>Mencari <span class="math notranslate nohighlight">\(x_3\)</span>:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x_3 + 2x_4 + x_5 = 16\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_3 + 2(4) + 5 = 16 \implies x_3 + 8 + 5 = 16 \implies \mathbf{x_3 = 3}\)</span></p></li>
+</ul>
+</li>
+<li><p>Mencari <span class="math notranslate nohighlight">\(x_2\)</span>:</p>
+<ul>
+<li><p>Dari baris 2: <span class="math notranslate nohighlight">\(1x_2 = 2 \implies \mathbf{x_2 = 2}\)</span></p></li>
+</ul>
+</li>
+<li><p>Mencari <span class="math notranslate nohighlight">\(x_1\)</span>:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x_1 + x_2 + x_3 + x_4 + x_5 = 15\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_1 + 2 + 3 + 4 + 5 = 15\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_1 + 14 = 15 \implies \mathbf{x_1 = 1}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Hasil :</p>
+<div class="math notranslate nohighlight">
+\[x_1=1, x_2=2, x_3=3, x_4=4, x_5=5\]</div>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -490,22 +609,13 @@ Ulangi proses pada submatriks yang tersisa (baris-baris di bawah pivot sebelumny
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="persamaanlinier.html"
+       href="tugas4.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Sistem Persamaan Linear</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="tugas4.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Tugas 4</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -523,11 +633,10 @@ Ulangi proses pada submatriks yang tersisa (baris-baris di bawah pivot sebelumny
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-eliminasi-gaussian">Definisi Eliminasi Gaussian</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-langkah:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan-linier">Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented">Matriks Augmented</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementar">Operasi Baris Elementar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substitusi-balik">Substitusi Balik</a></li>
 </ul>
   </nav></div>
 
