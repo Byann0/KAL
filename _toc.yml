@@ -6,3 +6,6 @@ root: intro
 chapters:
 - file: persamaanlinier
 - file: eliminasigauss
+  sections:
+  - file: tugas4
+  - file: tugas5

@@ -76,3 +76,7 @@ untuk mengubah semua entri di bawah pivot menjadi nol.
 
 **Langkah 4**  
 Ulangi proses pada submatriks yang tersisa (baris-baris di bawah pivot sebelumnya) hingga seluruh matriks berada dalam bentuk eselon baris.
+
+
+
+
