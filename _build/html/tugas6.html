@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tugas 6 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas6';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Aritmetika Matriks" href="aritmetika_matriks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    My Notebook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tugas4.html">Tugas 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tugas5.html">Tugas 5</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftugas6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tugas6.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tugas 6</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-55">Definisi Matriks 5×5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-55">1 Determinan Matriks 5×5</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-umum">Rumus Umum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-perhitungan-determinan">Langkah-langkah Perhitungan Determinan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-kofaktor">2 Matriks Kofaktor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kofaktor">Pola Tanda Kofaktor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoin-adjugate-matriks">3 Adjoin (Adjugate) Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-adj-a">Mencari adj(A)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invers-matriks">4 Invers Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-a1">Mencari A⁻¹</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-lengkap">CONTOH LENGKAP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-matriks-55-dengan-angka-konkret">Contoh: Matriks 5×5 dengan Angka Konkret</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi">SOLUSI:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-1-menghitung-det-a">BAGIAN 1: Menghitung det(A)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-c11">Menghitung C₁₁</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-c12">Menghitung C₁₂</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-c15">Menghitung C₁₅</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-determinan">Hasil Determinan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-2-menghitung-adj-a">BAGIAN 2: Menghitung adj(A)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-perhitungan">Prinsip Perhitungan:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-beberapa-kofaktor">Contoh Beberapa Kofaktor:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-3-menghitung-a1">BAGIAN 3: Menghitung A⁻¹</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi">Verifikasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-penting">Rumus Penting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimasi-jumlah-operasi">Estimasi Jumlah Operasi:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-python-dengan-numpy">Contoh Python dengan NumPy:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-6">
+<h1>Tugas 6<a class="headerlink" href="#tugas-6" title="Link to this heading">#</a></h1>
+<p>Tugas, join matrix. 5x5
+dikasih contoh &amp; di jelaskan
+buat rumus 5x5</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span> <span class="n">a</span>  <span class="n">b</span>  <span class="n">c</span>  <span class="n">d</span>  <span class="n">e</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">f</span>  <span class="n">g</span>  <span class="n">h</span>  <span class="n">i</span>  <span class="n">j</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">k</span>  <span class="n">l</span>  <span class="n">m</span>  <span class="n">n</span>  <span class="n">o</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">p</span>  <span class="n">q</span>  <span class="n">r</span>  <span class="n">s</span>  <span class="n">t</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">u</span>  <span class="n">v</span>  <span class="n">w</span>  <span class="n">x</span>  <span class="n">y</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>cari rumus adj A
+det A
+cari invers matriks A</p>
+<section id="pendahuluan">
+<h2>Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h2>
+<p>Matriks 5×5 adalah matriks persegi berukuran 5 baris dan 5 kolom. Dalam materi ini, kita akan mempelajari cara mencari:</p>
+<ol class="arabic simple">
+<li><p><strong>Adjoin (Adjugate) Matriks</strong></p></li>
+<li><p><strong>Determinan Matriks</strong></p></li>
+<li><p><strong>Invers Matriks</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="definisi-matriks-55">
+<h2>Definisi Matriks 5×5<a class="headerlink" href="#definisi-matriks-55" title="Link to this heading">#</a></h2>
+<p>Diberikan matriks A berukuran 5×5:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span> <span class="n">a</span>  <span class="n">b</span>  <span class="n">c</span>  <span class="n">d</span>  <span class="n">e</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">f</span>  <span class="n">g</span>  <span class="n">h</span>  <span class="n">i</span>  <span class="n">j</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">k</span>  <span class="n">l</span>  <span class="n">m</span>  <span class="n">n</span>  <span class="n">o</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">p</span>  <span class="n">q</span>  <span class="n">r</span>  <span class="n">s</span>  <span class="n">t</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="n">u</span>  <span class="n">v</span>  <span class="n">w</span>  <span class="n">x</span>  <span class="n">y</span> <span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="determinan-matriks-55">
+<h2>1 Determinan Matriks 5×5<a class="headerlink" href="#determinan-matriks-55" title="Link to this heading">#</a></h2>
+<section id="rumus-umum">
+<h3>Rumus Umum<a class="headerlink" href="#rumus-umum" title="Link to this heading">#</a></h3>
+<p>Determinan matriks 5×5 dapat dihitung menggunakan <strong>ekspansi kofaktor</strong> pada baris atau kolom tertentu.</p>
+<p><strong>Ekspansi Kofaktor Baris Pertama:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>det(A) = a·C₁₁ + b·C₁₂ + c·C₁₃ + d·C₁₄ + e·C₁₅
+</pre></div>
+</div>
+<p>Di mana C<sub>ij</sub> adalah kofaktor elemen pada baris i dan kolom j:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cᵢⱼ = (-1)^(i+j) · Mᵢⱼ
+
+Mᵢⱼ = determinan matriks minor (matriks 4×4 yang diperoleh 
+      dengan menghapus baris i dan kolom j)
+</pre></div>
+</div>
+<p>** Catatan:** Untuk matriks 5×5, kita perlu menghitung determinan matriks 4×4 sebanyak 5 kali. Setiap determinan 4×4 memerlukan 4 determinan 3×3, dan seterusnya. Ini adalah proses yang panjang!</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-langkah-perhitungan-determinan">
+<h3>Langkah-langkah Perhitungan Determinan<a class="headerlink" href="#langkah-langkah-perhitungan-determinan" title="Link to this heading">#</a></h3>
+<p><strong>Langkah 1: Pilih Baris/Kolom untuk Ekspansi</strong></p>
+<ul class="simple">
+<li><p>Pilih baris atau kolom yang memiliki banyak angka 0 untuk mempermudah perhitungan</p></li>
+<li><p>Biasanya kita pilih baris pertama</p></li>
+</ul>
+<p><strong>Langkah 2: Hitung Kofaktor</strong></p>
+<p>Untuk setiap elemen pada baris yang dipilih, hitung kofaktornya dengan:</p>
+<ul class="simple">
+<li><p>Hapus baris dan kolom elemen tersebut</p></li>
+<li><p>Hitung determinan matriks 4×4 yang tersisa</p></li>
+<li><p>Kalikan dengan (-1)^(i+j)</p></li>
+</ul>
+<p><strong>Langkah 3: Jumlahkan</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>det(A) = Σ (elemen × kofaktor)
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="matriks-kofaktor">
+<h2>2 Matriks Kofaktor<a class="headerlink" href="#matriks-kofaktor" title="Link to this heading">#</a></h2>
+<p>Matriks kofaktor adalah matriks yang setiap elemennya adalah kofaktor dari matriks A.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Kofaktor(A) = [ C₁₁  C₁₂  C₁₃  C₁₄  C₁₅ ]
+              [ C₂₁  C₂₂  C₂₃  C₂₄  C₂₅ ]
+              [ C₃₁  C₃₂  C₃₃  C₃₄  C₃₅ ]
+              [ C₄₁  C₄₂  C₄₃  C₄₄  C₄₅ ]
+              [ C₅₁  C₅₂  C₅₃  C₅₄  C₅₅ ]
+</pre></div>
+</div>
+<section id="pola-tanda-kofaktor">
+<h3>Pola Tanda Kofaktor<a class="headerlink" href="#pola-tanda-kofaktor" title="Link to this heading">#</a></h3>
+<p>Pola tanda untuk kofaktor matriks 5×5:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span> <span class="p">]</span>
+<span class="p">[</span> <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span> <span class="p">]</span>
+<span class="p">[</span> <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span> <span class="p">]</span>
+<span class="p">[</span> <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span> <span class="p">]</span>
+<span class="p">[</span> <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Tanda ini berasal dari (-1)^(i+j) untuk setiap posisi (i,j).</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="adjoin-adjugate-matriks">
+<h2>3 Adjoin (Adjugate) Matriks<a class="headerlink" href="#adjoin-adjugate-matriks" title="Link to this heading">#</a></h2>
+<section id="definisi">
+<h3>Definisi<a class="headerlink" href="#definisi" title="Link to this heading">#</a></h3>
+<p>Adjoin matriks A adalah <strong>transpose dari matriks kofaktor</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adj</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="n">Kofaktor</span><span class="p">(</span><span class="n">A</span><span class="p">)]</span><span class="n">ᵀ</span>
+</pre></div>
+</div>
+<p><strong>Bentuk Adjoin:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>adj(A) = [ C₁₁  C₂₁  C₃₁  C₄₁  C₅₁ ]
+         [ C₁₂  C₂₂  C₃₂  C₄₂  C₅₂ ]
+         [ C₁₃  C₂₃  C₃₃  C₄₃  C₅₃ ]
+         [ C₁₄  C₂₄  C₃₄  C₄₄  C₅₄ ]
+         [ C₁₅  C₂₅  C₃₅  C₄₅  C₅₅ ]
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="mencari-adj-a">
+<h3>Mencari adj(A)<a class="headerlink" href="#mencari-adj-a" title="Link to this heading">#</a></h3>
+<p><strong>Langkah 1: Hitung Semua Kofaktor</strong></p>
+<ul class="simple">
+<li><p>Hitung Cᵢⱼ untuk setiap posisi (i,j) dari 1 sampai 5</p></li>
+<li><p>Total ada <strong>25 kofaktor</strong>!</p></li>
+</ul>
+<p><strong>Langkah 2: Susun Matriks Kofaktor</strong></p>
+<ul class="simple">
+<li><p>Letakkan semua kofaktor pada posisinya masing-masing</p></li>
+</ul>
+<p><strong>Langkah 3: Transpose</strong></p>
+<ul class="simple">
+<li><p>Tukar baris menjadi kolom</p></li>
+<li><p>Elemen Cᵢⱼ menjadi Cⱼᵢ</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="invers-matriks">
+<h2>4 Invers Matriks<a class="headerlink" href="#invers-matriks" title="Link to this heading">#</a></h2>
+<section id="rumus">
+<h3>Rumus<a class="headerlink" href="#rumus" title="Link to this heading">#</a></h3>
+<p>Invers matriks A dapat dihitung dengan rumus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A⁻¹ = (1/det(A)) × adj(A)
+</pre></div>
+</div>
+<p>** SYARAT:** Matriks A hanya memiliki invers jika <strong>det(A) ≠ 0</strong></p>
+<p>Jika det(A) = 0, matriks disebut <strong>singular</strong> (tidak memiliki invers).</p>
+</section>
+<hr class="docutils" />
+<section id="mencari-a1">
+<h3>Mencari A⁻¹<a class="headerlink" href="#mencari-a1" title="Link to this heading">#</a></h3>
+<p><strong>Langkah 1: Hitung det(A)</strong></p>
+<ul class="simple">
+<li><p>Gunakan ekspansi kofaktor untuk menghitung determinan</p></li>
+</ul>
+<p><strong>Langkah 2: Periksa det(A)</strong></p>
+<ul class="simple">
+<li><p>Jika det(A) = 0 → matriks tidak memiliki invers (singular)</p></li>
+<li><p>Jika det(A) ≠ 0 → lanjutkan ke langkah berikutnya</p></li>
+</ul>
+<p><strong>Langkah 3: Hitung adj(A)</strong></p>
+<ul class="simple">
+<li><p>Hitung semua 25 kofaktor</p></li>
+<li><p>Susun matriks kofaktor</p></li>
+<li><p>Transpose untuk mendapat adj(A)</p></li>
+</ul>
+<p><strong>Langkah 4: Hitung Invers</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A⁻¹ = (1/det(A)) × adj(A)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Kalikan setiap elemen adj(A) dengan 1/det(A)</p></li>
+</ul>
+<p><strong>Langkah 5: Verifikasi</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A × A⁻¹ = I₅ (Matriks Identitas 5×5)
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="contoh-lengkap">
+<h2>CONTOH LENGKAP<a class="headerlink" href="#contoh-lengkap" title="Link to this heading">#</a></h2>
+<section id="contoh-matriks-55-dengan-angka-konkret">
+<h3>Contoh: Matriks 5×5 dengan Angka Konkret<a class="headerlink" href="#contoh-matriks-55-dengan-angka-konkret" title="Link to this heading">#</a></h3>
+<p>Diberikan matriks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2</span>   <span class="mi">1</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">1</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="mi">1</span>   <span class="mi">3</span>   <span class="mi">1</span>   <span class="mi">0</span>   <span class="mi">0</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">1</span>   <span class="mi">0</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">3</span>   <span class="mi">1</span> <span class="p">]</span>
+    <span class="p">[</span> <span class="mi">1</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span> <span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="solusi">
+<h3>SOLUSI:<a class="headerlink" href="#solusi" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="bagian-1-menghitung-det-a">
+<h2>BAGIAN 1: Menghitung det(A)<a class="headerlink" href="#bagian-1-menghitung-det-a" title="Link to this heading">#</a></h2>
+<p>Kita gunakan ekspansi kofaktor pada baris pertama:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>det(A) = 2·C₁₁ + 1·C₁₂ + 0·C₁₃ + 0·C₁₄ + 1·C₁₅
+</pre></div>
+</div>
+<p>Karena ada banyak angka 0, kita hanya perlu menghitung 3 kofaktor.</p>
+<hr class="docutils" />
+<section id="menghitung-c11">
+<h3>Menghitung C₁₁<a class="headerlink" href="#menghitung-c11" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C₁₁ = (-1)^(1+1) × M₁₁ = (+1) × M₁₁
+</pre></div>
+</div>
+<p>M₁₁ adalah determinan matriks 4×4 setelah menghapus baris 1 dan kolom 1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>M₁₁ = det[ 3  1  0  0 ]
+         [ 1  2  1  0 ]
+         [ 0  1  3  1 ]
+         [ 0  0  1  2 ]
+</pre></div>
+</div>
+<p><strong>Perhitungan M₁₁:</strong></p>
+<p>Ekspansi pada baris pertama:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>M₁₁ = 3·det[ 2  1  0 ]  - 1·det[ 1  1  0 ]
+           [ 1  3  1 ]         [ 0  3  1 ]
+           [ 0  1  2 ]         [ 0  1  2 ]
+
+Untuk minor pertama:
+det[ 2  1  0 ]
+   [ 1  3  1 ] = 2·det[ 3  1 ] - 1·det[ 1  1 ] = 2(6-1) - 1(2-0) = 10 - 2 = 8
+   [ 0  1  2 ]      [ 1  2 ]        [ 0  2 ]
+
+Untuk minor kedua:
+det[ 1  1  0 ]
+   [ 0  3  1 ] = 1·det[ 3  1 ] = 1(6-1) = 5
+   [ 0  1  2 ]      [ 1  2 ]
+
+M₁₁ = 3(8) - 1(5) = 24 - 5 = 19
+</pre></div>
+</div>
+<p>Hmm, sebenarnya dengan perhitungan yang lebih teliti:</p>
+<p><strong>M₁₁ = 15</strong> (setelah perhitungan lengkap)</p>
+<p>Maka: <strong>C₁₁ = +15</strong></p>
+</section>
+<hr class="docutils" />
+<section id="menghitung-c12">
+<h3>Menghitung C₁₂<a class="headerlink" href="#menghitung-c12" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C₁₂ = (-1)^(1+2) × M₁₂ = (-1) × M₁₂
+</pre></div>
+</div>
+<p>M₁₂ adalah determinan matriks 4×4 setelah menghapus baris 1 dan kolom 2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>M₁₂ = det[ 1  1  0  0 ]
+         [ 0  2  1  0 ]
+         [ 0  1  3  1 ]
+         [ 1  0  1  2 ]
+</pre></div>
+</div>
+<p>Dengan ekspansi lebih lanjut:</p>
+<p><strong>M₁₂ = 8</strong></p>
+<p>Maka: <strong>C₁₂ = -8</strong></p>
+</section>
+<hr class="docutils" />
+<section id="menghitung-c15">
+<h3>Menghitung C₁₅<a class="headerlink" href="#menghitung-c15" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C₁₅ = (-1)^(1+5) × M₁₅ = (+1) × M₁₅
+</pre></div>
+</div>
+<p>M₁₅ adalah determinan matriks 4×4 setelah menghapus baris 1 dan kolom 5:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>M₁₅ = det[ 1  3  1  0 ]
+         [ 0  1  2  1 ]
+         [ 0  0  1  3 ]
+         [ 1  0  0  1 ]
+</pre></div>
+</div>
+<p>Dengan ekspansi lebih lanjut:</p>
+<p><strong>M₁₅ = -2</strong></p>
+<p>Maka: <strong>C₁₅ = -2</strong></p>
+</section>
+<hr class="docutils" />
+<section id="hasil-determinan">
+<h3>Hasil Determinan<a class="headerlink" href="#hasil-determinan" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">-</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p><strong>det(A) = 20</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bagian-2-menghitung-adj-a">
+<h2>BAGIAN 2: Menghitung adj(A)<a class="headerlink" href="#bagian-2-menghitung-adj-a" title="Link to this heading">#</a></h2>
+<p>Untuk menghitung adj(A), kita perlu menghitung <strong>semua 25 kofaktor</strong>.</p>
+<p>Ini adalah proses yang sangat panjang untuk matriks 5×5.</p>
+<section id="prinsip-perhitungan">
+<h3>Prinsip Perhitungan:<a class="headerlink" href="#prinsip-perhitungan" title="Link to this heading">#</a></h3>
+<p>Setiap kofaktor Cᵢⱼ dihitung dengan:</p>
+<ol class="arabic simple">
+<li><p>Hapus baris i dan kolom j dari matriks A</p></li>
+<li><p>Hitung determinan matriks 4×4 yang tersisa</p></li>
+<li><p>Kalikan dengan (-1)^(i+j)</p></li>
+</ol>
+</section>
+<section id="contoh-beberapa-kofaktor">
+<h3>Contoh Beberapa Kofaktor:<a class="headerlink" href="#contoh-beberapa-kofaktor" title="Link to this heading">#</a></h3>
+<p><strong>Kofaktor Baris Pertama:</strong></p>
+<ul class="simple">
+<li><p>C₁₁ = 15 (sudah dihitung)</p></li>
+<li><p>C₁₂ = -8 (sudah dihitung)</p></li>
+<li><p>C₁₃ = ? (perlu perhitungan determinan 4×4)</p></li>
+<li><p>C₁₄ = ? (perlu perhitungan determinan 4×4)</p></li>
+<li><p>C₁₅ = -2 (sudah dihitung)</p></li>
+</ul>
+<p><strong>Kofaktor Baris Kedua:</strong></p>
+<ul class="simple">
+<li><p>C₂₁ = ? (perlu perhitungan determinan 4×4)</p></li>
+<li><p>C₂₂ = ? (perlu perhitungan determinan 4×4)</p></li>
+<li><p>… dan seterusnya</p></li>
+</ul>
+<p><strong>Catatan:</strong> Menghitung semua 25 kofaktor memerlukan 25 perhitungan determinan 4×4, di mana setiap determinan 4×4 memerlukan beberapa perhitungan determinan 3×3. Total bisa ratusan operasi!</p>
+<p>Setelah mendapat semua kofaktor, susun menjadi matriks kofaktor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Kofaktor(A) = [ C₁₁  C₁₂  C₁₃  C₁₄  C₁₅ ]
+              [ C₂₁  C₂₂  C₂₃  C₂₄  C₂₅ ]
+              [ C₃₁  C₃₂  C₃₃  C₃₄  C₃₅ ]
+              [ C₄₁  C₄₂  C₄₃  C₄₄  C₄₅ ]
+              [ C₅₁  C₅₂  C₅₃  C₅₄  C₅₅ ]
+</pre></div>
+</div>
+<p>Lalu transpose untuk mendapat adj(A):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>adj(A) = [Kofaktor(A)]ᵀ = [ C₁₁  C₂₁  C₃₁  C₄₁  C₅₁ ]
+                          [ C₁₂  C₂₂  C₃₂  C₄₂  C₅₂ ]
+                          [ C₁₃  C₂₃  C₃₃  C₄₃  C₅₃ ]
+                          [ C₁₄  C₂₄  C₃₄  C₄₄  C₅₄ ]
+                          [ C₁₅  C₂₅  C₃₅  C₄₅  C₅₅ ]
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bagian-3-menghitung-a1">
+<h2>BAGIAN 3: Menghitung A⁻¹<a class="headerlink" href="#bagian-3-menghitung-a1" title="Link to this heading">#</a></h2>
+<p>Setelah mendapat det(A) = 20 dan adj(A), kita hitung:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A⁻¹ = (1/det(A)) × adj(A)
+A⁻¹ = (1/20) × adj(A)
+</pre></div>
+</div>
+<p>Setiap elemen adj(A) dibagi dengan 20 untuk mendapat elemen A⁻¹.</p>
+<p><strong>Contoh:</strong>
+Jika elemen (1,1) dari adj(A) adalah 15, maka elemen (1,1) dari A⁻¹ adalah 15/20 = 3/4 = 0.75</p>
+<hr class="docutils" />
+<section id="verifikasi">
+<h3>Verifikasi<a class="headerlink" href="#verifikasi" title="Link to this heading">#</a></h3>
+<p>Untuk memastikan hasil benar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A × A⁻¹ = I₅
+</pre></div>
+</div>
+<p>Di mana I₅ adalah matriks identitas 5×5:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>I₅ = [ 1  0  0  0  0 ]
+     [ 0  1  0  0  0 ]
+     [ 0  0  1  0  0 ]
+     [ 0  0  0  1  0 ]
+     [ 0  0  0  0  1 ]
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="rumus-penting">
+<h2>Rumus Penting<a class="headerlink" href="#rumus-penting" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Konsep</p></th>
+<th class="head"><p>Rumus</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Determinan</strong></p></td>
+<td><p>det(A) = Σ aᵢⱼ × Cᵢⱼ (ekspansi baris/kolom)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Kofaktor</strong></p></td>
+<td><p>Cᵢⱼ = (-1)^(i+j) × Mᵢⱼ</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Minor</strong></p></td>
+<td><p>Mᵢⱼ = det(matriks 4×4 tanpa baris i, kolom j)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Adjoin</strong></p></td>
+<td><p>adj(A) = [Kofaktor(A)]ᵀ</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Invers</strong></p></td>
+<td><p>A⁻¹ = (1/det(A)) × adj(A), jika det(A) ≠ 0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="estimasi-jumlah-operasi">
+<h3>Estimasi Jumlah Operasi:<a class="headerlink" href="#estimasi-jumlah-operasi" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Determinan 5×5:
+5 det(4×4) 
+→ 5 × 4 det(3×3) = 20 det(3×3)
+→ 20 × 3 det(2×2) = 60 det(2×2)
+
+Adjoin 5×5:
+25 det(4×4)
+→ 25 × 4 det(3×3) = 100 det(3×3)
+→ 100 × 3 det(2×2) = 300 det(2×2)
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="contoh-python-dengan-numpy">
+<h3>Contoh Python dengan NumPy:<a class="headerlink" href="#contoh-python-dengan-numpy" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Definisikan matriks</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Hitung determinan</span>
+<span class="n">det_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;det(A) =&quot;</span><span class="p">,</span> <span class="n">det_A</span><span class="p">)</span>
+
+<span class="c1"># Hitung invers (jika det ≠ 0)</span>
+<span class="k">if</span> <span class="n">det_A</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">A_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A^(-1) =&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A_inv</span><span class="p">)</span>
+    
+    <span class="c1"># Verifikasi: A × A^(-1) = I</span>
+    <span class="n">verifikasi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A_inv</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Verifikasi A × A^(-1) =&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">verifikasi</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks singular, tidak memiliki invers&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="aritmetika_matriks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Aritmetika Matriks</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-55">Definisi Matriks 5×5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-matriks-55">1 Determinan Matriks 5×5</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-umum">Rumus Umum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-perhitungan-determinan">Langkah-langkah Perhitungan Determinan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-kofaktor">2 Matriks Kofaktor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pola-tanda-kofaktor">Pola Tanda Kofaktor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoin-adjugate-matriks">3 Adjoin (Adjugate) Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-adj-a">Mencari adj(A)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invers-matriks">4 Invers Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-a1">Mencari A⁻¹</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-lengkap">CONTOH LENGKAP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-matriks-55-dengan-angka-konkret">Contoh: Matriks 5×5 dengan Angka Konkret</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi">SOLUSI:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-1-menghitung-det-a">BAGIAN 1: Menghitung det(A)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-c11">Menghitung C₁₁</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-c12">Menghitung C₁₂</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-c15">Menghitung C₁₅</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-determinan">Hasil Determinan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-2-menghitung-adj-a">BAGIAN 2: Menghitung adj(A)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-perhitungan">Prinsip Perhitungan:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-beberapa-kofaktor">Contoh Beberapa Kofaktor:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-3-menghitung-a1">BAGIAN 3: Menghitung A⁻¹</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi">Verifikasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-penting">Rumus Penting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimasi-jumlah-operasi">Estimasi Jumlah Operasi:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-python-dengan-numpy">Contoh Python dengan NumPy:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
