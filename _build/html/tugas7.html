@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="tugas6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,7 +180,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -428,8 +427,9 @@ Dijelaskan dengan proses-proses untuk mendapatkanya sesuai dengan rumus</p>
 \[\begin{split}A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\end{split}\]</div>
 </li>
 </ol>
-<p>Rumus Determinan
-$<span class="math notranslate nohighlight">\(\text{det}(A) = \sum_{k=1}^{n} (-1)^{i+k} a_{ik} M_{ik}\)</span>$</p>
+<p>Rumus Determinan :</p>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = \sum_{k=1}^{n} (-1)^{i+k} a_{ik} M_{ik}\]</div>
 <section id="jawab">
 <h2>Jawab<a class="headerlink" href="#jawab" title="Link to this heading">#</a></h2>
 <ol class="arabic">
@@ -442,6 +442,7 @@ $<span class="math notranslate nohighlight">\(\text{det}(A) = \sum_{k=1}^{n} (-1
 <li><p>Elemen <span class="math notranslate nohighlight">\(a_{11} = -7\)</span>: Minor <span class="math notranslate nohighlight">\(M_{11} = |4| = 4\)</span>.</p></li>
 <li><p>Elemen <span class="math notranslate nohighlight">\(a_{12} = -5\)</span>: Minor <span class="math notranslate nohighlight">\(M_{12} = |1| = 1\)</span>.</p></li>
 </ul>
+<p>Perhitungan :</p>
 <div class="math notranslate nohighlight">
 \[\text{det}(A) = a_{11}(-1)^{1+1}M_{11} + a_{12}(-1)^{1+2}M_{12}\]</div>
 <div class="math notranslate nohighlight">
@@ -459,6 +460,7 @@ $<span class="math notranslate nohighlight">\(\text{det}(A) = \sum_{k=1}^{n} (-1
 <li><p>Elemen <span class="math notranslate nohighlight">\(a_{32} = 0\)</span>:</p></li>
 <li><p>Elemen <span class="math notranslate nohighlight">\(a_{33} = 1\)</span>: Minor <span class="math notranslate nohighlight">\(M_{33} = \text{det}\begin{bmatrix} 0 &amp; 2 \\ 1 &amp; -2 \end{bmatrix} = (0 \cdot -2) - (2 \cdot 1) = -2\)</span>.</p></li>
 </ul>
+<p>Perhitungan :</p>
 <div class="math notranslate nohighlight">
 \[\text{det}(A) = a_{31}C_{31} + a_{32}C_{32} + a_{33}(-1)^{3+3}M_{33}\]</div>
 <div class="math notranslate nohighlight">
@@ -470,8 +472,8 @@ $<span class="math notranslate nohighlight">\(\text{det}(A) = \sum_{k=1}^{n} (-1
 \[\begin{split}A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\end{split}\]</div>
 </li>
 </ol>
-<p>Ekspansi Baris 1 (<span class="math notranslate nohighlight">\(i=1\)</span>):
-<span class="math notranslate nohighlight">\(\text{det}(A) = a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13} + a_{14}C_{14}\)</span></p>
+<p>Ekspansi Baris 1 (<span class="math notranslate nohighlight">\(i=1\)</span>):</p>
+<p><span class="math notranslate nohighlight">\(\text{det}(A) = a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13} + a_{14}C_{14}\)</span></p>
 <p>Kofaktor <span class="math notranslate nohighlight">\(C_{1k}\)</span>:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(C_{11}\)</span>: <span class="math notranslate nohighlight">\((-1)^2 \text{det} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; -3 \end{bmatrix} = 1 \cdot [1(9-1) - 1(-3-1) + 1(1+3)] = 8 + 4 + 4 = 16\)</span></p></li>
@@ -479,6 +481,7 @@ $<span class="math notranslate nohighlight">\(\text{det}(A) = \sum_{k=1}^{n} (-1
 <li><p><span class="math notranslate nohighlight">\(C_{13}\)</span>: <span class="math notranslate nohighlight">\((-1)^4 \text{det} \begin{bmatrix} -3 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 \end{bmatrix} = 1 \cdot [-3(-3-1) - 1(-3-1) + 1(1-1)] = 12 + 4 + 0 = 16\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(C_{14}\)</span>: <span class="math notranslate nohighlight">\((-1)^5 \text{det} \begin{bmatrix} -3 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 \\ 1 &amp; 1 &amp; 1 \end{bmatrix} = -1 \cdot [-3(1+3) - 1(1+3) + 1(1-1)] = -1[-12-4] = 16\)</span></p></li>
 </ul>
+<p>Perhitungan :</p>
 <div class="math notranslate nohighlight">
 \[\text{det}(A) = (1)(16) + (-3)(16) + (1)(16) + (1)(16)\]</div>
 <div class="math notranslate nohighlight">
@@ -486,26 +489,29 @@ $<span class="math notranslate nohighlight">\(\text{det}(A) = \sum_{k=1}^{n} (-1
 <div class="math notranslate nohighlight">
 \[\text{det}(A) = 48 - 48 = \mathbf{0}\]</div>
 <p>B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus</p>
-<p>Rumus Matriks Adjoin :
-$<span class="math notranslate nohighlight">\(A^{-1} = \frac{1}{\text{det}(A)} \text{adj}(A)\)</span>$</p>
+<p>Rumus Matriks Adjoin :</p>
+<div class="math notranslate nohighlight">
+\[A^{-1} = \frac{1}{\text{det}(A)} \text{adj}(A)\]</div>
 <ol class="arabic" start="4">
 <li><div class="math notranslate nohighlight">
 \[\begin{split}A = \begin{bmatrix} -7 &amp; -5 \\ 1 &amp; 4 \end{bmatrix}\end{split}\]</div>
 </li>
 </ol>
-<p>Determinan :
-<span class="math notranslate nohighlight">\(\text{det}(A) = -23\)</span>.</p>
-<p>Matriks Adjoin :
-$<span class="math notranslate nohighlight">\(\text{adj}(A) = \begin{bmatrix} 4 &amp; 5 \\ -1 &amp; -7 \end{bmatrix}\)</span>$</p>
-<p>Invers :
-$<span class="math notranslate nohighlight">\(A^{-1} = \frac{1}{-23} \begin{bmatrix} 4 &amp; 5 \\ -1 &amp; -7 \end{bmatrix} = \mathbf{\begin{bmatrix} -4/23 &amp; -5/23 \\ 1/23 &amp; 7/23 \end{bmatrix}}\)</span>$</p>
+<p>Determinan :</p>
+<p><span class="math notranslate nohighlight">\(\text{det}(A) = -23\)</span>.</p>
+<p>Matriks Adjoin :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{adj}(A) = \begin{bmatrix} 4 &amp; 5 \\ -1 &amp; -7 \end{bmatrix}\end{split}\]</div>
+<p>Invers :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A^{-1} = \frac{1}{-23} \begin{bmatrix} 4 &amp; 5 \\ -1 &amp; -7 \end{bmatrix} = \mathbf{\begin{bmatrix} -4/23 &amp; -5/23 \\ 1/23 &amp; 7/23 \end{bmatrix}}\end{split}\]</div>
 <ol class="arabic" start="5">
 <li><div class="math notranslate nohighlight">
 \[\begin{split}A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
 </li>
 </ol>
-<p>Determinan :
-<span class="math notranslate nohighlight">\(\text{det}(A) = -2\)</span>.</p>
+<p>Determinan :</p>
+<p><span class="math notranslate nohighlight">\(\text{det}(A) = -2\)</span>.</p>
 <p>Matriks Kofaktor :
 Kofaktor (<span class="math notranslate nohighlight">\(C_{ij}\)</span>):</p>
 <ul class="simple">
@@ -519,19 +525,22 @@ Kofaktor (<span class="math notranslate nohighlight">\(C_{ij}\)</span>):</p>
 <li><p><span class="math notranslate nohighlight">\(C_{32} = - |^{0 \ -3}_{1 \ -1}| = -(0 - (-3)) = -3\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(C_{33} = + |^{0 \ \ \ 2}_{1 \ -2}| = 0 - 2 = -2\)</span></p></li>
 </ul>
-<p>Adjoin(Tranpose)
-$<span class="math notranslate nohighlight">\(\text{adj}(A) = \begin{bmatrix} -2 &amp; -1 &amp; 0 \\ -2 &amp; 0 &amp; 0 \\ -8 &amp; -3 &amp; -2 \end{bmatrix}^T = \begin{bmatrix} -2 &amp; -2 &amp; -8 \\ -1 &amp; 0 &amp; -3 \\ 0 &amp; 0 &amp; -2 \end{bmatrix}\)</span>$</p>
+<p>Adjoin(Tranpose) :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{adj}(A) = \begin{bmatrix} -2 &amp; -1 &amp; 0 \\ -2 &amp; 0 &amp; 0 \\ -8 &amp; -3 &amp; -2 \end{bmatrix}^T\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}\text{adj}(A) = K^T = \begin{bmatrix} -2 &amp; -2 &amp; -8 \\ -1 &amp; 0 &amp; -3 \\ 0 &amp; 0 &amp; -2 \end{bmatrix}\end{split}\]</div>
-<p>Invers :
-$<span class="math notranslate nohighlight">\(A^{-1} = \frac{1}{-2} \begin{bmatrix} -2 &amp; -2 &amp; -8 \\ -1 &amp; 0 &amp; -3 \\ 0 &amp; 0 &amp; -2 \end{bmatrix} = \mathbf{\begin{bmatrix} 1 &amp; 1 &amp; 4 \\ 0.5 &amp; 0 &amp; 1.5 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}}\)</span>$</p>
+<p>Invers :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A^{-1} = \frac{1}{-2} \begin{bmatrix} -2 &amp; -2 &amp; -8 \\ -1 &amp; 0 &amp; -3 \\ 0 &amp; 0 &amp; -2 \end{bmatrix} = \mathbf{\begin{bmatrix} 1 &amp; 1 &amp; 4 \\ 0.5 &amp; 0 &amp; 1.5 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}}\end{split}\]</div>
 <ol class="arabic" start="6">
 <li><div class="math notranslate nohighlight">
 \[\begin{split}A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\end{split}\]</div>
 </li>
 </ol>
-<p>Determinan :
-$<span class="math notranslate nohighlight">\(\text{det}(A) = 0\)</span>$</p>
+<p>Determinan :</p>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = 0\]</div>
 <p>Kesimpulan :</p>
 <p>Matriks no 6 tidak memiliki invers. Karena,  jika determinan sebuah matriks adalah nol, maka matriks tersebut disebut sebagai Matriks Singular. Sesuai dengan rumus <span class="math notranslate nohighlight">\(A^{-1} = \frac{1}{\text{det}(A)} \text{adj}(A)\)</span>, kita tidak bisa membagi dengan nol.</p>
 </section>
@@ -567,6 +576,15 @@ $<span class="math notranslate nohighlight">\(\text{det}(A) = 0\)</span>$</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tugas6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
