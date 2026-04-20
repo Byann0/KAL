@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Aritmetika Matriks &#8212; My sample book</title>
+    <title>Jawab &#8212; My sample book</title>
   
   
   
@@ -59,11 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'aritmetika_matriks';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="tugas6.html" />
-    <link rel="prev" title="Tugas 5" href="tugas5.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="tugas6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,7 +188,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tugas5.html">Tugas 5</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aritmetika Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
 
 </ul>
 
@@ -262,7 +261,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Faritmetika_matriks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftugas7.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -292,7 +291,7 @@
       
       
       
-      <li><a href="_sources/aritmetika_matriks.md" target="_blank"
+      <li><a href="_sources/tugas7.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +301,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -363,9 +362,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -376,33 +373,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Aritmetika Matriks</h1>
+    <h1>Jawab</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aritmetika Matriks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks">Definisi Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notasi-matriks">Notasi Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-notasi">Contoh Notasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-kesamaan-matriks">Definisi Kesamaan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-kesamaan-matriks">Contoh Kesamaan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-solusi-sistem-linear">Definisi Solusi Sistem Linear</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-augmentasi">Definisi Matriks Augmentasi</a></li>
-</ul>
-</li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -412,138 +387,140 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="aritmetika-matriks">
-<h1>Aritmetika Matriks<a class="headerlink" href="#aritmetika-matriks" title="Link to this heading">#</a></h1>
-<p>Tidak setiap matriks harus dianggap sebagai matriks augmented yang terkait dengan sistem linear.</p>
-<section id="definisi-matriks">
-<h2>Definisi Matriks<a class="headerlink" href="#definisi-matriks" title="Link to this heading">#</a></h2>
-<p>Sebuah matriks (real) adalah array persegi panjang dari bilangan real
-$<span class="math notranslate nohighlight">\(
-A = \begin{bmatrix}
-a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
-a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
-\end{bmatrix}
-\)</span>$</p>
-<p>Bilangan <span class="math notranslate nohighlight">\(a_{ij}\)</span> yang terletak pada baris ke-<span class="math notranslate nohighlight">\(i\)</span> dan kolom ke-<span class="math notranslate nohighlight">\(j\)</span> dari <span class="math notranslate nohighlight">\(A\)</span> disebut <span class="math notranslate nohighlight">\((i, j)\)</span>-entri (atau <span class="math notranslate nohighlight">\(ij\)</span>-entri) dari <span class="math notranslate nohighlight">\(A\)</span>.Sebuah matriks dengan <span class="math notranslate nohighlight">\(m\)</span> baris dan <span class="math notranslate nohighlight">\(n\)</span> kolom dikatakan memiliki ukuran (atau dimensi) <span class="math notranslate nohighlight">\(m \times n\)</span>.Matriks biasanya menggunakan huruf kapital awal alfabet (e.g. <span class="math notranslate nohighlight">\(A, B, C, D\)</span>, etc.) untuk menunjukkan matriks.</p>
-</section>
-<section id="notasi-matriks">
-<h2>Notasi Matriks<a class="headerlink" href="#notasi-matriks" title="Link to this heading">#</a></h2>
-<p>Notasi pembangun matriks</p>
-<p>Notasi <span class="math notranslate nohighlight">\([a_{ij}]_{m \times n}\)</span> menunjukkan matriks <span class="math notranslate nohighlight">\(m \times n\)</span> yang entri <span class="math notranslate nohighlight">\(ij\)</span>-nya (baris ke-<span class="math notranslate nohighlight">\(i\)</span>, kolom ke-<span class="math notranslate nohighlight">\(j\)</span>) adalah <span class="math notranslate nohighlight">\(a_{ij}\)</span>. Ketika tidak ada bahaya kebingungan, notasi ini sering disingkat menjadi <span class="math notranslate nohighlight">\([a_{ij}]\)</span>.</p>
-<p>Notasi entri matriks</p>
-<p>Diberikan sebuah matriks <span class="math notranslate nohighlight">\(A\)</span>, notasi <span class="math notranslate nohighlight">\([A]_{ij}\)</span> menunjukkan entri ke-<span class="math notranslate nohighlight">\(ij\)</span> dari <span class="math notranslate nohighlight">\(A\)</span>. Jadi jika <span class="math notranslate nohighlight">\(A = [a_{ij}]_{m \times n}\)</span>, maka <span class="math notranslate nohighlight">\([A]_{ij} = a_{ij}\)</span> untuk semua <span class="math notranslate nohighlight">\(1 \le i \le m\)</span> dan <span class="math notranslate nohighlight">\(1 \le j \le n\)</span>.</p>
-</section>
-<hr class="docutils" />
-<section id="contoh-notasi">
-<h2>Contoh Notasi<a class="headerlink" href="#contoh-notasi" title="Link to this heading">#</a></h2>
-<p>Notasi dapat digunakan untuk mendeskripsikan matriks yang entri <span class="math notranslate nohighlight">\(ij\)</span>-nya diberikan oleh aturan atau formula tertentu.Sebagai contoh, misalkan <span class="math notranslate nohighlight">\(A = [a_{ij}]_{2 \times 3}\)</span>, dimana <span class="math notranslate nohighlight">\(a_{ij} = (i - j)j\)</span>. Ini adalah matriks <span class="math notranslate nohighlight">\(2 \times 3\)</span> yang entri <span class="math notranslate nohighlight">\(ij\)</span>-nya adalah <span class="math notranslate nohighlight">\((i - j)j\)</span>. Jadi</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A = \begin{bmatrix} (1 - 1)1 &amp; (1 - 2)2 &amp; (1 - 3)3 \\ (2 - 1)1 &amp; (2 - 2)2 &amp; (2 - 3)3 \end{bmatrix} = \begin{bmatrix} 0 &amp; -2 &amp; -6 \\ 1 &amp; 0 &amp; -3 \end{bmatrix}
-\end{split}\]</div>
-<p>Dalam contoh ini kita memiliki <span class="math notranslate nohighlight">\([A]_{23} = -3\)</span> dan <span class="math notranslate nohighlight">\([A]_{ii} = 0\)</span> untuk <span class="math notranslate nohighlight">\(i = 1, 2\)</span>.</p>
-</section>
-<hr class="docutils" />
-<section id="definisi-kesamaan-matriks">
-<h2>Definisi Kesamaan Matriks<a class="headerlink" href="#definisi-kesamaan-matriks" title="Link to this heading">#</a></h2>
-<p>Misalkan <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> adalah matriks dengan dimensi <span class="math notranslate nohighlight">\(m \times n\)</span> dan <span class="math notranslate nohighlight">\(m' \times n'\)</span>, masing-masing. Dua matriks tersebut sama jika:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(m = m'\)</span> dan <span class="math notranslate nohighlight">\(n = n'\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\([A]_{ij} = [B]_{ij}\)</span> untuk semua <span class="math notranslate nohighlight">\(1 \le i \le m\)</span> dan <span class="math notranslate nohighlight">\(1 \le j \le n\)</span>.</p></li>
+  <p>Perintah:</p>
+<p>Kerjakan soal berikut dengan dan hasilnya di tulis di webstatis dan dikumpulkan di webstatis github
+Dijelaskan dengan proses-proses untuk mendapatkanya sesuai dengan rumus</p>
+<p>SOAL.</p>
+<p>A. Hitunglah determinan matrik berikut dengan menggunakan rumus expansi baris</p>
+<ol class="arabic">
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} -7 &amp; -5 \\ 1 &amp; 4 \end{bmatrix}\end{split}\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\end{split}\]</div>
+</li>
 </ol>
-<p>Dengan kata lain, kita memiliki <span class="math notranslate nohighlight">\(A = B\)</span> jika dan hanya jika <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> memiliki bentuk yang sama, dan setiap entri dari <span class="math notranslate nohighlight">\(A\)</span> sama dengan entri yang bersesuaian dari <span class="math notranslate nohighlight">\(B\)</span>.</p>
-</section>
-<section id="contoh-kesamaan-matriks">
-<h2>Contoh Kesamaan Matriks<a class="headerlink" href="#contoh-kesamaan-matriks" title="Link to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A = \begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \end{bmatrix} \quad
-B = \begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}
-\end{split}\]</div>
-<p>tidak sama satu sama lain, meskipun mereka memiliki entri yang sama yang muncul kira-kira dalam urutan yang sama. Dalam kasus ini kesamaan tidak berlaku karena <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> memiliki bentuk yang berbeda: <span class="math notranslate nohighlight">\(A\)</span> adalah <span class="math notranslate nohighlight">\(1 \times 4\)</span>, dan <span class="math notranslate nohighlight">\(B\)</span> adalah <span class="math notranslate nohighlight">\(4 \times 1\)</span>.</p>
-<p>Matriks <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span> dan <span class="math notranslate nohighlight">\(B = \begin{bmatrix} 1 &amp; 2 \\ 5 &amp; 4 \end{bmatrix}\)</span> memiliki dimensi yang sama, tetapi tidak sama karena <span class="math notranslate nohighlight">\([A]_{21} = 3 \neq 5 = [B]_{21}\)</span>.</p>
-</section>
-<hr class="docutils" />
-<section id="definisi-solusi-sistem-linear">
-<h2>Definisi Solusi Sistem Linear<a class="headerlink" href="#definisi-solusi-sistem-linear" title="Link to this heading">#</a></h2>
-<p>Sebuah solusi persamaan linear</p>
-<div class="math notranslate nohighlight">
-\[
-a_1x_1 + a_2x_2 + \cdots + a_nx_n = b
-\]</div>
-<p>adalah sebuah <span class="math notranslate nohighlight">\(n\)</span>-tuple <span class="math notranslate nohighlight">\((s_1, s_2, \dots, s_n)\)</span> sehingga substitusi<br />
-<span class="math notranslate nohighlight">\(x_1 = s_1, x_2 = s_2, \dots, x_n = s_n\)</span> membuat persamaan benar.</p>
-<p>Sebuah solusi sistem persamaan linear adalah <span class="math notranslate nohighlight">\(n\)</span>-tuple<br />
-<span class="math notranslate nohighlight">\((s_1, s_2, \dots, s_n)\)</span> yang merupakan solusi dari setiap persamaan dalam sistem.</p>
-<p>Himpunan solusi dapat berupa:</p>
-<ol class="arabic simple">
-<li><p>Tidak ada solusi (sistem tidak konsisten)</p></li>
-<li><p>Tepat satu solusi</p></li>
-<li><p>Tak hingga banyak solusi</p></li>
+<p>B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus</p>
+<ol class="arabic" start="4">
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} -7 &amp; -5 \\ 1 &amp; 4 \end{bmatrix}\end{split}\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\end{split}\]</div>
+</li>
 </ol>
-</section>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="representasi-matriks-dari-sistem-linear">
-<h1>Representasi Matriks dari Sistem Linear<a class="headerlink" href="#representasi-matriks-dari-sistem-linear" title="Link to this heading">#</a></h1>
-<p>Jika <span class="math notranslate nohighlight">\(A\)</span> adalah matriks koefisien dan <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> adalah vektor konstanta,<br />
-maka sistem dapat ditulis sebagai</p>
+<p>Rumus Determinan
+$<span class="math notranslate nohighlight">\(\text{det}(A) = \sum_{k=1}^{n} (-1)^{i+k} a_{ik} M_{ik}\)</span>$</p>
+<section id="jawab">
+<h1>Jawab<a class="headerlink" href="#jawab" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} -7 &amp; -5 \\ 1 &amp; 4 \end{bmatrix}\end{split}\]</div>
+</li>
+</ol>
+<p>Ekspansi Baris 1 (<span class="math notranslate nohighlight">\(i=1\)</span>):</p>
+<ul class="simple">
+<li><p>Elemen <span class="math notranslate nohighlight">\(a_{11} = -7\)</span>: Minor <span class="math notranslate nohighlight">\(M_{11} = |4| = 4\)</span>.</p></li>
+<li><p>Elemen <span class="math notranslate nohighlight">\(a_{12} = -5\)</span>: Minor <span class="math notranslate nohighlight">\(M_{12} = |1| = 1\)</span>.</p></li>
+</ul>
 <div class="math notranslate nohighlight">
-\[
-A\mathbf{x} = \mathbf{b}
-\]</div>
-<hr class="docutils" />
-<section id="contoh">
-<h2>Contoh<a class="headerlink" href="#contoh" title="Link to this heading">#</a></h2>
+\[\text{det}(A) = a_{11}(-1)^{1+1}M_{11} + a_{12}(-1)^{1+2}M_{12}\]</div>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-2x_1 + 4x_2 - 3x_3 + 5x_4 + x_5 &amp;= 9 \\
-3x_1 + x_2 + x_4 - 3x_5 &amp;= 0 \\
--2x_1 + 7x_2 - 5x_3 + 2x_4 + 2x_5 &amp;= -3
-\end{aligned}
-\end{split}\]</div>
-<p>Matriks koefisiennya:</p>
+\[\text{det}(A) = (-7)(1)(4) + (-5)(-1)(1)\]</div>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-A =
-\begin{bmatrix}
-2 &amp; 4 &amp; -3 &amp; 5 &amp; 1 \\
-3 &amp; 1 &amp; 0 &amp; 1 &amp; -3 \\
--2 &amp; 7 &amp; -5 &amp; 2 &amp; 2
-\end{bmatrix}
-\end{split}\]</div>
-<p>Vektor konstanta:</p>
+\[\text{det}(A) = -28 + 5 = \mathbf{-23}\]</div>
+<ol class="arabic" start="2">
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
+</li>
+</ol>
+<p>Ekspansi Baris 3 (<span class="math notranslate nohighlight">\(i=3\)</span>):</p>
+<ul class="simple">
+<li><p>Elemen <span class="math notranslate nohighlight">\(a_{31} = 0\)</span>:</p></li>
+<li><p>Elemen <span class="math notranslate nohighlight">\(a_{32} = 0\)</span>:</p></li>
+<li><p>Elemen <span class="math notranslate nohighlight">\(a_{33} = 1\)</span>: Minor <span class="math notranslate nohighlight">\(M_{33} = \text{det}\begin{bmatrix} 0 &amp; 2 \\ 1 &amp; -2 \end{bmatrix} = (0 \cdot -2) - (2 \cdot 1) = -2\)</span>.</p></li>
+</ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\mathbf{b} =
-\begin{bmatrix}
-9 \\
-0 \\
--3
-\end{bmatrix}
-\end{split}\]</div>
-</section>
-<hr class="docutils" />
-<section id="definisi-matriks-augmentasi">
-<h2>Definisi Matriks Augmentasi<a class="headerlink" href="#definisi-matriks-augmentasi" title="Link to this heading">#</a></h2>
-<p>Matriks augmentasi dari sistem adalah:</p>
+\[\text{det}(A) = a_{31}C_{31} + a_{32}C_{32} + a_{33}(-1)^{3+3}M_{33}\]</div>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\left[
-\begin{array}{ccc|c}
-1 &amp; -1 &amp; 2 &amp; 1 \\
-2 &amp; 1 &amp; 1 &amp; 8 \\
-1 &amp; 1 &amp; 0 &amp; 5
-\end{array}
-\right]
-\end{split}\]</div>
-<p>Matriks ini merepresentasikan seluruh informasi penting dari sistem persamaan.</p>
-</section>
-<div class="toctree-wrapper compound">
-</div>
+\[\text{det}(A) = 0 + 0 + (1)(1)(-2)\]</div>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = \mathbf{-2}\]</div>
+<ol class="arabic" start="3">
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\end{split}\]</div>
+</li>
+</ol>
+<p>Ekspansi Baris 1 (<span class="math notranslate nohighlight">\(i=1\)</span>):
+<span class="math notranslate nohighlight">\(\text{det}(A) = a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13} + a_{14}C_{14}\)</span></p>
+<p>Kofaktor <span class="math notranslate nohighlight">\(C_{1k}\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(C_{11}\)</span>: <span class="math notranslate nohighlight">\((-1)^2 \text{det} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; -3 \end{bmatrix} = 1 \cdot [1(9-1) - 1(-3-1) + 1(1+3)] = 8 + 4 + 4 = 16\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{12}\)</span>: <span class="math notranslate nohighlight">\((-1)^3 \text{det} \begin{bmatrix} -3 &amp; 1 &amp; 1 \\ 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; -3 \end{bmatrix} = -1 \cdot [-3(9-1) - 1(-3-1) + 1(1+3)] = -1[-24+4+4] = 16\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{13}\)</span>: <span class="math notranslate nohighlight">\((-1)^4 \text{det} \begin{bmatrix} -3 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 \end{bmatrix} = 1 \cdot [-3(-3-1) - 1(-3-1) + 1(1-1)] = 12 + 4 + 0 = 16\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{14}\)</span>: <span class="math notranslate nohighlight">\((-1)^5 \text{det} \begin{bmatrix} -3 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 \\ 1 &amp; 1 &amp; 1 \end{bmatrix} = -1 \cdot [-3(1+3) - 1(1+3) + 1(1-1)] = -1[-12-4] = 16\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = (1)(16) + (-3)(16) + (1)(16) + (1)(16)\]</div>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = 16 - 48 + 16 + 16\]</div>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = 48 - 48 = \mathbf{0}\]</div>
+<p>B. Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut dengan rumus</p>
+<p>Rumus Matriks Adjoin :
+$<span class="math notranslate nohighlight">\(A^{-1} = \frac{1}{\text{det}(A)} \text{adj}(A)\)</span>$</p>
+<ol class="arabic" start="4">
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} -7 &amp; -5 \\ 1 &amp; 4 \end{bmatrix}\end{split}\]</div>
+</li>
+</ol>
+<p>Determinan :
+<span class="math notranslate nohighlight">\(\text{det}(A) = -23\)</span>.</p>
+<p>Matriks Adjoin :
+$<span class="math notranslate nohighlight">\(\text{adj}(A) = \begin{bmatrix} 4 &amp; 5 \\ -1 &amp; -7 \end{bmatrix}\)</span>$</p>
+<p>Invers :
+$<span class="math notranslate nohighlight">\(A^{-1} = \frac{1}{-23} \begin{bmatrix} 4 &amp; 5 \\ -1 &amp; -7 \end{bmatrix} = \mathbf{\begin{bmatrix} -4/23 &amp; -5/23 \\ 1/23 &amp; 7/23 \end{bmatrix}}\)</span>$</p>
+<ol class="arabic" start="5">
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
+</li>
+</ol>
+<p>Determinan :
+<span class="math notranslate nohighlight">\(\text{det}(A) = -2\)</span>.</p>
+<p>Matriks Kofaktor :
+Kofaktor (<span class="math notranslate nohighlight">\(C_{ij}\)</span>):</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(C_{11} = + |_{-2 \ -1}^{ \ 0 \ \ \ 1}| = -2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{12} = - |^{1 \ -1}_{0 \ \ \ 1}| = -1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{13} = + |^{1 \ -2}_{0 \ \ \ 0}| = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{21} = - |^{2 \ -3}_{0 \ \ \ 1}| = -2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{22} = + |^{0 \ -3}_{0 \ \ \ 1}| = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{23} = - |^{0 \ \ \ 2}_{0 \ \ \ 0}| = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{31} = + |^{ \ 2 \ -3}_{-2 \ -1}| = -2 - 6 = -8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{32} = - |^{0 \ -3}_{1 \ -1}| = -(0 - (-3)) = -3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{33} = + |^{0 \ \ \ 2}_{1 \ -2}| = 0 - 2 = -2\)</span></p></li>
+</ul>
+<p>Adjoin(Tranpose)
+$<span class="math notranslate nohighlight">\(\text{adj}(A) = \begin{bmatrix} -2 &amp; -1 &amp; 0 \\ -2 &amp; 0 &amp; 0 \\ -8 &amp; -3 &amp; -2 \end{bmatrix}^T = \begin{bmatrix} -2 &amp; -2 &amp; -8 \\ -1 &amp; 0 &amp; -3 \\ 0 &amp; 0 &amp; -2 \end{bmatrix}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{adj}(A) = K^T = \begin{bmatrix} -2 &amp; -2 &amp; -8 \\ -1 &amp; 0 &amp; -3 \\ 0 &amp; 0 &amp; -2 \end{bmatrix}\end{split}\]</div>
+<p>Invers :
+$<span class="math notranslate nohighlight">\(A^{-1} = \frac{1}{-2} \begin{bmatrix} -2 &amp; -2 &amp; -8 \\ -1 &amp; 0 &amp; -3 \\ 0 &amp; 0 &amp; -2 \end{bmatrix} = \mathbf{\begin{bmatrix} 1 &amp; 1 &amp; 4 \\ 0.5 &amp; 0 &amp; 1.5 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}}\)</span>$</p>
+<ol class="arabic" start="6">
+<li><div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\end{split}\]</div>
+</li>
+</ol>
+<p>Determinan :
+$<span class="math notranslate nohighlight">\(\text{det}(A) = 0\)</span>$</p>
+<p>Kesimpulan :</p>
+<p>Matriks no 6 tidak memiliki invers. Karena,  jika determinan sebuah matriks adalah nol, maka matriks tersebut disebut sebagai Matriks Singular. Sesuai dengan rumus <span class="math notranslate nohighlight">\(A^{-1} = \frac{1}{\text{det}(A)} \text{adj}(A)\)</span>, kita tidak bisa membagi dengan nol.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -577,22 +554,13 @@ A =
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tugas5.html"
+       href="tugas6.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tugas 5</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="tugas6.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -600,35 +568,6 @@ A =
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aritmetika Matriks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks">Definisi Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notasi-matriks">Notasi Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-notasi">Contoh Notasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-kesamaan-matriks">Definisi Kesamaan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-kesamaan-matriks">Contoh Kesamaan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-solusi-sistem-linear">Definisi Solusi Sistem Linear</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-augmentasi">Definisi Matriks Augmentasi</a></li>
-</ul>
-</li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
