@@ -10,4 +10,6 @@ chapters:
   - file: tugas4
   - file: tugas5
 - file: aritmetika_matriks
-
+  sections:
+  - file: tugas6
+  - file: tugas7
