@@ -15,4 +15,4 @@ chapters:
   - file: tugas7
 - file : transformasi_linier
   sections:
-  - file : eigemvalue_vektor
+  - file : eigenvalue_vektor
