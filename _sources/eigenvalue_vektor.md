@@ -1,14 +1,14 @@
-# Eigenvalue dan Eigenvector Matriks 2x2
+# Eigenvalue dan Eigenvector
 
 Diketahui matriks:
 
-\[
+$$
 A =
 \begin{bmatrix}
 2 & 1 \\
 1 & 2
 \end{bmatrix}
-\]
+$$
 
 ---
 
@@ -16,50 +16,50 @@ A =
 
 Gunakan persamaan karakteristik:
 
-\[
+$$
 \det(A-\lambda I)=0
-\]
+$$
 
-\[
+$$
 \begin{vmatrix}
 2-\lambda & 1 \\
 1 & 2-\lambda
 \end{vmatrix}=0
-\]
+$$
 
 Hitung determinan:
 
-\[
+$$
 (2-\lambda)(2-\lambda)-1=0
-\]
+$$
 
-\[
+$$
 (2-\lambda)^2-1=0
-\]
+$$
 
-\[
+$$
 4-4\lambda+\lambda^2-1=0
-\]
+$$
 
-\[
+$$
 \lambda^2-4\lambda+3=0
-\]
+$$
 
 Faktorkan:
 
-\[
+$$
 (\lambda-3)(\lambda-1)=0
-\]
+$$
 
 Maka diperoleh eigenvalue:
 
-\[
+$$
 \lambda_1=3
-\]
+$$
 
-\[
+$$
 \lambda_2=1
-\]
+$$
 
 ---
 
@@ -69,11 +69,11 @@ Maka diperoleh eigenvalue:
 
 Gunakan:
 
-\[
+$$
 (A-3I)v=0
-\]
+$$
 
-\[
+$$
 \begin{bmatrix}
 2-3 & 1 \\
 1 & 2-3
@@ -83,58 +83,58 @@ Gunakan:
 -1 & 1 \\
 1 & -1
 \end{bmatrix}
-\]
+$$
 
 Misalkan:
 
-\[
+$$
 v=
 \begin{bmatrix}
 x\\
 y
 \end{bmatrix}
-\]
+$$
 
 Maka:
 
-\[
+$$
 -x+y=0
-\]
+$$
 
-\[
+$$
 y=x
-\]
+$$
 
 Ambil:
 
-\[
+$$
 x=1
-\]
+$$
 
 Sehingga:
 
-\[
+$$
 v_1=
 \begin{bmatrix}
 1\\
 1
 \end{bmatrix}
-\]
+$$
 
 Normalisasi:
 
-\[
+$$
 ||v_1||=\sqrt{1^2+1^2}=\sqrt{2}
-\]
+$$
 
-\[
+$$
 q_1=
 \frac{1}{\sqrt{2}}
 \begin{bmatrix}
 1\\
 1
 \end{bmatrix}
-\]
+$$
 
 ---
 
@@ -142,57 +142,57 @@ q_1=
 
 Gunakan:
 
-\[
+$$
 (A-I)v=0
-\]
+$$
 
-\[
+$$
 \begin{bmatrix}
 1 & 1 \\
 1 & 1
 \end{bmatrix}
-\]
+$$
 
 Persamaan:
 
-\[
+$$
 x+y=0
-\]
+$$
 
-\[
+$$
 y=-x
-\]
+$$
 
 Ambil:
 
-\[
+$$
 x=1
-\]
+$$
 
 Sehingga:
 
-\[
+$$
 v_2=
 \begin{bmatrix}
 1\\
 -1
 \end{bmatrix}
-\]
+$$
 
 Normalisasi:
 
-\[
+$$
 ||v_2||=\sqrt{1^2+(-1)^2}=\sqrt{2}
-\]
+$$
 
-\[
+$$
 q_2=
 \frac{1}{\sqrt{2}}
 \begin{bmatrix}
 1\\
 -1
 \end{bmatrix}
-\]
+$$
 
 ---
 
@@ -200,33 +200,33 @@ q_2=
 
 Matriks:
 
-\[
+$$
 A=
 \begin{bmatrix}
 2 & 1\\
 1 & 2
 \end{bmatrix}
-\]
+$$
 
 Kolom pertama:
 
-\[
+$$
 a_1=
 \begin{bmatrix}
 2\\
 1
 \end{bmatrix}
-\]
+$$
 
 Kolom kedua:
 
-\[
+$$
 a_2=
 \begin{bmatrix}
 1\\
 2
 \end{bmatrix}
-\]
+$$
 
 ---
 
@@ -234,12 +234,12 @@ a_2=
 
 Normalisasi \(a_1\):
 
-\[
+$$
 ||a_1||=\sqrt{2^2+1^2}
 =\sqrt{5}
-\]
+$$
 
-\[
+$$
 q_1=
 \frac{a_1}{||a_1||}
 =
@@ -248,7 +248,7 @@ q_1=
 2\\
 1
 \end{bmatrix}
-\]
+$$
 
 ---
 
@@ -256,7 +256,7 @@ q_1=
 
 Hitung proyeksi \(a_2\) terhadap \(q_1\):
 
-\[
+$$
 a_2 \cdot q_1
 =
 \begin{bmatrix}
@@ -269,18 +269,18 @@ a_2 \cdot q_1
 2\\
 1
 \end{bmatrix}
-\]
+$$
 
-\[
+$$
 =
 \frac{2+2}{\sqrt5}
 =
 \frac{4}{\sqrt5}
-\]
+$$
 
 Proyeksi:
 
-\[
+$$
 (a_2 \cdot q_1)q_1
 =
 \frac45
@@ -293,17 +293,17 @@ Proyeksi:
 8/5\\
 4/5
 \end{bmatrix}
-\]
+$$
 
 Cari vector tegak lurus:
 
-\[
+$$
 v_2
 =
 a_2-(a_2 \cdot q_1)q_1
-\]
+$$
 
-\[
+$$
 =
 \begin{bmatrix}
 1\\
@@ -314,28 +314,28 @@ a_2-(a_2 \cdot q_1)q_1
 8/5\\
 4/5
 \end{bmatrix}
-\]
+$$
 
-\[
+$$
 =
 \begin{bmatrix}
 -3/5\\
 6/5
 \end{bmatrix}
-\]
+$$
 
 Norm:
 
-\[
+$$
 ||v_2||
 =
 \sqrt{
 \left(-\frac35\right)^2+
 \left(\frac65\right)^2
 }
-\]
+$$
 
-\[
+$$
 =
 \sqrt{
 \frac9{25}+\frac{36}{25}
@@ -344,11 +344,11 @@ Norm:
 \sqrt{\frac{45}{25}}
 =
 \frac{3}{\sqrt5}
-\]
+$$
 
 Normalisasi:
 
-\[
+$$
 q_2=
 \frac{v_2}{||v_2||}
 =
@@ -356,7 +356,7 @@ q_2=
 -\frac1{\sqrt5}\\
 \frac2{\sqrt5}
 \end{bmatrix}
-\]
+$$
 
 ---
 
@@ -426,42 +426,42 @@ print(Q)
 
 ## Eigenvalue
 
-\[
+$$
 \lambda_1 = 3
-\]
+$$
 
-\[
+$$
 \lambda_2 = 1
-\]
+$$
 
 ---
 
 ## Eigenvector
 
-\[
+$$
 v_1=
 \begin{bmatrix}
 1\\
 1
 \end{bmatrix}
-\]
+$$
 
-\[
+$$
 v_2=
 \begin{bmatrix}
 1\\
 -1
 \end{bmatrix}
-\]
+$$
 
 ---
 
 ## Matriks Q Gram-Schmidt
 
-\[
+$$
 Q=
 \begin{bmatrix}
 0.8944 & -0.4472 \\
 0.4472 & 0.8944
 \end{bmatrix}
-\]
+$$
