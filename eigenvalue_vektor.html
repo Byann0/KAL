@@ -1,0 +1,1043 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Eigenvalue dan Eigenvector Matriks 2x2 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eigenvalue_vektor';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    My Notebook
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tugas4.html">Tugas 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tugas5.html">Tugas 5</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="transformasi_linier.html">Transformasi Linier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feigenvalue_vektor.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/eigenvalue_vektor.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Eigenvalue dan Eigenvector Matriks 2x2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Eigenvalue dan Eigenvector Matriks 2x2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-eigenvalue">1. Mencari Eigenvalue</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-eigenvector">2. Mencari Eigenvector</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-untuk-lambda-3">Eigenvector untuk (\lambda = 3)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-bmatrix-2-3-1-1-2-3-end-bmatrix">[
+\begin{bmatrix}
+2-3 &amp; 1 \
+1 &amp; 2-3
+\end{bmatrix}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-untuk-lambda-1">Eigenvector untuk (\lambda = 1)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gram-schmidt">3. Gram-Schmidt</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-vector-pertama">Langkah 1: Vector Pertama</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-1-frac-a-1-a-1">[
+q_1=
+\frac{a_1}{||a_1||}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-vector-kedua">Langkah 2: Vector Kedua</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2-cdot-q-1">[
+a_2 \cdot q_1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-2-2-sqrt5">\frac{2+2}{\sqrt5}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2-cdot-q-1-q-1">[
+(a_2 \cdot q_1)q_1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac45-begin-bmatrix-2-1-end-bmatrix">\frac45
+\begin{bmatrix}
+2\
+1
+\end{bmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-2">[
+v_2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-bmatrix-1-2-end-bmatrix">\begin{bmatrix}
+1\
+2
+\end{bmatrix}</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">[</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[
+||v_2||</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sqrt-frac9-25-frac-36-25">\sqrt{
+\frac9{25}+\frac{36}{25}
+}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sqrt-frac-45-25">\sqrt{\frac{45}{25}}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-2-frac-v-2-v-2">[
+q_2=
+\frac{v_2}{||v_2||}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code">4. Python Code</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akhir">Hasil Akhir</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalue">Eigenvalue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector">Eigenvector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-q-gram-schmidt">Matriks Q Gram-Schmidt</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="eigenvalue-dan-eigenvector-matriks-2x2">
+<h1>Eigenvalue dan Eigenvector Matriks 2x2<a class="headerlink" href="#eigenvalue-dan-eigenvector-matriks-2x2" title="Link to this heading">#</a></h1>
+<p>Diketahui matriks:</p>
+<p>[
+A =
+\begin{bmatrix}
+2 &amp; 1 \
+1 &amp; 2
+\end{bmatrix}
+]</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-eigenvalue">
+<h1>1. Mencari Eigenvalue<a class="headerlink" href="#mencari-eigenvalue" title="Link to this heading">#</a></h1>
+<p>Gunakan persamaan karakteristik:</p>
+<p>[
+\det(A-\lambda I)=0
+]</p>
+<p>[
+\begin{vmatrix}
+2-\lambda &amp; 1 \
+1 &amp; 2-\lambda
+\end{vmatrix}=0
+]</p>
+<p>Hitung determinan:</p>
+<p>[
+(2-\lambda)(2-\lambda)-1=0
+]</p>
+<p>[
+(2-\lambda)^2-1=0
+]</p>
+<p>[
+4-4\lambda+\lambda^2-1=0
+]</p>
+<p>[
+\lambda^2-4\lambda+3=0
+]</p>
+<p>Faktorkan:</p>
+<p>[
+(\lambda-3)(\lambda-1)=0
+]</p>
+<p>Maka diperoleh eigenvalue:</p>
+<p>[
+\lambda_1=3
+]</p>
+<p>[
+\lambda_2=1
+]</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="mencari-eigenvector">
+<h1>2. Mencari Eigenvector<a class="headerlink" href="#mencari-eigenvector" title="Link to this heading">#</a></h1>
+<section id="eigenvector-untuk-lambda-3">
+<h2>Eigenvector untuk (\lambda = 3)<a class="headerlink" href="#eigenvector-untuk-lambda-3" title="Link to this heading">#</a></h2>
+<p>Gunakan:</p>
+<p>[
+(A-3I)v=0
+]</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="begin-bmatrix-2-3-1-1-2-3-end-bmatrix">
+<h1>[
+\begin{bmatrix}
+2-3 &amp; 1 \
+1 &amp; 2-3
+\end{bmatrix}<a class="headerlink" href="#begin-bmatrix-2-3-1-1-2-3-end-bmatrix" title="Link to this heading">#</a></h1>
+<p>\begin{bmatrix}
+-1 &amp; 1 \
+1 &amp; -1
+\end{bmatrix}
+]</p>
+<p>Misalkan:</p>
+<p>[
+v=
+\begin{bmatrix}
+x\
+y
+\end{bmatrix}
+]</p>
+<p>Maka:</p>
+<p>[
+-x+y=0
+]</p>
+<p>[
+y=x
+]</p>
+<p>Ambil:</p>
+<p>[
+x=1
+]</p>
+<p>Sehingga:</p>
+<p>[
+v_1=
+\begin{bmatrix}
+1\
+1
+\end{bmatrix}
+]</p>
+<p>Normalisasi:</p>
+<p>[
+||v_1||=\sqrt{1^2+1^2}=\sqrt{2}
+]</p>
+<p>[
+q_1=
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1\
+1
+\end{bmatrix}
+]</p>
+<hr class="docutils" />
+<section id="eigenvector-untuk-lambda-1">
+<h2>Eigenvector untuk (\lambda = 1)<a class="headerlink" href="#eigenvector-untuk-lambda-1" title="Link to this heading">#</a></h2>
+<p>Gunakan:</p>
+<p>[
+(A-I)v=0
+]</p>
+<p>[
+\begin{bmatrix}
+1 &amp; 1 \
+1 &amp; 1
+\end{bmatrix}
+]</p>
+<p>Persamaan:</p>
+<p>[
+x+y=0
+]</p>
+<p>[
+y=-x
+]</p>
+<p>Ambil:</p>
+<p>[
+x=1
+]</p>
+<p>Sehingga:</p>
+<p>[
+v_2=
+\begin{bmatrix}
+1\
+-1
+\end{bmatrix}
+]</p>
+<p>Normalisasi:</p>
+<p>[
+||v_2||=\sqrt{1^2+(-1)^2}=\sqrt{2}
+]</p>
+<p>[
+q_2=
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1\
+-1
+\end{bmatrix}
+]</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="gram-schmidt">
+<h1>3. Gram-Schmidt<a class="headerlink" href="#gram-schmidt" title="Link to this heading">#</a></h1>
+<p>Matriks:</p>
+<p>[
+A=
+\begin{bmatrix}
+2 &amp; 1\
+1 &amp; 2
+\end{bmatrix}
+]</p>
+<p>Kolom pertama:</p>
+<p>[
+a_1=
+\begin{bmatrix}
+2\
+1
+\end{bmatrix}
+]</p>
+<p>Kolom kedua:</p>
+<p>[
+a_2=
+\begin{bmatrix}
+1\
+2
+\end{bmatrix}
+]</p>
+<hr class="docutils" />
+<section id="langkah-1-vector-pertama">
+<h2>Langkah 1: Vector Pertama<a class="headerlink" href="#langkah-1-vector-pertama" title="Link to this heading">#</a></h2>
+<p>Normalisasi (a_1):</p>
+<p>[
+||a_1||=\sqrt{2^2+1^2}
+=\sqrt{5}
+]</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="q-1-frac-a-1-a-1">
+<h1>[
+q_1=
+\frac{a_1}{||a_1||}<a class="headerlink" href="#q-1-frac-a-1-a-1" title="Link to this heading">#</a></h1>
+<p>\frac{1}{\sqrt{5}}
+\begin{bmatrix}
+2\
+1
+\end{bmatrix}
+]</p>
+<hr class="docutils" />
+<section id="langkah-2-vector-kedua">
+<h2>Langkah 2: Vector Kedua<a class="headerlink" href="#langkah-2-vector-kedua" title="Link to this heading">#</a></h2>
+<p>Hitung proyeksi (a_2) terhadap (q_1):</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-2-cdot-q-1">
+<h1>[
+a_2 \cdot q_1<a class="headerlink" href="#a-2-cdot-q-1" title="Link to this heading">#</a></h1>
+<p>\begin{bmatrix}
+1\
+2
+\end{bmatrix}
+\cdot
+\frac{1}{\sqrt5}
+\begin{bmatrix}
+2\
+1
+\end{bmatrix}
+]</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>[<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="frac-2-2-sqrt5">
+<h1>\frac{2+2}{\sqrt5}<a class="headerlink" href="#frac-2-2-sqrt5" title="Link to this heading">#</a></h1>
+<p>\frac{4}{\sqrt5}
+]</p>
+<p>Proyeksi:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-2-cdot-q-1-q-1">
+<h1>[
+(a_2 \cdot q_1)q_1<a class="headerlink" href="#a-2-cdot-q-1-q-1" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="frac45-begin-bmatrix-2-1-end-bmatrix">
+<h1>\frac45
+\begin{bmatrix}
+2\
+1
+\end{bmatrix}<a class="headerlink" href="#frac45-begin-bmatrix-2-1-end-bmatrix" title="Link to this heading">#</a></h1>
+<p>\begin{bmatrix}
+8/5\
+4/5
+\end{bmatrix}
+]</p>
+<p>Cari vector tegak lurus:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="v-2">
+<h1>[
+v_2<a class="headerlink" href="#v-2" title="Link to this heading">#</a></h1>
+<p>a_2-(a_2 \cdot q_1)q_1
+]</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>[<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<section id="begin-bmatrix-1-2-end-bmatrix">
+<h2>\begin{bmatrix}
+1\
+2
+\end{bmatrix}<a class="headerlink" href="#begin-bmatrix-1-2-end-bmatrix" title="Link to this heading">#</a></h2>
+<p>\begin{bmatrix}
+8/5\
+4/5
+\end{bmatrix}
+]</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>[<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<p>\begin{bmatrix}
+-3/5\
+6/5
+\end{bmatrix}
+]</p>
+<p>Norm:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1>[
+||v_2||<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<p>\sqrt{
+\left(-\frac35\right)^2+
+\left(\frac65\right)^2
+}
+]</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>[<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sqrt-frac9-25-frac-36-25">
+<h1>\sqrt{
+\frac9{25}+\frac{36}{25}
+}<a class="headerlink" href="#sqrt-frac9-25-frac-36-25" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sqrt-frac-45-25">
+<h1>\sqrt{\frac{45}{25}}<a class="headerlink" href="#sqrt-frac-45-25" title="Link to this heading">#</a></h1>
+<p>\frac{3}{\sqrt5}
+]</p>
+<p>Normalisasi:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="q-2-frac-v-2-v-2">
+<h1>[
+q_2=
+\frac{v_2}{||v_2||}<a class="headerlink" href="#q-2-frac-v-2-v-2" title="Link to this heading">#</a></h1>
+<p>\begin{bmatrix}
+-\frac1{\sqrt5}\
+\frac2{\sqrt5}
+\end{bmatrix}
+]</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="python-code">
+<h1>4. Python Code<a class="headerlink" href="#python-code" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Matriks</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># =========================</span>
+<span class="c1"># Eigenvalue &amp; Eigenvector</span>
+<span class="c1"># =========================</span>
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Eigenvalue:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Eigenvector:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvectors</span><span class="p">)</span>
+
+<span class="c1"># =========================</span>
+<span class="c1"># Gram-Schmidt</span>
+<span class="c1"># =========================</span>
+
+<span class="c1"># Ambil kolom matriks</span>
+<span class="n">a1</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Langkah 1</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">a1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+
+<span class="c1"># Langkah 2</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span> <span class="n">q1</span><span class="p">)</span> <span class="o">*</span> <span class="n">q1</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">a2</span> <span class="o">-</span> <span class="n">proj</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">v2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">q1:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Proyeksi a2 ke q1:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">proj</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">v2:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">q2:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q2</span><span class="p">)</span>
+
+<span class="c1"># Matriks Q</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks Q:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="hasil-akhir">
+<h1>Hasil Akhir<a class="headerlink" href="#hasil-akhir" title="Link to this heading">#</a></h1>
+<section id="eigenvalue">
+<h2>Eigenvalue<a class="headerlink" href="#eigenvalue" title="Link to this heading">#</a></h2>
+<p>[
+\lambda_1 = 3
+]</p>
+<p>[
+\lambda_2 = 1
+]</p>
+</section>
+<hr class="docutils" />
+<section id="eigenvector">
+<h2>Eigenvector<a class="headerlink" href="#eigenvector" title="Link to this heading">#</a></h2>
+<p>[
+v_1=
+\begin{bmatrix}
+1\
+1
+\end{bmatrix}
+]</p>
+<p>[
+v_2=
+\begin{bmatrix}
+1\
+-1
+\end{bmatrix}
+]</p>
+</section>
+<hr class="docutils" />
+<section id="matriks-q-gram-schmidt">
+<h2>Matriks Q Gram-Schmidt<a class="headerlink" href="#matriks-q-gram-schmidt" title="Link to this heading">#</a></h2>
+<p>[
+Q=
+\begin{bmatrix}
+0.8944 &amp; -0.4472 \
+0.4472 &amp; 0.8944
+\end{bmatrix}
+]</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Eigenvalue dan Eigenvector Matriks 2x2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-eigenvalue">1. Mencari Eigenvalue</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-eigenvector">2. Mencari Eigenvector</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-untuk-lambda-3">Eigenvector untuk (\lambda = 3)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-bmatrix-2-3-1-1-2-3-end-bmatrix">[
+\begin{bmatrix}
+2-3 &amp; 1 \
+1 &amp; 2-3
+\end{bmatrix}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector-untuk-lambda-1">Eigenvector untuk (\lambda = 1)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gram-schmidt">3. Gram-Schmidt</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-vector-pertama">Langkah 1: Vector Pertama</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-1-frac-a-1-a-1">[
+q_1=
+\frac{a_1}{||a_1||}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-vector-kedua">Langkah 2: Vector Kedua</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2-cdot-q-1">[
+a_2 \cdot q_1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-2-2-sqrt5">\frac{2+2}{\sqrt5}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2-cdot-q-1-q-1">[
+(a_2 \cdot q_1)q_1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac45-begin-bmatrix-2-1-end-bmatrix">\frac45
+\begin{bmatrix}
+2\
+1
+\end{bmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-2">[
+v_2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-bmatrix-1-2-end-bmatrix">\begin{bmatrix}
+1\
+2
+\end{bmatrix}</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">[</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[
+||v_2||</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sqrt-frac9-25-frac-36-25">\sqrt{
+\frac9{25}+\frac{36}{25}
+}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sqrt-frac-45-25">\sqrt{\frac{45}{25}}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#q-2-frac-v-2-v-2">[
+q_2=
+\frac{v_2}{||v_2||}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code">4. Python Code</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akhir">Hasil Akhir</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalue">Eigenvalue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvector">Eigenvector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-q-gram-schmidt">Matriks Q Gram-Schmidt</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

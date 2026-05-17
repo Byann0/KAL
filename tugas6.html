@@ -189,6 +189,9 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="transformasi_linier.html">Transformasi Linier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -407,7 +410,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-lengkap">CONTOH LENGKAP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-matriks-55-dengan-angka-konkret">Contoh: Matriks 5×5 dengan Angka Konkret</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi">SOLUSI:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi">SOLUSI</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-1-menghitung-det-a">BAGIAN 1: Menghitung det(A)</a><ul class="nav section-nav flex-column">
@@ -418,8 +421,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-2-menghitung-adj-a">BAGIAN 2: Menghitung adj(A)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-perhitungan">Prinsip Perhitungan:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-beberapa-kofaktor">Contoh Beberapa Kofaktor:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-perhitungan">Prinsip Perhitungan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-beberapa-kofaktor">Contoh Beberapa Kofaktor</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-3-menghitung-a1">BAGIAN 3: Menghitung A⁻¹</a><ul class="nav section-nav flex-column">
@@ -427,8 +430,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-penting">Rumus Penting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimasi-jumlah-operasi">Estimasi Jumlah Operasi:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-python-dengan-numpy">Contoh Python dengan NumPy:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimasi-jumlah-operasi">Estimasi Jumlah Operasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-python-dengan-numpy">Contoh Python dengan NumPy</a></li>
 </ul>
 </li>
 </ul>
@@ -447,11 +450,11 @@ document.write(`
 <p>Tugas, join matrix. 5x5
 dikasih contoh &amp; di jelaskan
 buat rumus 5x5</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span> <span class="n">a</span>  <span class="n">b</span>  <span class="n">c</span>  <span class="n">d</span>  <span class="n">e</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="n">f</span>  <span class="n">g</span>  <span class="n">h</span>  <span class="n">i</span>  <span class="n">j</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="n">k</span>  <span class="n">l</span>  <span class="n">m</span>  <span class="n">n</span>  <span class="n">o</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="n">p</span>  <span class="n">q</span>  <span class="n">r</span>  <span class="n">s</span>  <span class="n">t</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="n">u</span>  <span class="n">v</span>  <span class="n">w</span>  <span class="n">x</span>  <span class="n">y</span> <span class="p">]</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A = [ a  b  c  d  e ]
+    [ f  g  h  i  j ]
+    [ k  l  m  n  o ]
+    [ p  q  r  s  t ]
+    [ u  v  w  x  y ]
 </pre></div>
 </div>
 <p>cari rumus adj A
@@ -470,11 +473,11 @@ cari invers matriks A</p>
 <section id="definisi-matriks-55">
 <h2>Definisi Matriks 5×5<a class="headerlink" href="#definisi-matriks-55" title="Link to this heading">#</a></h2>
 <p>Diberikan matriks A berukuran 5×5:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span> <span class="n">a</span>  <span class="n">b</span>  <span class="n">c</span>  <span class="n">d</span>  <span class="n">e</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="n">f</span>  <span class="n">g</span>  <span class="n">h</span>  <span class="n">i</span>  <span class="n">j</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="n">k</span>  <span class="n">l</span>  <span class="n">m</span>  <span class="n">n</span>  <span class="n">o</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="n">p</span>  <span class="n">q</span>  <span class="n">r</span>  <span class="n">s</span>  <span class="n">t</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="n">u</span>  <span class="n">v</span>  <span class="n">w</span>  <span class="n">x</span>  <span class="n">y</span> <span class="p">]</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A = [ a  b  c  d  e ]
+    [ f  g  h  i  j ]
+    [ k  l  m  n  o ]
+    [ p  q  r  s  t ]
+    [ u  v  w  x  y ]
 </pre></div>
 </div>
 </section>
@@ -485,35 +488,35 @@ cari invers matriks A</p>
 <h3>Rumus Umum<a class="headerlink" href="#rumus-umum" title="Link to this heading">#</a></h3>
 <p>Determinan matriks 5×5 dapat dihitung menggunakan <strong>ekspansi kofaktor</strong> pada baris atau kolom tertentu.</p>
 <p><strong>Ekspansi Kofaktor Baris Pertama:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>det(A) = a·C₁₁ + b·C₁₂ + c·C₁₃ + d·C₁₄ + e·C₁₅
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>det(A) = a·C₁₁ + b·C₁₂ + c·C₁₃ + d·C₁₄ + e·C₁₅
 </pre></div>
 </div>
-<p>Di mana C<sub>ij</sub> adalah kofaktor elemen pada baris i dan kolom j:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cᵢⱼ = (-1)^(i+j) · Mᵢⱼ
+<p>Di mana Cij adalah kofaktor elemen pada baris i dan kolom j:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Cᵢⱼ = (-1)^(i+j) · Mᵢⱼ
 
 Mᵢⱼ = determinan matriks minor (matriks 4×4 yang diperoleh 
       dengan menghapus baris i dan kolom j)
 </pre></div>
 </div>
-<p>** Catatan:** Untuk matriks 5×5, kita perlu menghitung determinan matriks 4×4 sebanyak 5 kali. Setiap determinan 4×4 memerlukan 4 determinan 3×3, dan seterusnya. Ini adalah proses yang panjang!</p>
+<p><strong>Catatan:</strong> Untuk matriks 5×5, kita perlu menghitung determinan matriks 4×4 sebanyak 5 kali. Setiap determinan 4×4 memerlukan 4 determinan 3×3, dan seterusnya. Ini adalah proses yang panjang!</p>
 </section>
 <hr class="docutils" />
 <section id="langkah-langkah-perhitungan-determinan">
 <h3>Langkah-langkah Perhitungan Determinan<a class="headerlink" href="#langkah-langkah-perhitungan-determinan" title="Link to this heading">#</a></h3>
-<p><strong>Langkah 1: Pilih Baris/Kolom untuk Ekspansi</strong></p>
+<p>Langkah 1: Pilih Baris/Kolom untuk Ekspansi</p>
 <ul class="simple">
 <li><p>Pilih baris atau kolom yang memiliki banyak angka 0 untuk mempermudah perhitungan</p></li>
 <li><p>Biasanya kita pilih baris pertama</p></li>
 </ul>
-<p><strong>Langkah 2: Hitung Kofaktor</strong></p>
+<p>Langkah 2: Hitung Kofaktor</p>
 <p>Untuk setiap elemen pada baris yang dipilih, hitung kofaktornya dengan:</p>
 <ul class="simple">
 <li><p>Hapus baris dan kolom elemen tersebut</p></li>
 <li><p>Hitung determinan matriks 4×4 yang tersisa</p></li>
 <li><p>Kalikan dengan (-1)^(i+j)</p></li>
 </ul>
-<p><strong>Langkah 3: Jumlahkan</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>det(A) = Σ (elemen × kofaktor)
+<p>Langkah 3: Jumlahkan</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>det(A) = Σ (elemen × kofaktor)
 </pre></div>
 </div>
 </section>
@@ -522,7 +525,7 @@ Mᵢⱼ = determinan matriks minor (matriks 4×4 yang diperoleh
 <section id="matriks-kofaktor">
 <h2>2 Matriks Kofaktor<a class="headerlink" href="#matriks-kofaktor" title="Link to this heading">#</a></h2>
 <p>Matriks kofaktor adalah matriks yang setiap elemennya adalah kofaktor dari matriks A.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Kofaktor(A) = [ C₁₁  C₁₂  C₁₃  C₁₄  C₁₅ ]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Kofaktor(A) = [ C₁₁  C₁₂  C₁₃  C₁₄  C₁₅ ]
               [ C₂₁  C₂₂  C₂₃  C₂₄  C₂₅ ]
               [ C₃₁  C₃₂  C₃₃  C₃₄  C₃₅ ]
               [ C₄₁  C₄₂  C₄₃  C₄₄  C₄₅ ]
@@ -532,11 +535,11 @@ Mᵢⱼ = determinan matriks minor (matriks 4×4 yang diperoleh
 <section id="pola-tanda-kofaktor">
 <h3>Pola Tanda Kofaktor<a class="headerlink" href="#pola-tanda-kofaktor" title="Link to this heading">#</a></h3>
 <p>Pola tanda untuk kofaktor matriks 5×5:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span> <span class="p">]</span>
-<span class="p">[</span> <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span> <span class="p">]</span>
-<span class="p">[</span> <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span> <span class="p">]</span>
-<span class="p">[</span> <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span> <span class="p">]</span>
-<span class="p">[</span> <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">+</span> <span class="p">]</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[ +  -  +  -  + ]
+[ -  +  -  +  - ]
+[ +  -  +  -  + ]
+[ -  +  -  +  - ]
+[ +  -  +  -  + ]
 </pre></div>
 </div>
 <p>Tanda ini berasal dari (-1)^(i+j) untuk setiap posisi (i,j).</p>
@@ -548,11 +551,11 @@ Mᵢⱼ = determinan matriks minor (matriks 4×4 yang diperoleh
 <section id="definisi">
 <h3>Definisi<a class="headerlink" href="#definisi" title="Link to this heading">#</a></h3>
 <p>Adjoin matriks A adalah <strong>transpose dari matriks kofaktor</strong>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adj</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="n">Kofaktor</span><span class="p">(</span><span class="n">A</span><span class="p">)]</span><span class="n">ᵀ</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>adj(A) = [Kofaktor(A)]ᵀ
 </pre></div>
 </div>
 <p><strong>Bentuk Adjoin:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>adj(A) = [ C₁₁  C₂₁  C₃₁  C₄₁  C₅₁ ]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>adj(A) = [ C₁₁  C₂₁  C₃₁  C₄₁  C₅₁ ]
          [ C₁₂  C₂₂  C₃₂  C₄₂  C₅₂ ]
          [ C₁₃  C₂₃  C₃₃  C₄₃  C₅₃ ]
          [ C₁₄  C₂₄  C₃₄  C₄₄  C₅₄ ]
@@ -563,16 +566,16 @@ Mᵢⱼ = determinan matriks minor (matriks 4×4 yang diperoleh
 <hr class="docutils" />
 <section id="mencari-adj-a">
 <h3>Mencari adj(A)<a class="headerlink" href="#mencari-adj-a" title="Link to this heading">#</a></h3>
-<p><strong>Langkah 1: Hitung Semua Kofaktor</strong></p>
+<p>Langkah 1: Hitung Semua Kofaktor</p>
 <ul class="simple">
 <li><p>Hitung Cᵢⱼ untuk setiap posisi (i,j) dari 1 sampai 5</p></li>
 <li><p>Total ada <strong>25 kofaktor</strong>!</p></li>
 </ul>
-<p><strong>Langkah 2: Susun Matriks Kofaktor</strong></p>
+<p>Langkah 2: Susun Matriks Kofaktor</p>
 <ul class="simple">
 <li><p>Letakkan semua kofaktor pada posisinya masing-masing</p></li>
 </ul>
-<p><strong>Langkah 3: Transpose</strong></p>
+<p>Langkah 3: Transpose</p>
 <ul class="simple">
 <li><p>Tukar baris menjadi kolom</p></li>
 <li><p>Elemen Cᵢⱼ menjadi Cⱼᵢ</p></li>
@@ -585,39 +588,39 @@ Mᵢⱼ = determinan matriks minor (matriks 4×4 yang diperoleh
 <section id="rumus">
 <h3>Rumus<a class="headerlink" href="#rumus" title="Link to this heading">#</a></h3>
 <p>Invers matriks A dapat dihitung dengan rumus:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A⁻¹ = (1/det(A)) × adj(A)
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A⁻¹ = (1/det(A)) × adj(A)
 </pre></div>
 </div>
-<p>** SYARAT:** Matriks A hanya memiliki invers jika <strong>det(A) ≠ 0</strong></p>
+<p><strong>SYARAT:</strong> Matriks A hanya memiliki invers jika <strong>det(A) ≠ 0</strong></p>
 <p>Jika det(A) = 0, matriks disebut <strong>singular</strong> (tidak memiliki invers).</p>
 </section>
 <hr class="docutils" />
 <section id="mencari-a1">
 <h3>Mencari A⁻¹<a class="headerlink" href="#mencari-a1" title="Link to this heading">#</a></h3>
-<p><strong>Langkah 1: Hitung det(A)</strong></p>
+<p>Langkah 1: Hitung det(A)</p>
 <ul class="simple">
 <li><p>Gunakan ekspansi kofaktor untuk menghitung determinan</p></li>
 </ul>
-<p><strong>Langkah 2: Periksa det(A)</strong></p>
+<p>Langkah 2: Periksa det(A)</p>
 <ul class="simple">
 <li><p>Jika det(A) = 0 → matriks tidak memiliki invers (singular)</p></li>
 <li><p>Jika det(A) ≠ 0 → lanjutkan ke langkah berikutnya</p></li>
 </ul>
-<p><strong>Langkah 3: Hitung adj(A)</strong></p>
+<p>Langkah 3: Hitung adj(A)</p>
 <ul class="simple">
 <li><p>Hitung semua 25 kofaktor</p></li>
 <li><p>Susun matriks kofaktor</p></li>
 <li><p>Transpose untuk mendapat adj(A)</p></li>
 </ul>
-<p><strong>Langkah 4: Hitung Invers</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A⁻¹ = (1/det(A)) × adj(A)
+<p>Langkah 4: Hitung Invers</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A⁻¹ = (1/det(A)) × adj(A)
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Kalikan setiap elemen adj(A) dengan 1/det(A)</p></li>
 </ul>
-<p><strong>Langkah 5: Verifikasi</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A × A⁻¹ = I₅ (Matriks Identitas 5×5)
+<p>Langkah 5: Verifikasi</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A × A⁻¹ = I₅ (Matriks Identitas 5×5)
 </pre></div>
 </div>
 </section>
@@ -628,34 +631,34 @@ Mᵢⱼ = determinan matriks minor (matriks 4×4 yang diperoleh
 <section id="contoh-matriks-55-dengan-angka-konkret">
 <h3>Contoh: Matriks 5×5 dengan Angka Konkret<a class="headerlink" href="#contoh-matriks-55-dengan-angka-konkret" title="Link to this heading">#</a></h3>
 <p>Diberikan matriks:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2</span>   <span class="mi">1</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">1</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="mi">1</span>   <span class="mi">3</span>   <span class="mi">1</span>   <span class="mi">0</span>   <span class="mi">0</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">1</span>   <span class="mi">0</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">3</span>   <span class="mi">1</span> <span class="p">]</span>
-    <span class="p">[</span> <span class="mi">1</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span> <span class="p">]</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A = [ 2   1   0   0   1 ]
+    [ 1   3   1   0   0 ]
+    [ 0   1   2   1   0 ]
+    [ 0   0   1   3   1 ]
+    [ 1   0   0   1   2 ]
 </pre></div>
 </div>
 </section>
 <hr class="docutils" />
 <section id="solusi">
-<h3>SOLUSI:<a class="headerlink" href="#solusi" title="Link to this heading">#</a></h3>
+<h3>SOLUSI<a class="headerlink" href="#solusi" title="Link to this heading">#</a></h3>
 </section>
 </section>
 <section id="bagian-1-menghitung-det-a">
 <h2>BAGIAN 1: Menghitung det(A)<a class="headerlink" href="#bagian-1-menghitung-det-a" title="Link to this heading">#</a></h2>
 <p>Kita gunakan ekspansi kofaktor pada baris pertama:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>det(A) = 2·C₁₁ + 1·C₁₂ + 0·C₁₃ + 0·C₁₄ + 1·C₁₅
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>det(A) = 2·C₁₁ + 1·C₁₂ + 0·C₁₃ + 0·C₁₄ + 1·C₁₅
 </pre></div>
 </div>
 <p>Karena ada banyak angka 0, kita hanya perlu menghitung 3 kofaktor.</p>
 <hr class="docutils" />
 <section id="menghitung-c11">
 <h3>Menghitung C₁₁<a class="headerlink" href="#menghitung-c11" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C₁₁ = (-1)^(1+1) × M₁₁ = (+1) × M₁₁
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>C₁₁ = (-1)^(1+1) × M₁₁ = (+1) × M₁₁
 </pre></div>
 </div>
 <p>M₁₁ adalah determinan matriks 4×4 setelah menghapus baris 1 dan kolom 1:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>M₁₁ = det[ 3  1  0  0 ]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>M₁₁ = det[ 3  1  0  0 ]
          [ 1  2  1  0 ]
          [ 0  1  3  1 ]
          [ 0  0  1  2 ]
@@ -663,7 +666,7 @@ Mᵢⱼ = determinan matriks minor (matriks 4×4 yang diperoleh
 </div>
 <p><strong>Perhitungan M₁₁:</strong></p>
 <p>Ekspansi pada baris pertama:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>M₁₁ = 3·det[ 2  1  0 ]  - 1·det[ 1  1  0 ]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>M₁₁ = 3·det[ 2  1  0 ]  - 1·det[ 1  1  0 ]
            [ 1  3  1 ]         [ 0  3  1 ]
            [ 0  1  2 ]         [ 0  1  2 ]
 
@@ -687,46 +690,46 @@ M₁₁ = 3(8) - 1(5) = 24 - 5 = 19
 <hr class="docutils" />
 <section id="menghitung-c12">
 <h3>Menghitung C₁₂<a class="headerlink" href="#menghitung-c12" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C₁₂ = (-1)^(1+2) × M₁₂ = (-1) × M₁₂
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>C₁₂ = (-1)^(1+2) × M₁₂ = (-1) × M₁₂
 </pre></div>
 </div>
 <p>M₁₂ adalah determinan matriks 4×4 setelah menghapus baris 1 dan kolom 2:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>M₁₂ = det[ 1  1  0  0 ]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>M₁₂ = det[ 1  1  0  0 ]
          [ 0  2  1  0 ]
          [ 0  1  3  1 ]
          [ 1  0  1  2 ]
 </pre></div>
 </div>
 <p>Dengan ekspansi lebih lanjut:</p>
-<p><strong>M₁₂ = 8</strong></p>
+<p>M₁₂ = 8</p>
 <p>Maka: <strong>C₁₂ = -8</strong></p>
 </section>
 <hr class="docutils" />
 <section id="menghitung-c15">
 <h3>Menghitung C₁₅<a class="headerlink" href="#menghitung-c15" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C₁₅ = (-1)^(1+5) × M₁₅ = (+1) × M₁₅
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>C₁₅ = (-1)^(1+5) × M₁₅ = (+1) × M₁₅
 </pre></div>
 </div>
 <p>M₁₅ adalah determinan matriks 4×4 setelah menghapus baris 1 dan kolom 5:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>M₁₅ = det[ 1  3  1  0 ]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>M₁₅ = det[ 1  3  1  0 ]
          [ 0  1  2  1 ]
          [ 0  0  1  3 ]
          [ 1  0  0  1 ]
 </pre></div>
 </div>
 <p>Dengan ekspansi lebih lanjut:</p>
-<p><strong>M₁₅ = -2</strong></p>
+<p>M₁₅ = -2</p>
 <p>Maka: <strong>C₁₅ = -2</strong></p>
 </section>
 <hr class="docutils" />
 <section id="hasil-determinan">
 <h3>Hasil Determinan<a class="headerlink" href="#hasil-determinan" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">-</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">2</span>
-<span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>det(A) = 2(15) + 1(-8) + 0 + 0 + 1(-2)
+det(A) = 30 - 8 - 2
+det(A) = 20
 </pre></div>
 </div>
-<p><strong>det(A) = 20</strong></p>
+<p>det(A) = 20</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -735,7 +738,7 @@ M₁₁ = 3(8) - 1(5) = 24 - 5 = 19
 <p>Untuk menghitung adj(A), kita perlu menghitung <strong>semua 25 kofaktor</strong>.</p>
 <p>Ini adalah proses yang sangat panjang untuk matriks 5×5.</p>
 <section id="prinsip-perhitungan">
-<h3>Prinsip Perhitungan:<a class="headerlink" href="#prinsip-perhitungan" title="Link to this heading">#</a></h3>
+<h3>Prinsip Perhitungan<a class="headerlink" href="#prinsip-perhitungan" title="Link to this heading">#</a></h3>
 <p>Setiap kofaktor Cᵢⱼ dihitung dengan:</p>
 <ol class="arabic simple">
 <li><p>Hapus baris i dan kolom j dari matriks A</p></li>
@@ -744,7 +747,7 @@ M₁₁ = 3(8) - 1(5) = 24 - 5 = 19
 </ol>
 </section>
 <section id="contoh-beberapa-kofaktor">
-<h3>Contoh Beberapa Kofaktor:<a class="headerlink" href="#contoh-beberapa-kofaktor" title="Link to this heading">#</a></h3>
+<h3>Contoh Beberapa Kofaktor<a class="headerlink" href="#contoh-beberapa-kofaktor" title="Link to this heading">#</a></h3>
 <p><strong>Kofaktor Baris Pertama:</strong></p>
 <ul class="simple">
 <li><p>C₁₁ = 15 (sudah dihitung)</p></li>
@@ -761,7 +764,7 @@ M₁₁ = 3(8) - 1(5) = 24 - 5 = 19
 </ul>
 <p><strong>Catatan:</strong> Menghitung semua 25 kofaktor memerlukan 25 perhitungan determinan 4×4, di mana setiap determinan 4×4 memerlukan beberapa perhitungan determinan 3×3. Total bisa ratusan operasi!</p>
 <p>Setelah mendapat semua kofaktor, susun menjadi matriks kofaktor:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Kofaktor(A) = [ C₁₁  C₁₂  C₁₃  C₁₄  C₁₅ ]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Kofaktor(A) = [ C₁₁  C₁₂  C₁₃  C₁₄  C₁₅ ]
               [ C₂₁  C₂₂  C₂₃  C₂₄  C₂₅ ]
               [ C₃₁  C₃₂  C₃₃  C₃₄  C₃₅ ]
               [ C₄₁  C₄₂  C₄₃  C₄₄  C₄₅ ]
@@ -769,7 +772,7 @@ M₁₁ = 3(8) - 1(5) = 24 - 5 = 19
 </pre></div>
 </div>
 <p>Lalu transpose untuk mendapat adj(A):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>adj(A) = [Kofaktor(A)]ᵀ = [ C₁₁  C₂₁  C₃₁  C₄₁  C₅₁ ]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>adj(A) = [Kofaktor(A)]ᵀ = [ C₁₁  C₂₁  C₃₁  C₄₁  C₅₁ ]
                           [ C₁₂  C₂₂  C₃₂  C₄₂  C₅₂ ]
                           [ C₁₃  C₂₃  C₃₃  C₄₃  C₅₃ ]
                           [ C₁₄  C₂₄  C₃₄  C₄₄  C₅₄ ]
@@ -782,7 +785,7 @@ M₁₁ = 3(8) - 1(5) = 24 - 5 = 19
 <section id="bagian-3-menghitung-a1">
 <h2>BAGIAN 3: Menghitung A⁻¹<a class="headerlink" href="#bagian-3-menghitung-a1" title="Link to this heading">#</a></h2>
 <p>Setelah mendapat det(A) = 20 dan adj(A), kita hitung:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A⁻¹ = (1/det(A)) × adj(A)
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A⁻¹ = (1/det(A)) × adj(A)
 A⁻¹ = (1/20) × adj(A)
 </pre></div>
 </div>
@@ -793,11 +796,11 @@ Jika elemen (1,1) dari adj(A) adalah 15, maka elemen (1,1) dari A⁻¹ adalah 15
 <section id="verifikasi">
 <h3>Verifikasi<a class="headerlink" href="#verifikasi" title="Link to this heading">#</a></h3>
 <p>Untuk memastikan hasil benar:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A × A⁻¹ = I₅
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A × A⁻¹ = I₅
 </pre></div>
 </div>
 <p>Di mana I₅ adalah matriks identitas 5×5:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>I₅ = [ 1  0  0  0  0 ]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>I₅ = [ 1  0  0  0  0 ]
      [ 0  1  0  0  0 ]
      [ 0  0  1  0  0 ]
      [ 0  0  0  1  0 ]
@@ -836,8 +839,8 @@ Jika elemen (1,1) dari adj(A) adalah 15, maka elemen (1,1) dari A⁻¹ adalah 15
 </div>
 <hr class="docutils" />
 <section id="estimasi-jumlah-operasi">
-<h3>Estimasi Jumlah Operasi:<a class="headerlink" href="#estimasi-jumlah-operasi" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Determinan 5×5:
+<h3>Estimasi Jumlah Operasi<a class="headerlink" href="#estimasi-jumlah-operasi" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Determinan 5×5:
 5 det(4×4) 
 → 5 × 4 det(3×3) = 20 det(3×3)
 → 20 × 3 det(2×2) = 60 det(2×2)
@@ -851,7 +854,7 @@ Adjoin 5×5:
 </section>
 <hr class="docutils" />
 <section id="contoh-python-dengan-numpy">
-<h3>Contoh Python dengan NumPy:<a class="headerlink" href="#contoh-python-dengan-numpy" title="Link to this heading">#</a></h3>
+<h3>Contoh Python dengan NumPy<a class="headerlink" href="#contoh-python-dengan-numpy" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Definisikan matriks</span>
@@ -973,7 +976,7 @@ Adjoin 5×5:
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-lengkap">CONTOH LENGKAP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-matriks-55-dengan-angka-konkret">Contoh: Matriks 5×5 dengan Angka Konkret</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi">SOLUSI:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi">SOLUSI</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-1-menghitung-det-a">BAGIAN 1: Menghitung det(A)</a><ul class="nav section-nav flex-column">
@@ -984,8 +987,8 @@ Adjoin 5×5:
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-2-menghitung-adj-a">BAGIAN 2: Menghitung adj(A)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-perhitungan">Prinsip Perhitungan:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-beberapa-kofaktor">Contoh Beberapa Kofaktor:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-perhitungan">Prinsip Perhitungan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-beberapa-kofaktor">Contoh Beberapa Kofaktor</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-3-menghitung-a1">BAGIAN 3: Menghitung A⁻¹</a><ul class="nav section-nav flex-column">
@@ -993,8 +996,8 @@ Adjoin 5×5:
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-penting">Rumus Penting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimasi-jumlah-operasi">Estimasi Jumlah Operasi:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-python-dengan-numpy">Contoh Python dengan NumPy:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimasi-jumlah-operasi">Estimasi Jumlah Operasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-python-dengan-numpy">Contoh Python dengan NumPy</a></li>
 </ul>
 </li>
 </ul>
