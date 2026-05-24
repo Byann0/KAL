@@ -16,3 +16,4 @@ chapters:
 - file : transformasi_linier
   sections:
   - file : eigenvalue_vektor
+  - file : eigenfaces

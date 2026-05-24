@@ -1,0 +1,804 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pengenalan Wajah: Eigenfaces Berbasis SVD &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eigenfaces';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Eigenvalue dan Eigenvector" href="eigenvalue_vektor.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    My Notebook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tugas4.html">Tugas 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tugas5.html">Tugas 5</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="transformasi_linier.html">Transformasi Linier</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eigenvalue_vektor.html">Eigenvalue dan Eigenvector</a></li>
+
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pengenalan Wajah: Eigenfaces Berbasis SVD</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feigenfaces.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/eigenfaces.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pengenalan Wajah: Eigenfaces Berbasis SVD</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teori-svd-standar-aljabar-linear">1. Teori SVD (Standar Aljabar Linear)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-kerja-matematis-bedah-potongan-kode">2. Alur Kerja Matematis &amp; Bedah Potongan Kode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstruksi-matriks-data-wajah-a">1 Konstruksi Matriks Data Wajah (<span class="math notranslate nohighlight">\(A\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentralisasi-data-mean-subtraction">2 Sentralisasi Data (Mean Subtraction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-utama-lewat-svd-dan-trunkasi-k-50">3 Ekstraksi Fitur Utama lewat SVD dan Trunkasi (<span class="math notranslate nohighlight">\(k=50\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proyeksi-dan-penyimpanan-vektor-bobot-omega">4 Proyeksi dan Penyimpanan Vektor Bobot (<span class="math notranslate nohighlight">\(\Omega\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-wajah-baru-menggunakan-euclidean-distance">5 Identifikasi Wajah Baru Menggunakan Euclidean Distance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-interpretasi-grafik-grafis">3. Hasil Interpretasi Grafik Grafis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-program">4. Kode Program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-output-program">Hasil Output Program</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pengenalan-wajah-eigenfaces-berbasis-svd">
+<h1>Pengenalan Wajah: Eigenfaces Berbasis SVD<a class="headerlink" href="#pengenalan-wajah-eigenfaces-berbasis-svd" title="Link to this heading">#</a></h1>
+<p>Alur kerja matematis dan implementasi terprogram dari algoritma Eigenfaces menggunakan metode dekomposisi matriks Singular Value Decomposition (SVD) untuk mengenali wajah dari dataset berisi 410 foto.</p>
+<section id="teori-svd-standar-aljabar-linear">
+<h2>1. Teori SVD (Standar Aljabar Linear)<a class="headerlink" href="#teori-svd-standar-aljabar-linear" title="Link to this heading">#</a></h2>
+<p>Berdasarkan teori aljabar linear, setiap matriks data <span class="math notranslate nohighlight">\(A\)</span> berukuran <span class="math notranslate nohighlight">\(M \times N\)</span> dapat difaktorkan menjadi perkalian tiga matriks terpisah:</p>
+<div class="math notranslate nohighlight">
+\[A = U \Sigma V^T\]</div>
+<p>Dalam proyek pengenalan wajah ini, variabel matriks tersebut memiliki representasi fisik sebagai berikut:</p>
+<ul class="simple">
+<li><p>Matriks <span class="math notranslate nohighlight">\(A\)</span> (Matriks Data Terpusat):
+Berukuran <span class="math notranslate nohighlight">\(4096 \times 410\)</span>. Setiap kolom merepresentasikan 1 foto wajah yang telah dikonversi menjadi vektor kolom dimensi tinggi dan dikurangi wajah rata-rata.</p></li>
+<li><p>Matriks <span class="math notranslate nohighlight">\(U\)</span> (Left Singular Vectors / Eigenfaces): Berukuran <span class="math notranslate nohighlight">\(4096 \times 410\)</span> (pada Economy SVD). Kolom-kolom di dalam matriks ini adalah vektor eigen dari matriks kovarians data yang menyimpan arah variasi geometri wajah terbesar (mata, hidung, bibir).</p></li>
+<li><p>Matriks <span class="math notranslate nohighlight">\(\Sigma\)</span> (Singular Values): Matriks diagonal berukuran <span class="math notranslate nohighlight">\(410 \times 410\)</span> yang menyimpan tingkat kepentingan/magnitudo informasi dari setiap Eigenface, terurut dari nilai terbesar hingga terkecil.</p></li>
+<li><p>Matriks <span class="math notranslate nohighlight">\(V^T\)</span> (Right Singular Vectors): Matriks berukuran <span class="math notranslate nohighlight">\(410 \times 410\)</span> yang menyimpan koefisien relasi atau koordinat gambar asli di dalam database.</p></li>
+</ul>
+</section>
+<section id="alur-kerja-matematis-bedah-potongan-kode">
+<h2>2. Alur Kerja Matematis &amp; Bedah Potongan Kode<a class="headerlink" href="#alur-kerja-matematis-bedah-potongan-kode" title="Link to this heading">#</a></h2>
+<section id="konstruksi-matriks-data-wajah-a">
+<h3>1 Konstruksi Matriks Data Wajah (<span class="math notranslate nohighlight">\(A\)</span>)<a class="headerlink" href="#konstruksi-matriks-data-wajah-a" title="Link to this heading">#</a></h3>
+<p>Setiap gambar 2D berukuran <span class="math notranslate nohighlight">\(64 \times 64\)</span> piksel diubah menjadi vektor baris/kolom 1D (flattening) sepanjang 4096 piksel (<span class="math notranslate nohighlight">\(M = 4096\)</span>). Seluruh 410 foto (<span class="math notranslate nohighlight">\(N = 410\)</span>) digabungkan secara berdampingan menjadi satu matriks raksasa.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># .flatten() mengubah matriks 2D (64x64) menjadi array 1D sepanjang 4096</span>
+<span class="n">matriks_wajah</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img_resized</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+<span class="c1"># Melakukan Transpose (.T) agar ukuran matriks menjadi (Piksel x Jumlah_Foto) -&gt; (4096 x 410)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">matriks_wajah</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</section>
+<section id="sentralisasi-data-mean-subtraction">
+<h3>2 Sentralisasi Data (Mean Subtraction)<a class="headerlink" href="#sentralisasi-data-mean-subtraction" title="Link to this heading">#</a></h3>
+<p>Untuk membuang kemiripan latar belakang ruangan atau pencahayaan konstan, sistem menghitung Wajah Rata-rata (<span class="math notranslate nohighlight">\(\Psi\)</span>) dari seluruh foto, lalu mengurangi setiap foto asli dengan nilai tersebut untuk menyisakan fitur unik wajah.</p>
+<div class="math notranslate nohighlight">
+\[\Phi_i = \Gamma_i - \Psi\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># axis=1 menghitung rata-rata nilai piksel secara horizontal melewati 410 foto</span>
+<span class="n">wajah_rata_rata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">A_terpusat</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">wajah_rata_rata</span>
+</pre></div>
+</div>
+</section>
+<section id="ekstraksi-fitur-utama-lewat-svd-dan-trunkasi-k-50">
+<h3>3 Ekstraksi Fitur Utama lewat SVD dan Trunkasi (<span class="math notranslate nohighlight">\(k=50\)</span>)<a class="headerlink" href="#ekstraksi-fitur-utama-lewat-svd-dan-trunkasi-k-50" title="Link to this heading">#</a></h3>
+<p>Kita menggunakan Economy SVD (full_matrices=False) agar komputasi efisien. Mengingat nilai singular pada matriks <span class="math notranslate nohighlight">\(\Sigma\)</span> sudah terurut, kita memotong data dengan hanya mengambil <span class="math notranslate nohighlight">\(k = 50\)</span> kolom pertama dari matriks <span class="math notranslate nohighlight">\(U\)</span> untuk mereduksi dimensi data dari 4096 piksel menjadi hanya 50 fitur utama.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung faktorisasi matriks</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A_terpusat</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Mengambil k komponen utama (Trunkasi Subspace)</span>
+<span class="n">eigenfaces</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">k_komponen</span><span class="p">]</span>  <span class="c1"># Menghasilkan matriks ukuran (4096 x 50)</span>
+</pre></div>
+</div>
+</section>
+<section id="proyeksi-dan-penyimpanan-vektor-bobot-omega">
+<h3>4 Proyeksi dan Penyimpanan Vektor Bobot (<span class="math notranslate nohighlight">\(\Omega\)</span>)<a class="headerlink" href="#proyeksi-dan-penyimpanan-vektor-bobot-omega" title="Link to this heading">#</a></h3>
+<p>Seluruh wajah terpusat di database diproyeksikan ke dalam ruang eigen dimensi rendah (<span class="math notranslate nohighlight">\(U_k\)</span>) untuk mendapatkan koordinat ringkasnya masing-masing.</p>
+<div class="math notranslate nohighlight">
+\[\Omega = U_k^T \cdot A_{\text{terpusat}}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengalikan transpose Eigenfaces dengan Matriks Terpusat</span>
+<span class="n">bobot_training</span> <span class="o">=</span> <span class="n">eigenfaces</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A_terpusat</span>  <span class="c1"># Menghasilkan matriks ukuran (50 x 410)</span>
+</pre></div>
+</div>
+</section>
+<section id="identifikasi-wajah-baru-menggunakan-euclidean-distance">
+<h3>5 Identifikasi Wajah Baru Menggunakan Euclidean Distance<a class="headerlink" href="#identifikasi-wajah-baru-menggunakan-euclidean-distance" title="Link to this heading">#</a></h3>
+<p>Ketika ada file test_wajah.jpg masuk, gambar tersebut diproses ke dalam format yang sama, diproyeksikan ke ruang eigen menjadi koordinat bobot_baru (<span class="math notranslate nohighlight">\(50 \times 1\)</span>), lalu dihitung jarak geometris L2-Normnya terhadap 410 data di database.</p>
+<div class="math notranslate nohighlight">
+\[\epsilon = \sqrt{\sum_{j=1}^{50} (\omega_{\text{baru}, j} - \omega_{\text{database}, j})^2}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung Euclidean Distance antara bobot baru dengan seluruh kolom database</span>
+<span class="n">jarak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">bobot_baru</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bobot_training</span><span class="p">[:,</span> <span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">indeks_terdekat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">jarak_list</span><span class="p">)</span> <span class="c1"># Mencari jarak paling minimum/mirip</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="hasil-interpretasi-grafik-grafis">
+<h2>3. Hasil Interpretasi Grafik Grafis<a class="headerlink" href="#hasil-interpretasi-grafik-grafis" title="Link to this heading">#</a></h2>
+<p>A. Jendela Visualisasi Eigenfaces (Ghost Wajah)</p>
+<p>Ketika fungsi visualisasikan_eigenfaces() dijalankan, vektor eigen kolom pada matriks <span class="math notranslate nohighlight">\(U\)</span> dipetakan kembali ke bentuk spasialnya.</p>
+<ul class="simple">
+<li><p>Eigenface 1, 2, dan 3: Menghasilkan visualisasi wajah abstrak kabur yang dominan menangkap variasi arah jatuhnya pencahayaan (kontras bayangan kiri, kanan, atau atas).</p></li>
+<li><p>Eigenface 4 hingga 10: Mulai mendeteksi fitur pembentuk wajah secara spesifik seperti struktur tulang rahang, bentuk bayangan garis bibir, posisi lengkungan alis, dan lebar cuping hidung.</p></li>
+</ul>
+<p>B. Jendela Scree Plot (Retensi Energi Singular)</p>
+<p>Melalui fungsi plot_retensi_energi(), nilai kuadrat dari komponen diagonal <span class="math notranslate nohighlight">\(\Sigma\)</span> dijumlahkan secara akumulatif.</p>
+<ul class="simple">
+<li><p>Kurva melonjak tajam pada nilai <span class="math notranslate nohighlight">\(k\)</span> awal dan melandai di akhir, membuktikan bahwa variasi terbesar data langsung terkonsentrasi di komponen-komponen awal.</p></li>
+<li><p>Titik koordinat penanda merah menunjukkan bahwa dengan nilai <span class="math notranslate nohighlight">\(k = 50\)</span>, sistem berhasil mempertahankan sekitar 85% hingga 95% total informasi varians penting dari seluruh gambar asli, sementara sisa dimensi yang dibuang hanyalah noise frekuensi tinggi yang tidak berdampak signifikan pada proses pengenalan wajah.</p></li>
+</ul>
+</section>
+<section id="kode-program">
+<h2>4. Kode Program<a class="headerlink" href="#kode-program" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">EigenfaceRecognizer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span> <span class="n">k_komponen</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">=</span> <span class="n">target_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">k_komponen</span> <span class="o">=</span> <span class="n">k_komponen</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wajah_rata_rata</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eigenfaces</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bobot_training</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_wajah</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">latih_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">folder_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Memulai Tahap Training ===&quot;</span><span class="p">)</span>
+        <span class="n">matriks_wajah</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># 1. Membaca seluruh 410 foto dari folder</span>
+        <span class="n">daftar_file</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;.png&#39;</span><span class="p">))]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">daftar_file</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tidak ada foto berformat gambar ditemukan di folder &#39;</span><span class="si">{</span><span class="n">folder_path</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            
+        <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">daftar_file</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+            <span class="n">img_resized</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">)</span>
+            
+            <span class="c1"># Ubah jadi vektor 1D dan masukkan ke list</span>
+            <span class="n">matriks_wajah</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img_resized</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">label_wajah</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="c1"># Menyimpan nama file sebagai identitas</span>
+            
+        <span class="c1"># Bentuk Matriks Data A (Ukuran: Piksel x Jumlah_Foto)</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">matriks_wajah</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matriks Data Wajah (A) berhasil dibentuk dengan ukuran: </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># 2. Sentralisasi Data (Mean Subtraction)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wajah_rata_rata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">A_terpusat</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">wajah_rata_rata</span>
+        
+        <span class="c1"># 3. Hitung SVD sesuai teori matematika</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menghitung Singular Value Decomposition (SVD)...&quot;</span><span class="p">)</span>
+        <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A_terpusat</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">S</span> <span class="o">=</span> <span class="n">S</span>
+        
+        <span class="c1"># 4. Ambil k-Eigenfaces terbesar untuk reduksi dimensi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eigenfaces</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">k_komponen</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eigenspace (Eigenfaces) berhasil dibentuk dengan ukuran: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenfaces</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># 5. Proyeksikan data training ke Eigenspace untuk mendapat vektor bobot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bobot_training</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenfaces</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A_terpusat</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model berhasil dilatih dan vektor bobot disimpan.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kenali_wajah_baru</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path_wajah_baru</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenfaces</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Model belum dilatih! Jalankan &#39;latih_model()&#39; terlebih dahulu.&quot;</span><span class="p">)</span>
+            
+        <span class="c1"># 1. Baca dan preprocess wajah baru</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">path_wajah_baru</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+        <span class="n">img_resized</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">)</span>
+        <span class="n">vektor_baru</span> <span class="o">=</span> <span class="n">img_resized</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Jadikan vektor kolom</span>
+        
+        <span class="c1"># 2. Sentralisasi wajah baru terhadap wajah rata-rata training</span>
+        <span class="n">vektor_terpusat</span> <span class="o">=</span> <span class="n">vektor_baru</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">wajah_rata_rata</span>
+        
+        <span class="c1"># 3. Proyeksikan ke Eigenspace untuk mendapatkan vektor bobot baru</span>
+        <span class="n">bobot_baru</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenfaces</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">vektor_terpusat</span>
+        
+        <span class="c1"># 4. Hitung Euclidean Distance dengan seluruh 410 data training</span>
+        <span class="n">jarak_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bobot_training</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">jarak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">bobot_baru</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bobot_training</span><span class="p">[:,</span> <span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">jarak_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jarak</span><span class="p">)</span>
+            
+        <span class="c1"># 5. Cari indeks dengan jarak terpendek (paling mirip)</span>
+        <span class="n">indeks_terdekat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">jarak_list</span><span class="p">)</span>
+        <span class="n">jarak_terdekat</span> <span class="o">=</span> <span class="n">jarak_list</span><span class="p">[</span><span class="n">indeks_terdekat</span><span class="p">]</span>
+        <span class="n">nama_orang_mirip</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_wajah</span><span class="p">[</span><span class="n">indeks_terdekat</span><span class="p">]</span>
+        
+        <span class="k">return</span> <span class="n">nama_orang_mirip</span><span class="p">,</span> <span class="n">jarak_terdekat</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">visualisasikan_eigenfaces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jumlah_tampil</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenfaces</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[-] Model belum dilatih!&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[*] Menampilkan </span><span class="si">{</span><span class="n">jumlah_tampil</span><span class="si">}</span><span class="s2"> Eigenfaces pertama...&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">jumlah_tampil</span><span class="p">):</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="c1"># Reshape kembali dari vektor 1D (4096) ke matriks 2D (64x64)</span>
+            <span class="n">komponen_wajah</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenfaces</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">)</span>
+            
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">komponen_wajah</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eigenface </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+            
+        <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Visualisasi Basis Subspace (Eigenfaces)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_retensi_energi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">S</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[-] Data Nilai Singular tidak ditemukan!&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        
+        <span class="c1"># Hitung varians / energi kumulatif berdasarkan nilai kuadrat singular values</span>
+        <span class="n">energi_total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">S</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">energi_kumulatif</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">S</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">energi_total</span> <span class="o">*</span> <span class="mi">100</span>
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+        <span class="c1"># Plot garis energi kumulatif</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">energi_kumulatif</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">energi_kumulatif</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        
+        <span class="c1"># Beri tanda titik merah pada batas k komponen yang kita pilih (k=50)</span>
+        <span class="n">persen_terpilih</span> <span class="o">=</span> <span class="n">energi_kumulatif</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">k_komponen</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">k_komponen</span><span class="p">,</span> <span class="n">persen_terpilih</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">persen_terpilih</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">k_komponen</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scree Plot: Retensi Energi Kumulatif Nilai Singular&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Jumlah Komponen Utama (k)&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Persentase Informasi / Energi Kumulatif (%)&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">k_komponen</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">persen_terpilih</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">k_komponen</span><span class="si">}</span><span class="se">\n</span><span class="s2">Info = </span><span class="si">{</span><span class="n">persen_terpilih</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># =====================================================================</span>
+<span class="c1"># CARA PENGGUNAAN SKRIP</span>
+<span class="c1"># =====================================================================</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">pengenal</span> <span class="o">=</span> <span class="n">EigenfaceRecognizer</span><span class="p">(</span><span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span> <span class="n">k_komponen</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">folder_dataset</span> <span class="o">=</span> <span class="s2">&quot;eigenfaces&quot;</span> 
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># 1. Jalankan training data</span>
+        <span class="n">pengenal</span><span class="o">.</span><span class="n">latih_model</span><span class="p">(</span><span class="n">folder_dataset</span><span class="p">)</span>
+        
+        <span class="c1"># === PLAY VISUALISASI GRAFIS ===</span>
+        <span class="n">pengenal</span><span class="o">.</span><span class="n">visualisasikan_eigenfaces</span><span class="p">(</span><span class="n">jumlah_tampil</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">pengenal</span><span class="o">.</span><span class="n">plot_retensi_energi</span><span class="p">()</span>
+        <span class="c1"># ===============================</span>
+        
+        <span class="c1"># 2. Jalankan pengujian wajah baru</span>
+        <span class="n">foto_test</span> <span class="o">=</span> <span class="s2">&quot;img/test_wajah.jpg&quot;</span> 
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">foto_test</span><span class="p">):</span>
+            <span class="n">nama_hasil</span><span class="p">,</span> <span class="n">nilai_jarak</span> <span class="o">=</span> <span class="n">pengenal</span><span class="o">.</span><span class="n">kenali_wajah_baru</span><span class="p">(</span><span class="n">foto_test</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== HASIL IDENTIFIKASI WAJAH ===&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input Foto       : </span><span class="si">{</span><span class="n">foto_test</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Paling Mirip Dengan: </span><span class="si">{</span><span class="n">nama_hasil</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jarak Euclidean  : </span><span class="si">{</span><span class="n">nilai_jarak</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sistem siap! Masukkan file foto baru dengan nama &#39;</span><span class="si">{</span><span class="n">foto_test</span><span class="si">}</span><span class="s2">&#39; untuk mencoba deteksi.&quot;</span><span class="p">)</span>
+            
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Terjadi Kesalahan: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="hasil-output-program">
+<h2>Hasil Output Program<a class="headerlink" href="#hasil-output-program" title="Link to this heading">#</a></h2>
+<p>Hasil Kode :
+<img alt="Hasil Hitung" src="_images/hsil.png" /></p>
+<p>Hasil Visualisasi Wajah :
+<img alt="Hasil Hitung" src="_images/hasil10eigenfaces.png" /></p>
+<p>Hasil ScatterPlot :
+<img alt="Hasil Hitung" src="_images/hasil_scatterplot.png" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="eigenvalue_vektor.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Eigenvalue dan Eigenvector</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teori-svd-standar-aljabar-linear">1. Teori SVD (Standar Aljabar Linear)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-kerja-matematis-bedah-potongan-kode">2. Alur Kerja Matematis &amp; Bedah Potongan Kode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstruksi-matriks-data-wajah-a">1 Konstruksi Matriks Data Wajah (<span class="math notranslate nohighlight">\(A\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentralisasi-data-mean-subtraction">2 Sentralisasi Data (Mean Subtraction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-utama-lewat-svd-dan-trunkasi-k-50">3 Ekstraksi Fitur Utama lewat SVD dan Trunkasi (<span class="math notranslate nohighlight">\(k=50\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proyeksi-dan-penyimpanan-vektor-bobot-omega">4 Proyeksi dan Penyimpanan Vektor Bobot (<span class="math notranslate nohighlight">\(\Omega\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-wajah-baru-menggunakan-euclidean-distance">5 Identifikasi Wajah Baru Menggunakan Euclidean Distance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-interpretasi-grafik-grafis">3. Hasil Interpretasi Grafik Grafis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kode-program">4. Kode Program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-output-program">Hasil Output Program</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
