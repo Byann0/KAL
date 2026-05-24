@@ -260,10 +260,10 @@ if __name__ == "__main__":
 ## Hasil Output Program
 
 Hasil Kode :
-![Hasil Hitung](img/hsil.jpg)
+![Hasil Hitung](img/hsil.png)
 
 Hasil Visualisasi Wajah :
-![Hasil Hitung](img/hasil10eigenfaces.jpg)
+![Hasil Hitung](img/hasil10eigenfaces.png)
 
 Hasil ScatterPlot :
-![Hasil Hitung](img/hasil_scatterplot.jpg)
+![Hasil Hitung](img/hasil_scatterplot.png)
