@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>My Notebook &#8212; My sample book</title>
+    <title>Pengurangan Matriks &#8212; My sample book</title>
   
   
   
@@ -59,10 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pengurangan_matrix';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sistem Persamaan Linear" href="persamaanlinier.html" />
+    <link rel="next" title="Perkalian Matriks" href="perkalian_matrix.html" />
+    <link rel="prev" title="Penjumlahan Matriks" href="penjumlahan_matrix.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +144,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,13 +175,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     My Notebook
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -212,8 +211,8 @@ date: 2026-04-12</a></li>
 <li class="toctree-l2"><a class="reference internal" href="demo_eigenfaces.html">Mengembalikan nilai ke format piksel gambar (0-255)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="penjumlahan_matrix.html">Penjumlahan Matriks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="pengurangan_matrix.html">Pengurangan Matriks</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="penjumlahan_matrix.html">Penjumlahan Matriks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pengurangan Matriks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perkalian_matrix.html">Perkalian Matriks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pembagian_matrix.html">Pembagian Matriks</a></li>
 </ul>
@@ -289,7 +288,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpengurangan_matrix.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +318,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/pengurangan_matrix.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +389,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -401,11 +402,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>My Notebook</h1>
+    <h1>Pengurangan Matriks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-pengurangan-matriks"><strong>Syarat Pengurangan Matriks</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-pengurangan-matriks"><strong>Sifat-Sifat Pengurangan Matriks</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual"><strong>Perhitungan Manual</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-kasus"><strong>Contoh Kasus:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-komputasi-dengan-python-numpy"><strong>Implementasi Komputasi dengan Python (NumPy)</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -415,24 +430,69 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="my-notebook">
-<h1>My Notebook<a class="headerlink" href="#my-notebook" title="Link to this heading">#</a></h1>
-<p><strong>Nama</strong>          : Abyan Naufal Yunianto</p>
-<p><strong>NIM</strong>           : 240411100178</p>
-<p><strong>Mata Kuliah</strong>   : Komputasi Aljabar Linier</p>
-<p><strong>Kelas</strong>         : IF 2A</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="determinan.html">Pengantar Determinan Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transformasi_linier.html">Transformasi Linier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="penjumlahan_matrix.html">Penjumlahan Matriks</a></li>
-</ul>
+  <section id="pengurangan-matriks">
+<h1>Pengurangan Matriks<a class="headerlink" href="#pengurangan-matriks" title="Link to this heading">#</a></h1>
+<p>Pengurangan matriks adalah operasi aljabar linear dasar untuk mengurangkan elemen-elemen suatu matriks dengan elemen-elemen matriks lainnya yang berada di posisi yang seletak.</p>
+<section id="syarat-pengurangan-matriks">
+<h2><strong>Syarat Pengurangan Matriks</strong><a class="headerlink" href="#syarat-pengurangan-matriks" title="Link to this heading">#</a></h2>
+<p>Sama halnya dengan penjumlahan, dua matriks atau lebih dapat dikurangkan jika dan hanya jika keduanya memiliki <strong>ordo (dimensi/ukuran) yang sama</strong>. Jika ordonya berbeda, maka hasil operasi pengurangan tersebut <strong>tidak terdefinisi</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="sifat-sifat-pengurangan-matriks">
+<h2><strong>Sifat-Sifat Pengurangan Matriks</strong><a class="headerlink" href="#sifat-sifat-pengurangan-matriks" title="Link to this heading">#</a></h2>
+<p>Berbeda dengan operasi penjumlahan, pengurangan matriks <strong>tidak bersifat komutatif maupun asosiatif</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Tidak Komutatif:</strong>
+$<span class="math notranslate nohighlight">\(A - B \neq B - A\)</span>$</p></li>
+<li><p><strong>Tidak Asosiatif:</strong>
+$<span class="math notranslate nohighlight">\((A - B) - C \neq A - (B - C)\)</span>$</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="perhitungan-manual">
+<h2><strong>Perhitungan Manual</strong><a class="headerlink" href="#perhitungan-manual" title="Link to this heading">#</a></h2>
+<p>Secara umum, jika kita memiliki dua matriks berukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>:
+$<span class="math notranslate nohighlight">\(A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}, \quad B = \begin{pmatrix} e &amp; f \\ g &amp; h \end{pmatrix}\)</span>$</p>
+<p>Maka hasil pengurangannya adalah:
+$<span class="math notranslate nohighlight">\(A - B = \begin{pmatrix} a-e &amp; b-f \\ c-g &amp; d-h \end{pmatrix}\)</span>$</p>
+<section id="contoh-kasus">
+<h3><strong>Contoh Kasus:</strong><a class="headerlink" href="#contoh-kasus" title="Link to this heading">#</a></h3>
+<p>Diberikan matriks:
+$<span class="math notranslate nohighlight">\(A = \begin{pmatrix} 8 &amp; 6 \\ 5 &amp; 4 \end{pmatrix}, \quad B = \begin{pmatrix} 3 &amp; 2 \\ 1 &amp; 4 \end{pmatrix}\)</span>$</p>
+<p>Maka hasil pengurangannya:
+$<span class="math notranslate nohighlight">\(A - B = \begin{pmatrix} 8-3 &amp; 6-2 \\ 5-1 &amp; 4-4 \end{pmatrix} = \begin{pmatrix} 5 &amp; 4 \\ 4 &amp; 0 \end{pmatrix}\)</span>$</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="implementasi-komputasi-dengan-python-numpy">
+<h2><strong>Implementasi Komputasi dengan Python (NumPy)</strong><a class="headerlink" href="#implementasi-komputasi-dengan-python-numpy" title="Link to this heading">#</a></h2>
+<p>Dalam pemrograman Python, kita menggunakan library <strong>NumPy</strong> untuk melakukan pengurangan matriks secara instan menggunakan operator <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># 1. Definisikan matriks A dan B</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># 2. Lakukan pengurangan matriks</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">B</span>
+
+<span class="c1"># 3. Tampilkan hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks B:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hasil A - B:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</pre></div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -465,12 +525,21 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="penjumlahan_matrix.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Penjumlahan Matriks</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="persamaanlinier.html"
+       href="perkalian_matrix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sistem Persamaan Linear</p>
+        <p class="prev-next-title">Perkalian Matriks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -480,6 +549,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-pengurangan-matriks"><strong>Syarat Pengurangan Matriks</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-pengurangan-matriks"><strong>Sifat-Sifat Pengurangan Matriks</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual"><strong>Perhitungan Manual</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-kasus"><strong>Contoh Kasus:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-komputasi-dengan-python-numpy"><strong>Implementasi Komputasi dengan Python (NumPy)</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>My Notebook &#8212; My sample book</title>
+    <title>Pengantar Determinan Matriks &#8212; My sample book</title>
   
   
   
@@ -59,10 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'determinan';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sistem Persamaan Linear" href="persamaanlinier.html" />
+    <link rel="next" title="Tugas 6" href="tugas6.html" />
+    <link rel="prev" title="Aritmetika Matriks" href="aritmetika_matriks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +144,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,13 +175,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     My Notebook
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -192,7 +191,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="determinan.html">Pengantar Determinan Matriks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Pengantar Determinan Matriks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="tugas6.html">Tugas 6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tugas7.html">Tugas 7</a></li>
 <li class="toctree-l2"><a class="reference internal" href="invers_matriks.html">Invers Matriks</a></li>
@@ -289,7 +288,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdeterminan.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +318,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/determinan.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +389,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -401,11 +402,26 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>My Notebook</h1>
+    <h1>Pengantar Determinan Matriks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-utama-dan-signifikansi-determinan">Fungsi Utama dan Signifikansi Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-perhitungan-determinan">Metode Perhitungan Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-ordo-2-times-2">1. Matriks Ordo <span class="math notranslate nohighlight">\(2 \times 2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-ordo-3-times-3-metode-sarrus">2. Matriks Ordo <span class="math notranslate nohighlight">\(3 \times 3\)</span> (Metode Sarrus)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-ordo-n-times-n-metode-ekspansi-kofaktor-laplace">3. Matriks Ordo <span class="math notranslate nohighlight">\(n \times n\)</span> (Metode Ekspansi Kofaktor / Laplace)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-utama-determinan">Sifat-Sifat Utama Determinan</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -415,23 +431,98 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="my-notebook">
-<h1>My Notebook<a class="headerlink" href="#my-notebook" title="Link to this heading">#</a></h1>
-<p><strong>Nama</strong>          : Abyan Naufal Yunianto</p>
-<p><strong>NIM</strong>           : 240411100178</p>
-<p><strong>Mata Kuliah</strong>   : Komputasi Aljabar Linier</p>
-<p><strong>Kelas</strong>         : IF 2A</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="determinan.html">Pengantar Determinan Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transformasi_linier.html">Transformasi Linier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="penjumlahan_matrix.html">Penjumlahan Matriks</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="pengantar-determinan-matriks">
+<h1>Pengantar Determinan Matriks<a class="headerlink" href="#pengantar-determinan-matriks" title="Link to this heading">#</a></h1>
+<p>Dalam aljabar linear, <strong>determinan</strong> adalah nilai skalar unik yang dapat dihitung dari elemen-elemen suatu matriks persegi (matriks dengan jumlah baris dan kolom yang sama, yaitu ordo <span class="math notranslate nohighlight">\(n \times n\)</span>). Determinan berfungsi sebagai representasi numerik yang merangkum karakteristik geometris dan aljabar penting dari suatu matriks.</p>
+<hr class="docutils" />
+<section id="fungsi-utama-dan-signifikansi-determinan">
+<h2>Fungsi Utama dan Signifikansi Determinan<a class="headerlink" href="#fungsi-utama-dan-signifikansi-determinan" title="Link to this heading">#</a></h2>
+<p>Determinan memiliki beberapa peran krusial dalam matematika dan komputasi aljabar linear:</p>
+<ol class="arabic simple">
+<li><p><strong>Menentukan Keberadaan Invers Matriks:</strong>
+Determinan merupakan syarat mutlak untuk menentukan apakah suatu matriks memiliki invers (<span class="math notranslate nohighlight">\(A^{-1}\)</span>):</p>
+<ul class="simple">
+<li><p>Jika <span class="math notranslate nohighlight">\(\det(A) \neq 0\)</span>, matriks disebut <strong>non-singular</strong> (memiliki invers).</p></li>
+<li><p>Jika <span class="math notranslate nohighlight">\(\det(A) = 0\)</span>, matriks disebut <strong>singular</strong> (tidak memiliki invers).</p></li>
 </ul>
+</li>
+<li><p><strong>Penyelesaian Sistem Persamaan Linear (SPL):</strong>
+Digunakan secara langsung dalam <strong>Aturan Cramer</strong> untuk menentukan solusi SPL persegi secara analitis.</p></li>
+<li><p><strong>Interpretasi Geometris (Skala Transformasi):</strong>
+Dalam geometri dan grafik komputer, determinan mengukur faktor skala perubahan ukuran suatu objek setelah dikenai transformasi linear:</p>
+<ul class="simple">
+<li><p>Pada dimensi 2 (matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>), determinan mutlak menyatakan luas daerah.</p></li>
+<li><p>Pada dimensi 3 (matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span>), determinan mutlak menyatakan volume bangun ruang.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="metode-perhitungan-determinan">
+<h2>Metode Perhitungan Determinan<a class="headerlink" href="#metode-perhitungan-determinan" title="Link to this heading">#</a></h2>
+<p>Cara menghitung nilai determinan sangat bergantung pada ordo (ukuran) matriks persegi tersebut:</p>
+<section id="matriks-ordo-2-times-2">
+<h3>1. Matriks Ordo <span class="math notranslate nohighlight">\(2 \times 2\)</span><a class="headerlink" href="#matriks-ordo-2-times-2" title="Link to this heading">#</a></h3>
+<p>Untuk matriks berukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}
+\end{split}\]</div>
+<p>Determinan dihitung dengan mengalikan elemen-elemen diagonal utama lalu dikurangi dengan hasil kali elemen-elemen diagonal samping:</p>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = |A| = ad - bc
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="matriks-ordo-3-times-3-metode-sarrus">
+<h3>2. Matriks Ordo <span class="math notranslate nohighlight">\(3 \times 3\)</span> (Metode Sarrus)<a class="headerlink" href="#matriks-ordo-3-times-3-metode-sarrus" title="Link to this heading">#</a></h3>
+<p>Metode Sarrus merupakan cara praktis yang khusus digunakan untuk matriks ordo <span class="math notranslate nohighlight">\(3 \times 3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix} 
+a &amp; b &amp; c \\ 
+d &amp; e &amp; f \\ 
+g &amp; h &amp; i 
+\end{bmatrix}
+\end{split}\]</div>
+<p><strong>Skema Perhitungan Sarrus:</strong>
+Perhitungan dilakukan dengan menuliskan kembali dua kolom pertama di sebelah kanan matriks, kemudian menjumlahkan hasil kali elemen diagonal dari kiri-atas ke kanan-bawah, lalu dikurangi dengan jumlah hasil kali elemen diagonal dari kiri-bawah ke kanan-atas:</p>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = (aei + bfg + cdh) - (ceg + afh + bdi)
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="matriks-ordo-n-times-n-metode-ekspansi-kofaktor-laplace">
+<h3>3. Matriks Ordo <span class="math notranslate nohighlight">\(n \times n\)</span> (Metode Ekspansi Kofaktor / Laplace)<a class="headerlink" href="#matriks-ordo-n-times-n-metode-ekspansi-kofaktor-laplace" title="Link to this heading">#</a></h3>
+<p>Untuk matriks berordo lebih besar (seperti <span class="math notranslate nohighlight">\(4 \times 4\)</span> ke atas), digunakan metode ekspansi kofaktor sepanjang baris ke-<span class="math notranslate nohighlight">\(i\)</span> atau kolom ke-<span class="math notranslate nohighlight">\(j\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = \sum_{k=1}^n a_{ik} C_{ik}
+\]</div>
+<p>Di mana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_{ik}\)</span> adalah elemen matriks pada baris ke-<span class="math notranslate nohighlight">\(i\)</span> dan kolom ke-<span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{ik}\)</span> adalah <strong>kofaktor</strong> yang diperoleh dari rumus:
+$<span class="math notranslate nohighlight">\(C_{ik} = (-1)^{i+k} M_{ik}\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(M_{ik}\)</span> adalah <strong>minor</strong>, yaitu determinan submatriks yang diperoleh dengan menghapus baris ke-<span class="math notranslate nohighlight">\(i\)</span> dan kolom ke-<span class="math notranslate nohighlight">\(k\)</span> dari matriks asal.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sifat-sifat-utama-determinan">
+<h2>Sifat-Sifat Utama Determinan<a class="headerlink" href="#sifat-sifat-utama-determinan" title="Link to this heading">#</a></h2>
+<p>Untuk menyederhanakan perhitungan matriks yang kompleks, beberapa sifat determinan berikut dapat digunakan:</p>
+<ul class="simple">
+<li><p><strong>Transpose:</strong> Determinan matriks transpose sama dengan determinan matriks asalnya: <span class="math notranslate nohighlight">\(\det(A^T) = \det(A)\)</span>.</p></li>
+<li><p><strong>Perkalian Matriks:</strong> Determinan dari hasil kali dua matriks sama dengan hasil kali determinan masing-masing matriks: <span class="math notranslate nohighlight">\(\det(A \cdot B) = \det(A) \cdot \det(B)\)</span>.</p></li>
+<li><p><strong>Invers:</strong> Determinan dari invers suatu matriks adalah kebalikan dari determinan matriks asalnya: <span class="math notranslate nohighlight">\(\det(A^{-1}) = \frac{1}{\det(A)}\)</span>.</p></li>
+<li><p><strong>Baris/Kolom Nol:</strong> Jika suatu matriks memiliki satu baris atau satu kolom yang semua elemennya bernilai <span class="math notranslate nohighlight">\(0\)</span>, maka nilai determinannya adalah <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p><strong>Baris/Kolom Identik:</strong> Jika terdapat dua baris atau dua kolom yang memiliki elemen yang sama (atau kelipatannya), maka nilai determinannya adalah <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+</ul>
+</section>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 
@@ -465,12 +556,21 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="aritmetika_matriks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Aritmetika Matriks</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="persamaanlinier.html"
+       href="tugas6.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sistem Persamaan Linear</p>
+        <p class="prev-next-title">Tugas 6</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -480,6 +580,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-utama-dan-signifikansi-determinan">Fungsi Utama dan Signifikansi Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-perhitungan-determinan">Metode Perhitungan Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-ordo-2-times-2">1. Matriks Ordo <span class="math notranslate nohighlight">\(2 \times 2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-ordo-3-times-3-metode-sarrus">2. Matriks Ordo <span class="math notranslate nohighlight">\(3 \times 3\)</span> (Metode Sarrus)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-ordo-n-times-n-metode-ekspansi-kofaktor-laplace">3. Matriks Ordo <span class="math notranslate nohighlight">\(n \times n\)</span> (Metode Ekspansi Kofaktor / Laplace)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-utama-determinan">Sifat-Sifat Utama Determinan</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

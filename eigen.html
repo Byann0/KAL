@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>My Notebook &#8212; My sample book</title>
+    <title>&lt;no title&gt; &#8212; My sample book</title>
   
   
   
@@ -59,10 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eigen';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sistem Persamaan Linear" href="persamaanlinier.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -145,7 +144,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,8 +175,8 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     My Notebook
                 </a>
             </li>
@@ -289,7 +288,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feigen.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +318,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/eigen.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -329,7 +328,7 @@ date: 2026-04-12</a></li>
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -390,7 +389,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -401,11 +402,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>My Notebook</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -415,25 +424,106 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="my-notebook">
-<h1>My Notebook<a class="headerlink" href="#my-notebook" title="Link to this heading">#</a></h1>
-<p><strong>Nama</strong>          : Abyan Naufal Yunianto</p>
-<p><strong>NIM</strong>           : 240411100178</p>
-<p><strong>Mata Kuliah</strong>   : Komputasi Aljabar Linier</p>
-<p><strong>Kelas</strong>         : IF 2A</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="determinan.html">Pengantar Determinan Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transformasi_linier.html">Transformasi Linier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="penjumlahan_matrix.html">Penjumlahan Matriks</a></li>
-</ul>
-</div>
-</section>
+  <p>Perhitungan Aljabar Linear</p>
+<p>Berikut adalah penelusuran matematis lengkap di balik algoritma EigenfaceRecognizer menggunakan contoh matriks data berukuran mikro (<span class="math notranslate nohighlight">\(4 \times 3\)</span>).</p>
+<p>Langkah 1: Pengondisian Awal Matriks Terpusat</p>
+<p>(<span class="math notranslate nohighlight">\(A_{\text{terpusat}}\)</span>)</p>
+<p>Dari proses pengurangan setiap piksel foto dengan wajah rata-rata (<span class="math notranslate nohighlight">\(\Psi\)</span>) pada Langkah 2 sebelumnya, kita memperoleh matriks terpusat berikut:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A_{\text{terpusat}} = \begin{bmatrix} -1 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 0 \\ -1 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 0 \end{bmatrix}\end{split}\]</div>
+<p>Langkah 2: Proses Dekomposisi SVD (Mencari <span class="math notranslate nohighlight">\(\Sigma\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, dan <span class="math notranslate nohighlight">\(U\)</span>)</p>
+<p>Untuk mencari komponen SVD secara manual pada matriks non-persegi (<span class="math notranslate nohighlight">\(4 \times 3\)</span>), kita akan menggunakan jalur perkalian matriks korelasi gambar (<span class="math notranslate nohighlight">\(A^T A\)</span>) yang berukuran lebih kecil (<span class="math notranslate nohighlight">\(3 \times 3\)</span>).</p>
+<ol class="arabic simple">
+<li><p>Hitung Matriks Korelasi <span class="math notranslate nohighlight">\(A_{\text{terpusat}}^T A_{\text{terpusat}}\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}A_{\text{terpusat}}^T A_{\text{terpusat}} = \begin{bmatrix} -1 &amp; 1 &amp; -1 &amp; 1 \\ 1 &amp; -1 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix} \begin{bmatrix} -1 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 0 \\ -1 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 0 \end{bmatrix}\end{split}\\$$Kalkulasi elemen demi elemen:\\Baris 1, Kolom 1: $(-1)(-1) + (1)(1) + (-1)(-1) + (1)(1) = 1 + 1 + 1 + 1 = 4$ \\Baris 1, Kolom 2: $(-1)(1) + (1)(-1) + (-1)(1) + (1)(-1) = -1 - 1 - 1 - 1 = -4$\\Baris 1, Kolom 3: $(-1)(0) + (1)(0) + (-1)(0) + (1)(0) = 0$\\(Lakukan hal yang sama untuk baris berikutnya)\\\begin{split}Hasil Akhir Perkalian:$$A_{\text{terpusat}}^T A_{\text{terpusat}} = \begin{bmatrix} 4 &amp; -4 &amp; 0 \\ -4 &amp; 4 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}\end{split}\end{aligned}\end{align} \]</div>
+<ol class="arabic simple" start="2">
+<li><p>Mencari Nilai Eigen (<span class="math notranslate nohighlight">\(\lambda\)</span>) untuk Menghitung Matriks <span class="math notranslate nohighlight">\(\Sigma\)</span></p></li>
+</ol>
+<p>Gunakan persamaan karakteristik <span class="math notranslate nohighlight">\(\det(A^T A - \lambda I) = 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{vmatrix} 4-\lambda &amp; -4 &amp; 0 \\ -4 &amp; 4-\lambda &amp; 0 \\ 0 &amp; 0 &amp; 0-\lambda \end{vmatrix} = 0\end{split}\]</div>
+<p>Hitung determinan menggunakan ekspansi kofaktor pada baris ke-3 (karena mengandung banyak angka nol):</p>
+<div class="math notranslate nohighlight">
+\[-\lambda \cdot \left( (4-\lambda)(4-\lambda) - (-4)(-4) \right) = 0\]</div>
+<div class="math notranslate nohighlight">
+\[-\lambda \cdot \left( 16 - 8\lambda + \lambda^2 - 16 \right) = 0\]</div>
+<div class="math notranslate nohighlight">
+\[-\lambda \cdot \left( \lambda^2 - 8\lambda \right) = 0\]</div>
+<div class="math notranslate nohighlight">
+\[-\lambda^2(\lambda - 8) = 0\]</div>
+<p>Dari persamaan di atas, kita mendapatkan tiga Nilai Eigen yang terurut dari besar ke kecil:$<span class="math notranslate nohighlight">\(\lambda_1 = 8, \quad \lambda_2 = 0, \quad \lambda_3 = 0\)</span>$</p>
+<p>Menghitung Singular Values (<span class="math notranslate nohighlight">\(\sigma\)</span>):</p>
+<p>Singular value adalah akar kuadrat dari nilai eigen.</p>
+<p><span class="math notranslate nohighlight">\(\sigma_1 = \sqrt{\lambda_1} = \sqrt{8} \approx 2.8284\)</span>
+<span class="math notranslate nohighlight">\(\sigma_2 = \sqrt{0} = 0\)</span>
+<span class="math notranslate nohighlight">\(\sigma_3 = \sqrt{0} = 0\)</span></p>
+<p>Maka, susunan Matriks Diagonal Singular (<span class="math notranslate nohighlight">\(\Sigma\)</span>) adalah:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Sigma = \begin{bmatrix} 2.8284 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Mencari Vektor Eigen untuk Menghitung Matriks Kanan (<span class="math notranslate nohighlight">\(V^T\)</span>)</p></li>
+</ol>
+<p>Substitusikan nilai eigen kembali ke persamaan <span class="math notranslate nohighlight">\((A^T A - \lambda I)v = 0\)</span> untuk mencari vektor kolom dari <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<p>Untuk <span class="math notranslate nohighlight">\(\lambda_1 = 8\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 4-8 &amp; -4 &amp; 0 \\ -4 &amp; 4-8 &amp; 0 \\ 0 &amp; 0 &amp; 0-8 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} \implies \begin{bmatrix} -4 &amp; -4 &amp; 0 \\ -4 &amp; -4 &amp; 0 \\ 0 &amp; 0 &amp; -8 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}\end{split}\]</div>
+<p>Dari Baris 3:  <span class="math notranslate nohighlight">\(-8v_3 = 0 \implies v_3 = 0\)</span></p>
+<p>Dari Baris 1: <span class="math notranslate nohighlight">\(-4v_1 - 4v_2 = 0 \implies v_1 = -v_2\)</span>. Jika kita set <span class="math notranslate nohighlight">\(v_2 = -1\)</span>, maka <span class="math notranslate nohighlight">\(v_1 = 1\)</span>.</p>
+<p>Vektor dasar: <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix}\)</span>.</p>
+<p>Normalisasikan vektor tersebut membagi dengan panjang/normanya (<span class="math notranslate nohighlight">\(\sqrt{1^2 + (-1)^2 + 0^2} = \sqrt{2}\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}v_{\text{kolom 1}} = \begin{bmatrix} 1/\sqrt{2} \\ -1/\sqrt{2} \\ 0 \end{bmatrix} \approx \begin{bmatrix} 0.7071 \\ -0.7071 \\ 0 \end{bmatrix}\end{split}\]</div>
+<p>(Dengan cara pengosongan ruang basis nullspace yang sama untuk <span class="math notranslate nohighlight">\(\lambda_2 = 0\)</span> dan <span class="math notranslate nohighlight">\(\lambda_3 = 0\)</span>, didapatkan kolom vektor ke-2 dan ke-3).</p>
+<p>Jika disusun menjadi Matriks <span class="math notranslate nohighlight">\(V\)</span> lalu di-Transpose menjadi <span class="math notranslate nohighlight">\(V^T\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}V^T = \begin{bmatrix} 0.7071 &amp; -0.7071 &amp; 0 \\ 0.7071 &amp; 0.7071 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Mencari Vektor Eigen Kiri untuk Menghitung Matriks Utama <span class="math notranslate nohighlight">\(U\)</span> (Eigenfaces)</p></li>
+</ol>
+<p>Berdasarkan hubungan fundamental SVD, untuk nilai singular yang tidak bernilai nol (<span class="math notranslate nohighlight">\(\sigma_i &gt; 0\)</span>), kita bisa langsung mencari vektor kolom <span class="math notranslate nohighlight">\(u_i\)</span> menggunakan rumus:</p>
+<div class="math notranslate nohighlight">
+\[u_i = \frac{1}{\sigma_i} \cdot A_{\text{terpusat}} \cdot v_i\]</div>
+<p>Mari kita hitung kolom pertama (<span class="math notranslate nohighlight">\(u_1\)</span>) yang menjadi basis Eigenspace terpenting kita:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u_1 = \frac{1}{\sqrt{8}} \cdot \begin{bmatrix} -1 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 0 \\ -1 &amp; 1 &amp; 0 \\ 1 &amp; -1 &amp; 0 \end{bmatrix} \cdot \begin{bmatrix} 1/\sqrt{2} \\ -1/\sqrt{2} \\ 0 \end{bmatrix}\end{split}\]</div>
+<p>Hitung perkalian matriksnya terlebih dahulu:$<span class="math notranslate nohighlight">\(A_{\text{terpusat}} \cdot v_1 = \begin{bmatrix} (-1)(1/\sqrt{2}) + (1)(-1/\sqrt{2}) + (0)(0) \\ (1)(1/\sqrt{2}) + (-1)(-1/\sqrt{2}) + (0)(0) \\ (-1)(1/\sqrt{2}) + (1)(-1/\sqrt{2}) + (0)(0) \\ (1)(1/\sqrt{2}) + (-1)(-1/\sqrt{2}) + (0)(0) \end{bmatrix} = \begin{bmatrix} -2/\sqrt{2} \\ 2/\sqrt{2} \\ -2/\sqrt{2} \\ 2/\sqrt{2} \end{bmatrix} = \begin{bmatrix} -\sqrt{2} \\ \sqrt{2} \\ -\sqrt{2} \\ \sqrt{2} \end{bmatrix}\)</span>$</p>
+<p>Sekarang, kalikan dengan skalar pengali di depannya:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u_1 = \frac{1}{\sqrt{8}} \begin{bmatrix} -\sqrt{2} \\ \sqrt{2} \\ -\sqrt{2} \\ \sqrt{2} \end{bmatrix} = \begin{bmatrix} -\sqrt{2}/\sqrt{8} \\ \sqrt{2}/\sqrt{8} \\ -\sqrt{2}/\sqrt{8} \\ \sqrt{2}/\sqrt{8} \end{bmatrix} = \begin{bmatrix} -\sqrt{1/4} \\ \sqrt{1/4} \\ -\sqrt{1/4} \\ \sqrt{1/4} \end{bmatrix} = \begin{bmatrix} -0.5 \\ 0.5 \\ -0.5 \\ 0.5 \end{bmatrix}\end{split}\]</div>
+<p>Hasil ini terbukti 100% konsisten dengan kolom pertama dari matriks <span class="math notranslate nohighlight">\(U\)</span> yang dikeluarkan oleh sistem komputer Anda:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}U = \begin{bmatrix} -0.5 &amp; 0.5 &amp; -0.5 \\ 0.5 &amp; 0.5 &amp; -0.5 \\ -0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 \end{bmatrix}\end{split}\]</div>
+<p>Langkah 3: Detail Aritmatika Pengujian Gambar BaruKetika objek test_wajah.jpg masuk dan diproyeksikan, didapatkan vektor koordinat bobot baru:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\omega_{\text{baru}} = \begin{bmatrix} 2 \\ 0 \end{bmatrix}\end{split}\]</div>
+<p>Sistem komputer Anda akan menguji kedekatan jarak geometrisnya dengan 3 data bobot training yang ada pada database, yaitu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\omega_1 = \begin{bmatrix} 2 \\ 0 \end{bmatrix}, \quad \omega_2 = \begin{bmatrix} -2 \\ 0 \end{bmatrix}, \quad \omega_3 = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\end{split}\]</div>
+<p>Penjabaran Rumus Jarak Euclidean (L2-Norm)</p>
+<p>Jarak ke Foto 1 (<span class="math notranslate nohighlight">\(d_1\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[d_1 = \sqrt{(\omega_{\text{baru}, 1} - \omega_{1, 1})^2 + (\omega_{\text{baru}, 2} - \omega_{1, 2})^2}\]</div>
+<div class="math notranslate nohighlight">
+\[d_1 = \sqrt{(2 - 2)^2 + (0 - 0)^2} = \sqrt{0 + 0} = 0\]</div>
+<p>Jarak ke Foto 2 (<span class="math notranslate nohighlight">\(d_2\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[d_2 = \sqrt{(\omega_{\text{baru}, 1} - \omega_{2, 1})^2 + (\omega_{\text{baru}, 2} - \omega_{2, 2})^2}\]</div>
+<div class="math notranslate nohighlight">
+\[d_2 = \sqrt{(2 - (-2))^2 + (0 - 0)^2} = \sqrt{(4)^2 + 0} = \sqrt{16} = 4\]</div>
+<p>Jarak ke Foto 3 (<span class="math notranslate nohighlight">\(d_3\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[d_3 = \sqrt{(\omega_{\text{baru}, 1} - \omega_{3, 1})^2 + (\omega_{\text{baru}, 2} - \omega_{3, 2})^2}\]</div>
+<div class="math notranslate nohighlight">
+\[d_3 = \sqrt{(2 - 0)^2 + (0 - 0)^2} = \sqrt{(2)^2 + 0} = \sqrt{4} = 2\]</div>
+<p>Pengambilan Keputusan Akhir (Argmin Classification)</p>
+<p>Sistem melakukan evaluasi pencarian nilai terkecil secara berurutan:</p>
+<div class="math notranslate nohighlight">
+\[\text{Hasil} = \text{indeks dari } \min(d_1, d_2, d_3)\]</div>
+<div class="math notranslate nohighlight">
+\[\text{Hasil} = \text{indeks dari } \min(0, 4, 2) \implies 0 \quad (\text{Indeks ke-0 = Foto 1})\]</div>
+<p>Karena nilai jarak spasialnya bernilai 0 (sempurna tanpa selisih), gambar baru dideklarasikan sah memiliki identitas yang sama dengan Foto 1.</p>
 
     <script type="text/x-thebe-config">
     {
@@ -465,21 +555,27 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="persamaanlinier.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sistem Persamaan Linear</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

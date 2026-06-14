@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>My Notebook &#8212; My sample book</title>
+    <title>Mengembalikan nilai ke format piksel gambar (0-255) &#8212; My sample book</title>
   
   
   
@@ -59,10 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'demo_eigenfaces';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sistem Persamaan Linear" href="persamaanlinier.html" />
+    <link rel="next" title="Penjumlahan Matriks" href="penjumlahan_matrix.html" />
+    <link rel="prev" title="Pengenalan Wajah: Eigenfaces Berbasis SVD" href="eigenfaces.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +144,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,13 +175,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     My Notebook
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -198,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="invers_matriks.html">Invers Matriks</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="transformasi_linier.html">Transformasi Linier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="transformasi_linier.html">Transformasi Linier</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="implementasi_transformasi.html">title: Implementasi Transformasi Linear
 date: 2026-04-12</a></li>
 
@@ -209,7 +208,7 @@ date: 2026-04-12</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="eigenfaces.html">Pengenalan Wajah: Eigenfaces Berbasis SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo_eigenfaces.html">Mengembalikan nilai ke format piksel gambar (0-255)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Mengembalikan nilai ke format piksel gambar (0-255)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="penjumlahan_matrix.html">Penjumlahan Matriks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -289,7 +288,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdemo_eigenfaces.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +318,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/demo_eigenfaces.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>My Notebook</h1>
+    <h1>Mengembalikan nilai ke format piksel gambar (0-255)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -415,24 +414,33 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="my-notebook">
-<h1>My Notebook<a class="headerlink" href="#my-notebook" title="Link to this heading">#</a></h1>
-<p><strong>Nama</strong>          : Abyan Naufal Yunianto</p>
-<p><strong>NIM</strong>           : 240411100178</p>
-<p><strong>Mata Kuliah</strong>   : Komputasi Aljabar Linier</p>
-<p><strong>Kelas</strong>         : IF 2A</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html">Sistem Persamaan Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="persamaanlinier.html#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eliminasigauss.html">Eliminasi Gauss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a></li>
-<li class="toctree-l1"><a class="reference internal" href="determinan.html">Pengantar Determinan Matriks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transformasi_linier.html">Transformasi Linier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="penjumlahan_matrix.html">Penjumlahan Matriks</a></li>
-</ul>
-</div>
+  <ol class="arabic simple">
+<li><p>Penambahan Library Visualisasi (matplotlib)Potongan Kode:Pythonimport matplotlib.pyplot as plt  # Library untuk memunculkan gambar
+Penjelasan:Pada kode awal Anda, library ini hanya di-import secara lokal di dalam fungsi visualisasi eigenfaces yang tidak tereksekusi dengan benar akibat error dimensi dataset. Dengan meletakkannya di bagian paling atas (global scope), kita bisa menggunakan perintah plt.imshow() dan plt.show() kapan saja untuk mengubah susunan angka di dalam matriks menjadi gambar hitam-putih (grayscale) yang bisa dilihat langsung di layar.2. Pembersihan Struktur Class dan Fokus pada Alur TunggalPenjelasan:Struktur class EigenfaceRecognizer, fungsi kenali_wajah_baru, dan pengkondisian file uji luar (img/test_wajah.jpg) dihapus total.Alasan: Fungsi-fungsi tersebut dirancang untuk cetak biru dataset banyak foto (metode Eigenface). Ketika Anda mengubah matriks A menjadi hanya berisi satu foto, fungsi pencarian jarak dan pengenalan wajah otomatis rusak (crash) karena kekurangan dimensi kolom data untuk dibandingkan. Kode kini disederhanakan murni di dalam blok if <strong>name</strong> == “<strong>main</strong>”:.3. Mempertahankan Matriks 2D Asli <span class="math notranslate nohighlight">\((64 \times 64)\)</span> tanpa FlattenPotongan Kode:Pythonimg = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+img_resized = cv2.resize(img, target_size)
+A = img_resized
+Penjelasan:Pada teori Eigenface banyak foto, gambar harus di-flatten (diubah menjadi vektor 1D panjang berukuran <span class="math notranslate nohighlight">\(4096 \times 1\)</span>). Namun, karena tujuan kita sekarang adalah SVD Tunggal pada satu gambar, matriks gambar A harus tetap berbentuk grid 2D berukuran <span class="math notranslate nohighlight">\((64 \times 64)\)</span>. SVD akan membedah baris dan kolom dari gambar tunggal ini secara langsung.4. Memperbaiki Urutan Eksekusi SVD (Mengatasi NameError)Potongan Kode:Python# Melakukan dekomposisi SVD murni pada matriks 2D gambar asli (A)
+U, S, Vt = np.linalg.svd(A.astype(float), full_matrices=True)
+Sigma = np.diag(S)
+Penjelasan:Solusi Bug: Di kode lama Anda, terdapat baris self.S = S yang ditulis sebelum fungsi np.linalg.svd(…) dipanggil. Hal ini menyebabkan Python error karena variabel S belum tercipta. Di kode baru, urutannya dibalik: SVD dieksekusi terlebih dahulu, baru nilai S disimpan.Pembentukan Matriks Diagonal (<span class="math notranslate nohighlight">\(\Sigma\)</span>): Fungsi np.linalg.svd dari numpy secara default hanya mengeluarkan nilai singular berupa array 1D. Baris np.diag(S) bertugas mengubah array 1D tersebut menjadi matriks diagonal 2D berukuran <span class="math notranslate nohighlight">\((64 \times 64)\)</span> agar bisa dikalikan kembali secara matematis.5. Proses Rekonstruksi Gambar Menggunakan Perkalian Matriks MurniPotongan Kode:PythonA_reconstructed = U &#64; Sigma &#64; Vt</p></li>
+</ol>
+<section class="tex2jax_ignore mathjax_ignore" id="mengembalikan-nilai-ke-format-piksel-gambar-0-255">
+<h1>Mengembalikan nilai ke format piksel gambar (0-255)<a class="headerlink" href="#mengembalikan-nilai-ke-format-piksel-gambar-0-255" title="Link to this heading">#</a></h1>
+<p>gambar_rekonstruksi = np.clip(A_reconstructed, 0, 255).astype(np.uint8)
+Penjelasan:Operator &#64;: Digunakan untuk melakukan perkalian matriks sesuai rumus matematis SVD: <span class="math notranslate nohighlight">\(A = U \times \Sigma \times V^T\)</span>.np.clip dan astype(np.uint8): Hasil perkalian matriks SVD menghasilkan angka bertipe float (desimal) yang kadang bisa sedikit di bawah 0 atau di atas 255 karena pembulatan komputer. Fungsi np.clip(…, 0, 255) mengunci angka agar tetap berada di rentang piksel valid (0 hingga 255), kemudian .astype(np.uint8) mengubah tipenya kembali menjadi interger/bilangan bulat positif agar OpenCV dan Matplotlib tahu bahwa ini adalah data piksel gambar yang siap dirender.6. Menampilkan Gambar Asli vs Rekonstruksi Secara BerdampinganPotongan Kode:Pythonplt.figure(figsize=(8, 4))
+plt.subplot(1, 2, 1)
+plt.imshow(A, cmap=’gray’)
+plt.title(“Gambar Wajah Asli”, fontsize=10)
+plt.axis(‘off’)</p>
+<p>plt.subplot(1, 2, 2)
+plt.imshow(gambar_rekonstruksi, cmap=’gray’)
+plt.title(“Gambar Hasil Rekonstruksi SVD”, fontsize=10)
+plt.axis(‘off’)</p>
+<p>plt.show()  # Memunculkan jendela plot ke layar
+Penjelasan:Perintah plt.subplot(1, 2, x) membagi jendela visualisasi menjadi 1 baris dan 2 kolom.Indeks 1 digunakan untuk menggambar wajah asli, dan indeks 2 digunakan untuk menggambar wajah hasil perkalian ulang SVD.cmap=’gray’ wajib dipasang agar warna yang keluar tidak menjadi warna hijau/kuning semu (karena Matplotlib membaca matriks 2D sebagai heatmap secara default jika tidak dipaksa ke mode abu-abu).plt.show() adalah tombol mutlak untuk memerintahkan komputer memunculkan grafik tersebut secara fisik di layar Anda.7. Verifikasi Akhir Dimensi (Poin 7 Tugas Anda)Potongan Kode:Pythonprint(f”Dimensi Matriks Hasil Rekonstruksi: {gambar_rekonstruksi.shape}”)
+apakah_identik = np.allclose(A.astype(float), A_reconstructed)
+print(f”Apakah hasil perkalian kembali identik dengan matriks asli? {apakah_identik}”)
+Penjelasan:Bagian ini ditambahkan untuk membuktikan secara numerik di terminal bahwa dimensi gambar tidak berubah sedikit pun sesudah didekomposisi, yaitu tetap berukuran <span class="math notranslate nohighlight">\((64 \times 64)\)</span>, serta membuktikan lewat fungsi np.allclose bahwa nilai-nilai matematis di dalam matriks hasil rekonstruksi tersebut bernilai sama persis dengan matriks asli sebelum dipecah.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -465,12 +473,21 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="eigenfaces.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pengenalan Wajah: Eigenfaces Berbasis SVD</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="persamaanlinier.html"
+       href="penjumlahan_matrix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sistem Persamaan Linear</p>
+        <p class="prev-next-title">Penjumlahan Matriks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

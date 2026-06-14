@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Aritmetika Matriks &#8212; My sample book</title>
+    <title>Perkalian Matriks &#8212; My sample book</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'aritmetika_matriks';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'perkalian_matrix';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pengantar Determinan Matriks" href="determinan.html" />
-    <link rel="prev" title="Tugas 5" href="tugas5.html" />
+    <link rel="next" title="Pembagian Matriks" href="pembagian_matrix.html" />
+    <link rel="prev" title="Pengurangan Matriks" href="pengurangan_matrix.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,7 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tugas5.html">Tugas 5</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aritmetika Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aritmetika_matriks.html">Aritmetika Matriks</a></li>
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="determinan.html">Pengantar Determinan Matriks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="tugas6.html">Tugas 6</a></li>
@@ -211,9 +211,9 @@ date: 2026-04-12</a></li>
 <li class="toctree-l2"><a class="reference internal" href="demo_eigenfaces.html">Mengembalikan nilai ke format piksel gambar (0-255)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="penjumlahan_matrix.html">Penjumlahan Matriks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="penjumlahan_matrix.html">Penjumlahan Matriks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pengurangan_matrix.html">Pengurangan Matriks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="perkalian_matrix.html">Perkalian Matriks</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Perkalian Matriks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pembagian_matrix.html">Pembagian Matriks</a></li>
 </ul>
 </details></li>
@@ -288,7 +288,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Faritmetika_matriks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fperkalian_matrix.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +318,7 @@ date: 2026-04-12</a></li>
       
       
       
-      <li><a href="_sources/aritmetika_matriks.md" target="_blank"
+      <li><a href="_sources/perkalian_matrix.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -402,7 +402,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Aritmetika Matriks</h1>
+    <h1>Perkalian Matriks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -412,22 +412,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aritmetika Matriks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks">Definisi Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notasi-matriks">Notasi Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-notasi">Contoh Notasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-kesamaan-matriks">Definisi Kesamaan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-kesamaan-matriks">Contoh Kesamaan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-solusi-sistem-linear">Definisi Solusi Sistem Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matriks-dengan-skalar"><strong>1. Perkalian Matriks dengan Skalar</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-dan-contoh"><strong>Rumus dan Contoh:</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-augmentasi">Definisi Matriks Augmentasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matriks-dengan-matriks"><strong>2. Perkalian Matriks dengan Matriks</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-perkalian-matriks"><strong>Syarat Perkalian Matriks</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-perkalian-matriks"><strong>Sifat-Sifat Perkalian Matriks</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-dot-product"><strong>Perhitungan Manual (Dot Product)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kasus-khusus-langkah-detail-perkalian-matriks-2-times-2-dengan-matriks-2-times-2"><strong>Kasus Khusus: Langkah Detail Perkalian Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span> dengan Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-dengan-angka"><strong>Contoh Soal dengan Angka:</strong></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-komputasi-dengan-python-numpy"><strong>Implementasi Komputasi dengan Python (NumPy)</strong></a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -438,135 +438,121 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="aritmetika-matriks">
-<h1>Aritmetika Matriks<a class="headerlink" href="#aritmetika-matriks" title="Link to this heading">#</a></h1>
-<p>Tidak setiap matriks harus dianggap sebagai matriks augmented yang terkait dengan sistem linear.</p>
-<section id="definisi-matriks">
-<h2>Definisi Matriks<a class="headerlink" href="#definisi-matriks" title="Link to this heading">#</a></h2>
-<p>Sebuah matriks (real) adalah array persegi panjang dari bilangan real
-$<span class="math notranslate nohighlight">\(
-A = \begin{bmatrix}
-a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
-a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
-\end{bmatrix}
-\)</span>$</p>
-<p>Bilangan <span class="math notranslate nohighlight">\(a_{ij}\)</span> yang terletak pada baris ke-<span class="math notranslate nohighlight">\(i\)</span> dan kolom ke-<span class="math notranslate nohighlight">\(j\)</span> dari <span class="math notranslate nohighlight">\(A\)</span> disebut <span class="math notranslate nohighlight">\((i, j)\)</span>-entri (atau <span class="math notranslate nohighlight">\(ij\)</span>-entri) dari <span class="math notranslate nohighlight">\(A\)</span>.Sebuah matriks dengan <span class="math notranslate nohighlight">\(m\)</span> baris dan <span class="math notranslate nohighlight">\(n\)</span> kolom dikatakan memiliki ukuran (atau dimensi) <span class="math notranslate nohighlight">\(m \times n\)</span>.Matriks biasanya menggunakan huruf kapital awal alfabet (e.g. <span class="math notranslate nohighlight">\(A, B, C, D\)</span>, etc.) untuk menunjukkan matriks.</p>
+  <section id="perkalian-matriks">
+<h1>Perkalian Matriks<a class="headerlink" href="#perkalian-matriks" title="Link to this heading">#</a></h1>
+<p>Dalam aljabar linear, operasi perkalian pada matriks dibagi menjadi dua jenis utama, yaitu perkalian matriks dengan skalar (angka tunggal) dan perkalian matriks dengan matriks lainnya.</p>
+<hr class="docutils" />
+<section id="perkalian-matriks-dengan-skalar">
+<h2><strong>1. Perkalian Matriks dengan Skalar</strong><a class="headerlink" href="#perkalian-matriks-dengan-skalar" title="Link to this heading">#</a></h2>
+<p>Perkalian skalar dilakukan dengan mengalikan suatu bilangan real (skalar <span class="math notranslate nohighlight">\(k\)</span>) dengan setiap elemen yang ada di dalam matriks.</p>
+<section id="rumus-dan-contoh">
+<h3><strong>Rumus dan Contoh:</strong><a class="headerlink" href="#rumus-dan-contoh" title="Link to this heading">#</a></h3>
+<p>Jika <span class="math notranslate nohighlight">\(k\)</span> adalah skalar dan <span class="math notranslate nohighlight">\(A\)</span> adalah matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>:
+$<span class="math notranslate nohighlight">\(k \cdot \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = \begin{pmatrix} ka &amp; kb \\ kc &amp; kd \end{pmatrix}\)</span>$</p>
+<p>Misalnya, <span class="math notranslate nohighlight">\(k = 3\)</span> dan <span class="math notranslate nohighlight">\(A = \begin{pmatrix} 1 &amp; 4 \\ 2 &amp; 5 \end{pmatrix}\)</span>:
+$<span class="math notranslate nohighlight">\(3 \cdot \begin{pmatrix} 1 &amp; 4 \\ 2 &amp; 5 \end{pmatrix} = \begin{pmatrix} 3(1) &amp; 3(4) \\ 3(2) &amp; 3(5) \end{pmatrix} = \begin{pmatrix} 3 &amp; 12 \\ 6 &amp; 15 \end{pmatrix}\)</span>$</p>
 </section>
-<section id="notasi-matriks">
-<h2>Notasi Matriks<a class="headerlink" href="#notasi-matriks" title="Link to this heading">#</a></h2>
-<p>Notasi pembangun matriks</p>
-<p>Notasi <span class="math notranslate nohighlight">\([a_{ij}]_{m \times n}\)</span> menunjukkan matriks <span class="math notranslate nohighlight">\(m \times n\)</span> yang entri <span class="math notranslate nohighlight">\(ij\)</span>-nya (baris ke-<span class="math notranslate nohighlight">\(i\)</span>, kolom ke-<span class="math notranslate nohighlight">\(j\)</span>) adalah <span class="math notranslate nohighlight">\(a_{ij}\)</span>. Ketika tidak ada bahaya kebingungan, notasi ini sering disingkat menjadi <span class="math notranslate nohighlight">\([a_{ij}]\)</span>.</p>
-<p>Notasi entri matriks</p>
-<p>Diberikan sebuah matriks <span class="math notranslate nohighlight">\(A\)</span>, notasi <span class="math notranslate nohighlight">\([A]_{ij}\)</span> menunjukkan entri ke-<span class="math notranslate nohighlight">\(ij\)</span> dari <span class="math notranslate nohighlight">\(A\)</span>. Jadi jika <span class="math notranslate nohighlight">\(A = [a_{ij}]_{m \times n}\)</span>, maka <span class="math notranslate nohighlight">\([A]_{ij} = a_{ij}\)</span> untuk semua <span class="math notranslate nohighlight">\(1 \le i \le m\)</span> dan <span class="math notranslate nohighlight">\(1 \le j \le n\)</span>.</p>
 </section>
 <hr class="docutils" />
-<section id="contoh-notasi">
-<h2>Contoh Notasi<a class="headerlink" href="#contoh-notasi" title="Link to this heading">#</a></h2>
-<p>Notasi dapat digunakan untuk mendeskripsikan matriks yang entri <span class="math notranslate nohighlight">\(ij\)</span>-nya diberikan oleh aturan atau formula tertentu.Sebagai contoh, misalkan <span class="math notranslate nohighlight">\(A = [a_{ij}]_{2 \times 3}\)</span>, dimana <span class="math notranslate nohighlight">\(a_{ij} = (i - j)j\)</span>. Ini adalah matriks <span class="math notranslate nohighlight">\(2 \times 3\)</span> yang entri <span class="math notranslate nohighlight">\(ij\)</span>-nya adalah <span class="math notranslate nohighlight">\((i - j)j\)</span>. Jadi</p>
+<section id="perkalian-matriks-dengan-matriks">
+<h2><strong>2. Perkalian Matriks dengan Matriks</strong><a class="headerlink" href="#perkalian-matriks-dengan-matriks" title="Link to this heading">#</a></h2>
+<p>Perkalian dua matriks tidak dilakukan dengan mengalikan elemen-elemen yang seletak, melainkan dengan prinsip <strong>mengalikan elemen-elemen baris pada matriks pertama dengan elemen-elemen kolom pada matriks kedua</strong>.</p>
+<section id="syarat-perkalian-matriks">
+<h3><strong>Syarat Perkalian Matriks</strong><a class="headerlink" href="#syarat-perkalian-matriks" title="Link to this heading">#</a></h3>
+<p>Dua matriks <span class="math notranslate nohighlight">\(A\)</span> (berukuran <span class="math notranslate nohighlight">\(m \times n\)</span>) dan <span class="math notranslate nohighlight">\(B\)</span> (berukuran <span class="math notranslate nohighlight">\(p \times q\)</span>) dapat dikalikan (<span class="math notranslate nohighlight">\(A \times B\)</span>) jika dan hanya jika <strong>jumlah kolom matriks pertama sama dengan jumlah baris matriks kedua</strong> (<span class="math notranslate nohighlight">\(n = p\)</span>). Matriks hasil perkalian akan memiliki ukuran <span class="math notranslate nohighlight">\(m \times q\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-A = \begin{bmatrix} (1 - 1)1 &amp; (1 - 2)2 &amp; (1 - 3)3 \\ (2 - 1)1 &amp; (2 - 2)2 &amp; (2 - 3)3 \end{bmatrix} = \begin{bmatrix} 0 &amp; -2 &amp; -6 \\ 1 &amp; 0 &amp; -3 \end{bmatrix}
-\end{split}\]</div>
-<p>Dalam contoh ini kita memiliki <span class="math notranslate nohighlight">\([A]_{23} = -3\)</span> dan <span class="math notranslate nohighlight">\([A]_{ii} = 0\)</span> untuk <span class="math notranslate nohighlight">\(i = 1, 2\)</span>.</p>
+\[\text{Ukuran: } (m \times \mathbf{n}) \times (\mathbf{n} \times q) \implies (m \times q)\]</div>
 </section>
-<hr class="docutils" />
-<section id="definisi-kesamaan-matriks">
-<h2>Definisi Kesamaan Matriks<a class="headerlink" href="#definisi-kesamaan-matriks" title="Link to this heading">#</a></h2>
-<p>Misalkan <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> adalah matriks dengan dimensi <span class="math notranslate nohighlight">\(m \times n\)</span> dan <span class="math notranslate nohighlight">\(m' \times n'\)</span>, masing-masing. Dua matriks tersebut sama jika:</p>
+<section id="sifat-sifat-perkalian-matriks">
+<h3><strong>Sifat-Sifat Perkalian Matriks</strong><a class="headerlink" href="#sifat-sifat-perkalian-matriks" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(m = m'\)</span> dan <span class="math notranslate nohighlight">\(n = n'\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\([A]_{ij} = [B]_{ij}\)</span> untuk semua <span class="math notranslate nohighlight">\(1 \le i \le m\)</span> dan <span class="math notranslate nohighlight">\(1 \le j \le n\)</span>.</p></li>
-</ol>
-<p>Dengan kata lain, kita memiliki <span class="math notranslate nohighlight">\(A = B\)</span> jika dan hanya jika <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> memiliki bentuk yang sama, dan setiap entri dari <span class="math notranslate nohighlight">\(A\)</span> sama dengan entri yang bersesuaian dari <span class="math notranslate nohighlight">\(B\)</span>.</p>
-</section>
-<section id="contoh-kesamaan-matriks">
-<h2>Contoh Kesamaan Matriks<a class="headerlink" href="#contoh-kesamaan-matriks" title="Link to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A = \begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \end{bmatrix} \quad
-B = \begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}
-\end{split}\]</div>
-<p>tidak sama satu sama lain, meskipun mereka memiliki entri yang sama yang muncul kira-kira dalam urutan yang sama. Dalam kasus ini kesamaan tidak berlaku karena <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span> memiliki bentuk yang berbeda: <span class="math notranslate nohighlight">\(A\)</span> adalah <span class="math notranslate nohighlight">\(1 \times 4\)</span>, dan <span class="math notranslate nohighlight">\(B\)</span> adalah <span class="math notranslate nohighlight">\(4 \times 1\)</span>.</p>
-<p>Matriks <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span> dan <span class="math notranslate nohighlight">\(B = \begin{bmatrix} 1 &amp; 2 \\ 5 &amp; 4 \end{bmatrix}\)</span> memiliki dimensi yang sama, tetapi tidak sama karena <span class="math notranslate nohighlight">\([A]_{21} = 3 \neq 5 = [B]_{21}\)</span>.</p>
-</section>
-<hr class="docutils" />
-<section id="definisi-solusi-sistem-linear">
-<h2>Definisi Solusi Sistem Linear<a class="headerlink" href="#definisi-solusi-sistem-linear" title="Link to this heading">#</a></h2>
-<p>Sebuah solusi persamaan linear</p>
-<div class="math notranslate nohighlight">
-\[
-a_1x_1 + a_2x_2 + \cdots + a_nx_n = b
-\]</div>
-<p>adalah sebuah <span class="math notranslate nohighlight">\(n\)</span>-tuple <span class="math notranslate nohighlight">\((s_1, s_2, \dots, s_n)\)</span> sehingga substitusi<br />
-<span class="math notranslate nohighlight">\(x_1 = s_1, x_2 = s_2, \dots, x_n = s_n\)</span> membuat persamaan benar.</p>
-<p>Sebuah solusi sistem persamaan linear adalah <span class="math notranslate nohighlight">\(n\)</span>-tuple<br />
-<span class="math notranslate nohighlight">\((s_1, s_2, \dots, s_n)\)</span> yang merupakan solusi dari setiap persamaan dalam sistem.</p>
-<p>Himpunan solusi dapat berupa:</p>
-<ol class="arabic simple">
-<li><p>Tidak ada solusi (sistem tidak konsisten)</p></li>
-<li><p>Tepat satu solusi</p></li>
-<li><p>Tak hingga banyak solusi</p></li>
+<li><p><strong>Tidak Komutatif (Secara Umum):</strong>
+$<span class="math notranslate nohighlight">\(A \times B \neq B \times A\)</span>$</p></li>
+<li><p><strong>Asosiatif:</strong>
+$<span class="math notranslate nohighlight">\((A \times B) \times C = A \times (B \times C)\)</span>$</p></li>
+<li><p><strong>Distributif:</strong>
+$<span class="math notranslate nohighlight">\(A \times (B + C) = A \times B + A \times C\)</span>$</p></li>
+<li><p><strong>Matriks Identitas (<span class="math notranslate nohighlight">\(I\)</span>):</strong>
+$<span class="math notranslate nohighlight">\(A \times I = I \times A = A\)</span>$</p></li>
 </ol>
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="representasi-matriks-dari-sistem-linear">
-<h1>Representasi Matriks dari Sistem Linear<a class="headerlink" href="#representasi-matriks-dari-sistem-linear" title="Link to this heading">#</a></h1>
-<p>Jika <span class="math notranslate nohighlight">\(A\)</span> adalah matriks koefisien dan <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> adalah vektor konstanta,<br />
-maka sistem dapat ditulis sebagai</p>
+<section id="perhitungan-manual-dot-product">
+<h2><strong>Perhitungan Manual (Dot Product)</strong><a class="headerlink" href="#perhitungan-manual-dot-product" title="Link to this heading">#</a></h2>
+<p>Misalkan kita memiliki dua matriks berukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>:
+$<span class="math notranslate nohighlight">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}, \quad B = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}\)</span>$</p>
+<p>Operasi perkaliannya adalah:
+$<span class="math notranslate nohighlight">\(A \times B = \begin{pmatrix} \text{Baris 1 A} \cdot \text{Kolom 1 B} &amp; \text{Baris 1 A} \cdot \text{Kolom 2 B} \\ \text{Baris 2 A} \cdot \text{Kolom 1 B} &amp; \text{Baris 2 A} \cdot \text{Kolom 2 B} \end{pmatrix}\)</span>$</p>
 <div class="math notranslate nohighlight">
-\[
-A\mathbf{x} = \mathbf{b}
-\]</div>
-<hr class="docutils" />
-<section id="contoh">
-<h2>Contoh<a class="headerlink" href="#contoh" title="Link to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-2x_1 + 4x_2 - 3x_3 + 5x_4 + x_5 &amp;= 9 \\
-3x_1 + x_2 + x_4 - 3x_5 &amp;= 0 \\
--2x_1 + 7x_2 - 5x_3 + 2x_4 + 2x_5 &amp;= -3
-\end{aligned}
-\end{split}\]</div>
-<p>Matriks koefisiennya:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A =
-\begin{bmatrix}
-2 &amp; 4 &amp; -3 &amp; 5 &amp; 1 \\
-3 &amp; 1 &amp; 0 &amp; 1 &amp; -3 \\
--2 &amp; 7 &amp; -5 &amp; 2 &amp; 2
-\end{bmatrix}
-\end{split}\]</div>
-<p>Vektor konstanta:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\mathbf{b} =
-\begin{bmatrix}
-9 \\
-0 \\
--3
-\end{bmatrix}
-\end{split}\]</div>
+\[\begin{split}A \times B = \begin{pmatrix} 1(5) + 2(7) &amp; 1(6) + 2(8) \\ 3(5) + 4(7) &amp; 3(6) + 4(8) \end{pmatrix} = \begin{pmatrix} 5 + 14 &amp; 6 + 16 \\ 15 + 28 &amp; 18 + 32 \end{pmatrix} = \begin{pmatrix} 19 &amp; 22 \\ 43 &amp; 50 \end{pmatrix}\end{split}\]</div>
 </section>
 <hr class="docutils" />
-<section id="definisi-matriks-augmentasi">
-<h2>Definisi Matriks Augmentasi<a class="headerlink" href="#definisi-matriks-augmentasi" title="Link to this heading">#</a></h2>
-<p>Matriks augmentasi dari sistem adalah:</p>
+<section id="kasus-khusus-langkah-detail-perkalian-matriks-2-times-2-dengan-matriks-2-times-2">
+<h2><strong>Kasus Khusus: Langkah Detail Perkalian Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span> dengan Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span></strong><a class="headerlink" href="#kasus-khusus-langkah-detail-perkalian-matriks-2-times-2-dengan-matriks-2-times-2" title="Link to this heading">#</a></h2>
+<p>Untuk mempermudah pemahaman langkah demi langkah, mari kita bedah perkalian dua matriks persegi <span class="math notranslate nohighlight">\(2 \times 2\)</span> secara umum:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\left[
-\begin{array}{ccc|c}
-1 &amp; -1 &amp; 2 &amp; 1 \\
-2 &amp; 1 &amp; 1 &amp; 8 \\
-1 &amp; 1 &amp; 0 &amp; 5
-\end{array}
-\right]
-\end{split}\]</div>
-<p>Matriks ini merepresentasikan seluruh informasi penting dari sistem persamaan.</p>
+\[\begin{split}A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}, \quad B = \begin{pmatrix} e &amp; f \\ g &amp; h \end{pmatrix}\end{split}\]</div>
+<p>Matriks hasil perkalian <span class="math notranslate nohighlight">\(C = A \times B\)</span> juga akan berukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>:
+$<span class="math notranslate nohighlight">\(C = \begin{pmatrix} C_{11} &amp; C_{12} \\ C_{21} &amp; C_{22} \end{pmatrix}\)</span>$</p>
+<p>Di mana setiap elemen dihitung dengan mengalikan baris matriks pertama dengan kolom matriks kedua:</p>
+<ol class="arabic simple">
+<li><p><strong>Mencari <span class="math notranslate nohighlight">\(C_{11}\)</span> (Baris 1 Matriks A <span class="math notranslate nohighlight">\(\times\)</span> Kolom 1 Matriks B):</strong>
+$<span class="math notranslate nohighlight">\(C_{11} = a \cdot e + b \cdot g\)</span>$</p></li>
+<li><p><strong>Mencari <span class="math notranslate nohighlight">\(C_{12}\)</span> (Baris 1 Matriks A <span class="math notranslate nohighlight">\(\times\)</span> Kolom 2 Matriks B):</strong>
+$<span class="math notranslate nohighlight">\(C_{12} = a \cdot f + b \cdot h\)</span>$</p></li>
+<li><p><strong>Mencari <span class="math notranslate nohighlight">\(C_{21}\)</span> (Baris 2 Matriks A <span class="math notranslate nohighlight">\(\times\)</span> Kolom 1 Matriks B):</strong>
+$<span class="math notranslate nohighlight">\(C_{21} = c \cdot e + d \cdot g\)</span>$</p></li>
+<li><p><strong>Mencari <span class="math notranslate nohighlight">\(C_{22}\)</span> (Baris 2 Matriks A <span class="math notranslate nohighlight">\(\times\)</span> Kolom 2 Matriks B):</strong>
+$<span class="math notranslate nohighlight">\(C_{22} = c \cdot f + d \cdot h\)</span>$</p></li>
+</ol>
+<section id="contoh-soal-dengan-angka">
+<h3><strong>Contoh Soal dengan Angka:</strong><a class="headerlink" href="#contoh-soal-dengan-angka" title="Link to this heading">#</a></h3>
+<p>Misalkan kita ingin mengalikan matriks berikut:
+$<span class="math notranslate nohighlight">\(A = \begin{pmatrix} 2 &amp; 3 \\ 1 &amp; 4 \end{pmatrix}, \quad B = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Langkah 1: Hitung <span class="math notranslate nohighlight">\(C_{11}\)</span> (Baris 1 <span class="math notranslate nohighlight">\(\times\)</span> Kolom 1)</strong>
+$<span class="math notranslate nohighlight">\(C_{11} = 2(5) + 3(7) = 10 + 21 = 31\)</span>$</p></li>
+<li><p><strong>Langkah 2: Hitung <span class="math notranslate nohighlight">\(C_{12}\)</span> (Baris 1 <span class="math notranslate nohighlight">\(\times\)</span> Kolom 2)</strong>
+$<span class="math notranslate nohighlight">\(C_{12} = 2(6) + 3(8) = 12 + 24 = 36\)</span>$</p></li>
+<li><p><strong>Langkah 3: Hitung <span class="math notranslate nohighlight">\(C_{21}\)</span> (Baris 2 <span class="math notranslate nohighlight">\(\times\)</span> Kolom 1)</strong>
+$<span class="math notranslate nohighlight">\(C_{21} = 1(5) + 4(7) = 5 + 28 = 33\)</span>$</p></li>
+<li><p><strong>Langkah 4: Hitung <span class="math notranslate nohighlight">\(C_{22}\)</span> (Baris 2 <span class="math notranslate nohighlight">\(\times\)</span> Kolom 2)</strong>
+$<span class="math notranslate nohighlight">\(C_{22} = 1(6) + 4(8) = 6 + 32 = 38\)</span>$</p></li>
+</ul>
+<p>Sehingga diperoleh hasil akhir matriks perkalian <span class="math notranslate nohighlight">\(A \times B\)</span>:
+$<span class="math notranslate nohighlight">\(C = \begin{pmatrix} 31 &amp; 36 \\ 33 &amp; 38 \end{pmatrix}\)</span>$</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="implementasi-komputasi-dengan-python-numpy">
+<h2><strong>Implementasi Komputasi dengan Python (NumPy)</strong><a class="headerlink" href="#implementasi-komputasi-dengan-python-numpy" title="Link to this heading">#</a></h2>
+<p>Dalam Python, kita dapat menggunakan operator <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> atau fungsi <code class="docutils literal notranslate"><span class="pre">np.dot()</span></code> dari library <strong>NumPy</strong> untuk melakukan perkalian matriks.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># 1. Definisikan matriks A dan B</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># 2. Lakukan perkalian matriks menggunakan operator &#39;@&#39;</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">B</span>
+
+<span class="c1"># 3. Tampilkan hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks B:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hasil A @ B (Perkalian Matriks):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -601,20 +587,20 @@ A =
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tugas5.html"
+       href="pengurangan_matrix.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tugas 5</p>
+        <p class="prev-next-title">Pengurangan Matriks</p>
       </div>
     </a>
     <a class="right-next"
-       href="determinan.html"
+       href="pembagian_matrix.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pengantar Determinan Matriks</p>
+        <p class="prev-next-title">Pembagian Matriks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -634,22 +620,22 @@ A =
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aritmetika Matriks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks">Definisi Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notasi-matriks">Notasi Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-notasi">Contoh Notasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-kesamaan-matriks">Definisi Kesamaan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-kesamaan-matriks">Contoh Kesamaan Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-solusi-sistem-linear">Definisi Solusi Sistem Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matriks-dengan-skalar"><strong>1. Perkalian Matriks dengan Skalar</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-dan-contoh"><strong>Rumus dan Contoh:</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representasi-matriks-dari-sistem-linear">Representasi Matriks dari Sistem Linear</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-matriks-augmentasi">Definisi Matriks Augmentasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matriks-dengan-matriks"><strong>2. Perkalian Matriks dengan Matriks</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-perkalian-matriks"><strong>Syarat Perkalian Matriks</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-perkalian-matriks"><strong>Sifat-Sifat Perkalian Matriks</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-dot-product"><strong>Perhitungan Manual (Dot Product)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kasus-khusus-langkah-detail-perkalian-matriks-2-times-2-dengan-matriks-2-times-2"><strong>Kasus Khusus: Langkah Detail Perkalian Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span> dengan Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-dengan-angka"><strong>Contoh Soal dengan Angka:</strong></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-komputasi-dengan-python-numpy"><strong>Implementasi Komputasi dengan Python (NumPy)</strong></a></li>
+</ul>
   </nav></div>
 
 </div></div>
